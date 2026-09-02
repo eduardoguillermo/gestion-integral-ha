@@ -2,6 +2,7 @@ const CACHE_NAME = "gestion-integral-ha-v0.01-dev";
 const ASSETS = [
   "./gestion_integral_ha.html",
   "./app.js",
+  "./style.css",
   "./manifest.json"
 ];
 
