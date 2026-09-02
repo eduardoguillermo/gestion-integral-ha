@@ -1,8 +1,9 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.06-dev
+// GESTIÓN INTEGRAL DE HA — v0.07-dev
 // ============================================================
-const APP_VERSION = "0.06-dev";
+const APP_VERSION = "0.07-dev";
 const STORAGE_KEY = "giha_items";
+const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const SNAPSHOT_KEY = "giha_snapshots";
 const DRIVE_TOKEN_KEY = "giha_drive_token";
 const MAX_SNAPSHOTS = 10;
@@ -29,6 +30,7 @@ function bateriaLabel(it) {
 }
 
 let items = [];
+let automatizaciones = [];
 let editingId = null;
 let fichaAbiertaId = null;
 let reemplazandoId = null;
@@ -115,21 +117,30 @@ function loadItems() {
     console.error("Error leyendo storage", e);
     items = [];
   }
-}
-
-function saveItems() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-  saveSnapshot();
-  render();
-  if (typeof DriveSync !== "undefined" && DriveSync.conectado()) {
-    DriveSync.sync();
+  try {
+    const rawAuto = localStorage.getItem(STORAGE_KEY_AUTO);
+    automatizaciones = rawAuto ? JSON.parse(rawAuto) : [];
+  } catch (e) {
+    console.error("Error leyendo storage de automatizaciones", e);
+    automatizaciones = [];
   }
 }
+
+// Persiste ambas colecciones (dispositivos + automatizaciones) juntas: un solo snapshot,
+// un solo sync a Drive, para que nunca queden desincronizadas entre sí.
+function persistAll() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
+  saveSnapshot();
+  if (typeof DriveSync !== "undefined" && DriveSync.conectado()) DriveSync.sync();
+}
+function saveItems() { persistAll(); render(); }
+function saveAutomatizaciones() { persistAll(); renderAutomatizaciones(); }
 
 function saveSnapshot() {
   try {
     let snaps = JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || "[]");
-    snaps.push({ t: Date.now(), data: items });
+    snaps.push({ t: Date.now(), data: items, dataAuto: automatizaciones });
     if (snaps.length > MAX_SNAPSHOTS) snaps = snaps.slice(snaps.length - MAX_SNAPSHOTS);
     localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(snaps));
   } catch (e) {
@@ -219,12 +230,143 @@ function render() {
 }
 
 // ============================================================
+// PÁGINA: AUTOMATIZACIONES
+// (Se cargan a mano por ahora; más adelante se van a poder traer del propio
+// sistema HA, así que el modelo de datos ya queda listo para eso: id, categoria,
+// nombre, descripcion — sin agregarle nada extra que no se haya pedido.)
+// ============================================================
+let filtroCategoria = "todas";
+
+function automatizacionesActivas() {
+  return automatizaciones.filter(a => !a.deleted);
+}
+
+function renderAutomatizaciones() {
+  document.getElementById("content").innerHTML = `
+    <div class="sbar">
+      <input type="text" id="searchAuto" autocomplete="off" placeholder="Buscar por nombre, categoría o descripción">
+      <select id="filtroCategoriaSel"></select>
+      <button class="btn btn-p" id="btnAgregarAuto">+ Agregar automatización</button>
+    </div>
+    <div class="dev-grid" id="listAuto"></div>
+  `;
+  document.getElementById("searchAuto").addEventListener("input", renderListaAuto);
+  document.getElementById("filtroCategoriaSel").addEventListener("change", (e) => { filtroCategoria = e.target.value; renderListaAuto(); });
+  document.getElementById("btnAgregarAuto").addEventListener("click", () => openFormAuto(null));
+  renderListaAuto();
+}
+
+function renderFiltroCategoriaSelect() {
+  const sel = document.getElementById("filtroCategoriaSel");
+  if (!sel) return;
+  const categorias = [...new Set(automatizacionesActivas().map(a => a.categoria).filter(Boolean))].sort();
+  let html = `<option value="todas">Todas las categorías</option>`;
+  categorias.forEach(c => { html += `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`; });
+  sel.innerHTML = html;
+  sel.value = filtroCategoria;
+}
+
+function renderListaAuto() {
+  const list = document.getElementById("listAuto");
+  if (!list) return;
+  const q = (document.getElementById("searchAuto").value || "").toLowerCase().trim();
+  const base = automatizacionesActivas();
+
+  const filtered = base.filter(a => {
+    if (filtroCategoria !== "todas" && a.categoria !== filtroCategoria) return false;
+    if (!q) return true;
+    return a.nombre.toLowerCase().includes(q) || (a.categoria || "").toLowerCase().includes(q) || (a.descripcion || "").toLowerCase().includes(q);
+  }).sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="empty">${base.length === 0 ? "Todavía no cargaste automatizaciones." : "Sin resultados."}</div>`;
+  } else {
+    list.innerHTML = filtered.map(a => `
+      <div class="dev-card" data-id="${a.id}">
+        <div class="dev-card-top">
+          <span class="dev-card-icon">🤖</span>
+          <span class="dev-card-title">${escapeHtml(a.nombre)}</span>
+        </div>
+        <div class="dev-card-meta">${a.descripcion ? escapeHtml(a.descripcion.length > 90 ? a.descripcion.slice(0, 90) + "…" : a.descripcion) : "sin descripción"}</div>
+        <span class="pill p-muted">${escapeHtml(a.categoria || "sin categoría")}</span>
+      </div>
+    `).join("");
+    list.querySelectorAll(".dev-card").forEach(card => {
+      card.addEventListener("click", () => openFormAuto(card.dataset.id));
+    });
+  }
+  renderFiltroCategoriaSelect();
+}
+
+function openFormAuto(id) {
+  const a = id ? automatizaciones.find(x => x.id === id) : null;
+  const titulo = a ? "Editar automatización" : "Agregar automatización";
+  const categoriasExistentes = [...new Set(automatizacionesActivas().map(x => x.categoria).filter(Boolean))].sort();
+
+  const body = `
+    <div class="fg"><label>Categoría</label>
+      <input type="text" id="faCategoria" autocomplete="off" list="listaCategorias" placeholder="Ej: Seguridad, Riego, Iluminación" value="${escapeHtml(a ? (a.categoria || "") : "")}">
+      <datalist id="listaCategorias">${categoriasExistentes.map(c => `<option value="${escapeHtml(c)}">`).join("")}</datalist>
+    </div>
+    <div class="fg"><label>Nombre</label><input type="text" id="faNombre" autocomplete="off" placeholder="Ej: Apagar luces al salir" value="${escapeHtml(a ? a.nombre : "")}"></div>
+    <div class="fg"><label>Descripción</label><textarea id="faDescripcion" placeholder="Qué hace y cuándo se dispara">${escapeHtml(a ? (a.descripcion || "") : "")}</textarea></div>
+  `;
+  const foot = `
+    ${a ? `<button class="btn btn-d" id="btnEliminarAuto">🗑️ Eliminar</button>` : ""}
+    <button class="btn" id="btnCancelFormAuto">Cancelar</button>
+    <button class="btn btn-p" id="btnSaveFormAuto">Guardar</button>
+  `;
+  abrirModal(titulo, body, foot);
+
+  document.getElementById("btnCancelFormAuto").addEventListener("click", cerrarModal);
+  document.getElementById("btnSaveFormAuto").addEventListener("click", () => guardarFormAuto(id));
+  const btnDel = document.getElementById("btnEliminarAuto");
+  if (btnDel) btnDel.addEventListener("click", () => eliminarAuto(id));
+}
+
+function guardarFormAuto(id) {
+  const nombre = document.getElementById("faNombre").value.trim();
+  if (!nombre) { alert("Ingresá el nombre de la automatización"); return; }
+
+  const data = {
+    categoria: document.getElementById("faCategoria").value.trim(),
+    nombre,
+    descripcion: document.getElementById("faDescripcion").value.trim(),
+    lastModified: Date.now(),
+  };
+
+  if (id) {
+    const a = automatizaciones.find(x => x.id === id);
+    if (a) Object.assign(a, data);
+    cerrarModal();
+    saveAutomatizaciones();
+    showToast(`${nombre} actualizada`);
+  } else {
+    automatizaciones.push({ id: uuid(), ...data, deleted: false });
+    cerrarModal();
+    saveAutomatizaciones();
+    showToast(`${nombre} agregada`);
+  }
+}
+
+function eliminarAuto(id) {
+  const a = automatizaciones.find(x => x.id === id);
+  if (!a) return;
+  if (!confirm(`¿Eliminar "${a.nombre}"?`)) return;
+  a.deleted = true;
+  a.lastModified = Date.now();
+  cerrarModal();
+  saveAutomatizaciones();
+  showToast(`${a.nombre} eliminada`);
+}
+
+// ============================================================
 // ROUTER / NAV LATERAL
 // ============================================================
 let _panel = "inventario";
-const PANELS = ["inventario", "reportes", "backup"];
-const TITULOS = { inventario: "Inventario", reportes: "Reportes", backup: "Backup" };
-const RENDERS = { inventario: renderInventario, reportes: () => renderReportes(), backup: () => renderBackup() };
+const PANELS = ["inventario", "automatizaciones", "reportes", "backup"];
+const TITULOS = { inventario: "Inventario", automatizaciones: "Automatizaciones", reportes: "Reportes", backup: "Backup" };
+const RENDERS = { inventario: renderInventario, automatizaciones: () => renderAutomatizaciones(), reportes: () => renderReportes(), backup: () => renderBackup() };
 
 function toggleNav() {
   document.getElementById("nav").classList.toggle("open");
@@ -271,7 +413,7 @@ function renderBackup() {
         const d = new Date(s.t);
         const label = d.toLocaleDateString("es-AR", { day: "2-digit", month: "2-digit", year: "2-digit" }) + " " + d.toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" });
         return `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;">
-          <span class="text2">🔄 ${label} · ${s.data.length} dispositivo${s.data.length === 1 ? "" : "s"}</span>
+          <span class="text2">🔄 ${label} · ${s.data.length} dispositivo${s.data.length === 1 ? "" : "s"} · ${(s.dataAuto || []).length} automatización${(s.dataAuto || []).length === 1 ? "" : "es"}</span>
           <div style="display:flex;gap:6px;">
             <button class="btn btn-sm" onclick="restaurarSnapshot(${s.t})">↩️ Restaurar</button>
           </div>
@@ -304,9 +446,12 @@ function restaurarSnapshot(ts) {
   if (!snap) return;
   if (!confirm("¿Restaurar este snapshot? Reemplaza los datos actuales por los de ese momento.")) return;
   items = snap.data;
+  automatizaciones = snap.dataAuto || [];
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
   saveSnapshot();
   render();
+  renderAutomatizaciones();
   renderBackup();
   showToast("Snapshot restaurado");
 }
@@ -732,11 +877,14 @@ const DriveSync = {
     if (!this.conectado()) return;
     const remoteData = await this.descargar();
     const remoteItems = remoteData && remoteData.items ? remoteData.items : [];
-    const merged = this.merge(items, remoteItems);
-    items = merged;
+    const remoteAuto = remoteData && remoteData.automatizaciones ? remoteData.automatizaciones : [];
+    items = this.merge(items, remoteItems);
+    automatizaciones = this.merge(automatizaciones, remoteAuto);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
     render();
-    await this.subir({ items, updatedAt: Date.now() }, keepalive);
+    renderAutomatizaciones();
+    await this.subir({ items, automatizaciones, updatedAt: Date.now() }, keepalive);
   },
 };
 DriveSync.init();
