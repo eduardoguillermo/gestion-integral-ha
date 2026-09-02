@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.02-dev
+// GESTIÓN INTEGRAL DE HA — v0.03-dev
 // ============================================================
-const APP_VERSION = "0.02-dev";
+const APP_VERSION = "0.03-dev";
 const STORAGE_KEY = "giha_items";
 const SNAPSHOT_KEY = "giha_snapshots";
 const DRIVE_TOKEN_KEY = "giha_drive_token";
@@ -16,12 +16,9 @@ const DRIVE_FILE_NAME = "data.json";
 const UMBRAL_BATERIA_DIAS = 180;
 
 const TIPOS = {
-  zigbee:   { label: "Zigbee",   icono: "📡" },
-  esphome:  { label: "ESPHome",  icono: "🔧" },
-  tasmota:  { label: "Tasmota",  icono: "⚡" },
-  miflora:  { label: "Mi Flora", icono: "🌱" },
-  zwave:    { label: "Z-Wave",   icono: "📶" },
-  generico: { label: "Genérico", icono: "🔘" },
+  zigbee: { label: "Zigbee", icono: "📡" },
+  wifi:   { label: "WiFi",   icono: "📶" },
+  otro:   { label: "Otro",   icono: "🔘" },
 };
 const BATERIAS = { cr2032: "CR2032", aa: "AA", aaa: "AAA", recargable: "Recargable", na: "N/A - cableado" };
 
@@ -92,6 +89,15 @@ function escapeHtml(s) {
   const d = document.createElement("div");
   d.textContent = s || "";
   return d.innerHTML;
+}
+
+// Etiqueta visible del tipo: si es "otro", usa el texto libre cargado en vez de "Otro".
+function tipoLabel(it) {
+  if (it.tipo === "otro" && it.tipoOtro) return it.tipoOtro;
+  return (TIPOS[it.tipo] || TIPOS.otro).label;
+}
+function tipoIcono(it) {
+  return (TIPOS[it.tipo] || TIPOS.otro).icono;
 }
 
 // ---------- storage ----------
@@ -187,15 +193,16 @@ function render() {
 function renderCard(it) {
   const estado = estadoDispositivo(it);
   const pill = pillInfo(estado);
-  const tipoInfo = TIPOS[it.tipo] || TIPOS.generico;
   const metaExtra = estado === "bateria_baja" ? ` · hace ${diasDesde(ultimoCambioBateria(it))} días` : "";
+  const marcaModelo = [it.marca, it.modelo].filter(Boolean).join(" ");
   return `
     <div class="dev-card ${estado === "reemplazado" ? "reemplazado" : ""}" data-id="${it.id}">
       <div class="dev-card-top">
-        <span class="dev-card-icon">${tipoInfo.icono}</span>
+        <span class="dev-card-icon">${tipoIcono(it)}</span>
         <span class="dev-card-title">${escapeHtml(it.nombre)}</span>
       </div>
       <div class="dev-card-meta">${escapeHtml(it.ubicacion || "sin ubicación")} · ${BATERIAS[it.bateria] || it.bateria}${metaExtra}</div>
+      ${marcaModelo ? `<div class="dev-card-meta">${escapeHtml(marcaModelo)}</div>` : ""}
       <span class="pill ${pill.cls}">${pill.txt}</span>
     </div>
   `;
@@ -238,6 +245,14 @@ function openForm(id, reemplazaAId) {
         ${Object.keys(TIPOS).map(t => `<option value="${t}" ${it && it.tipo === t ? "selected" : ""}>${TIPOS[t].label}</option>`).join("")}
       </select>
     </div>
+    <div class="fg" id="fTipoOtroWrap" style="display:${it && it.tipo === "otro" ? "flex" : "none"};">
+      <label>Especificar tipo</label>
+      <input type="text" id="fTipoOtro" placeholder="Ej: Bluetooth, Matter, LoRa" value="${escapeHtml(it ? (it.tipoOtro || "") : "")}">
+    </div>
+    <div class="fgrid">
+      <div class="fg"><label>Marca</label><input type="text" id="fMarca" placeholder="Ej: Aqara" value="${escapeHtml(it ? (it.marca || "") : "")}"></div>
+      <div class="fg"><label>Modelo</label><input type="text" id="fModelo" placeholder="Ej: WSDCGQ11LM" value="${escapeHtml(it ? (it.modelo || "") : "")}"></div>
+    </div>
     <div class="fg"><label>Ubicación</label><input type="text" id="fUbicacion" placeholder="Ej: Cocina" value="${escapeHtml(it ? (it.ubicacion || "") : "")}"></div>
     <div class="fg"><label>Entidades HA</label>
       <div id="entidadesWrap"></div>
@@ -263,6 +278,9 @@ function openForm(id, reemplazaAId) {
   document.getElementById("btnAgregarEntidad").addEventListener("click", () => agregarFilaEntidad(""));
   document.getElementById("btnCancelForm").addEventListener("click", cerrarModal);
   document.getElementById("btnSaveForm").addEventListener("click", guardarForm);
+  document.getElementById("fTipo").addEventListener("change", (e) => {
+    document.getElementById("fTipoOtroWrap").style.display = e.target.value === "otro" ? "flex" : "none";
+  });
 }
 
 function renderEntidadesInputs(valores) {
@@ -294,10 +312,17 @@ function guardarForm() {
   const nombre = document.getElementById("fNombre").value.trim();
   if (!nombre) { alert("Ingresá el nombre del dispositivo"); return; }
 
+  const tipo = document.getElementById("fTipo").value;
+  const tipoOtro = document.getElementById("fTipoOtro").value.trim();
+  if (tipo === "otro" && !tipoOtro) { alert("Especificá el tipo en el campo de texto"); return; }
+
   const fechaInstalacion = document.getElementById("fFechaInstalacion").value || hoyYMD();
   const data = {
     nombre,
-    tipo: document.getElementById("fTipo").value,
+    tipo,
+    tipoOtro: tipo === "otro" ? tipoOtro : "",
+    marca: document.getElementById("fMarca").value.trim(),
+    modelo: document.getElementById("fModelo").value.trim(),
     ubicacion: document.getElementById("fUbicacion").value.trim(),
     entidades: leerEntidadesForm(),
     fechaInstalacion,
@@ -349,7 +374,6 @@ function abrirFicha(id) {
 
   const estado = estadoDispositivo(it);
   const pill = pillInfo(estado);
-  const tipoInfo = TIPOS[it.tipo] || TIPOS.generico;
   const esReemplazado = estado === "reemplazado";
 
   const eventos = [...(it.historial || [])].reverse();
@@ -367,11 +391,12 @@ function abrirFicha(id) {
   }
 
   const notasHtml = it.notas ? `<div class="ficha-notas">${escapeHtml(it.notas)}</div>` : "";
+  const marcaModelo = [it.marca, it.modelo].filter(Boolean).join(" ");
 
   const body = `
     <div class="ficha-meta-row">
       <span class="pill ${pill.cls}">${pill.txt}</span>
-      <span class="ficha-entidades">${escapeHtml(it.ubicacion || "sin ubicación")} · ${tipoInfo.label}${(it.entidades || []).length ? " · " + it.entidades.map(escapeHtml).join(", ") : ""}</span>
+      <span class="ficha-entidades">${escapeHtml(it.ubicacion || "sin ubicación")} · ${tipoLabel(it)}${marcaModelo ? " · " + escapeHtml(marcaModelo) : ""}${(it.entidades || []).length ? " · " + it.entidades.map(escapeHtml).join(", ") : ""}</span>
     </div>
     <div class="ficha-acciones">
       ${(!esReemplazado && it.bateria !== "na") ? `<button class="btn" id="btnCambiarBateria">🔋 Cambiar batería</button>` : ""}
