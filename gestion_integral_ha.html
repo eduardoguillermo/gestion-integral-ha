@@ -13,34 +13,36 @@
 </head>
 <body>
 
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <div class="logo-icon">🏠</div>
+    <div>
+      <div class="logo-text">Gestión Integral de HA</div>
+      <div class="logo-sub">Home Assistant · <span id="nav-version"></span></div>
+    </div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">Principal</div>
+    <a onclick="goTo('inventario')" id="nav-inventario">📦 Inventario</a>
+    <a onclick="goTo('reportes')" id="nav-reportes">📈 Reportes</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">Sistema</div>
+    <a onclick="goTo('backup')" id="nav-backup">💾 Backup</a>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="nav-overlay" onclick="toggleNav()"></div>
+
 <div class="main">
   <div class="topbar">
-    <div class="logo">
-      <div class="logo-icon">🏠</div>
-      <div>
-        <div class="logo-text">Gestión Integral de HA</div>
-        <div class="logo-sub">Sensores y baterías · <span id="topbar-version"></span></div>
-      </div>
-    </div>
-    <div class="pacts">
-      <button class="btn" id="btnHelp" title="Ayuda">❓</button>
-      <button class="btn" id="btnDrive" title="Conectar Google Drive">🔌</button>
-      <button class="btn" id="btnBackup" title="Backup ahora">☁️</button>
-      <button class="btn" id="btnExit" title="Salir">🚪</button>
-    </div>
+    <button class="nav-toggle" id="nav-toggle" onclick="toggleNav()">&#9776;</button>
+    <div class="ptitle" id="ptitle">Inventario</div>
+    <div class="pacts" id="pacts"></div>
+    <button class="btn btn-sm" id="btnHelp" title="Ayuda">❓ Ayuda</button>
+    <button class="btn btn-sm" id="btnExit" title="Salir">🚪 Salir</button>
   </div>
-
-  <div class="content">
-    <div class="stats" id="stats"></div>
-
-    <div class="sbar">
-      <input type="text" id="search" autocomplete="off" placeholder="Buscar por nombre o entidad">
-      <select id="filtroTipoSel"></select>
-      <button class="btn btn-p" id="btnAgregar">+ Agregar dispositivo</button>
-    </div>
-
-    <div class="dev-grid" id="list"></div>
-  </div>
+  <div class="content" id="content"></div>
 </div>
 
 <div class="moverlay" id="modal" style="display:none" onclick="if(event.target===this) cerrarModal()">
