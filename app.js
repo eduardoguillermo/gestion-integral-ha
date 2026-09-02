@@ -1,5 +1,5 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.01-dev
+// GESTIÓN INTEGRAL DE HA — v0.02-dev
 // ============================================================
 const APP_VERSION = "0.02-dev";
 const STORAGE_KEY = "giha_items";
