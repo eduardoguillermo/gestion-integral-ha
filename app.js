@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.05-dev
+// GESTIÓN INTEGRAL DE HA — v0.06-dev
 // ============================================================
-const APP_VERSION = "0.05-dev";
+const APP_VERSION = "0.06-dev";
 const STORAGE_KEY = "giha_items";
 const SNAPSHOT_KEY = "giha_snapshots";
 const DRIVE_TOKEN_KEY = "giha_drive_token";
@@ -137,8 +137,29 @@ function saveSnapshot() {
   }
 }
 
+// ============================================================
+// PÁGINA: INVENTARIO
+// ============================================================
+function renderInventario() {
+  document.getElementById("content").innerHTML = `
+    <div class="stats" id="stats"></div>
+    <div class="sbar">
+      <input type="text" id="search" autocomplete="off" placeholder="Buscar por nombre o entidad">
+      <select id="filtroTipoSel"></select>
+      <button class="btn btn-p" id="btnAgregar">+ Agregar dispositivo</button>
+    </div>
+    <div class="dev-grid" id="list"></div>
+  `;
+  document.getElementById("filtroTipoSel").addEventListener("change", (e) => { filtroTipo = e.target.value; render(); });
+  document.getElementById("search").addEventListener("input", render);
+  document.getElementById("btnAgregar").addEventListener("click", () => openForm(null));
+  render();
+}
+
 // ---------- render: stats ----------
 function renderStats() {
+  const statsEl = document.getElementById("stats");
+  if (!statsEl) return;
   const base = activos();
   const stats = [
     { label: "Activos", n: base.filter(it => estadoDispositivo(it) === "activo").length, cls: "" },
@@ -146,7 +167,7 @@ function renderStats() {
     { label: "Reemplazados", n: base.filter(it => estadoDispositivo(it) === "reemplazado").length, cls: "" },
     { label: "Fuera de servicio", n: base.filter(it => estadoDispositivo(it) === "fuera_servicio").length, cls: "danger" },
   ];
-  document.getElementById("stats").innerHTML = stats.map(s =>
+  statsEl.innerHTML = stats.map(s =>
     `<div class="stat ${s.cls}"><div class="stat-n">${s.n}</div><div class="stat-l">${s.label}</div></div>`
   ).join("");
 }
@@ -154,6 +175,7 @@ function renderStats() {
 // ---------- render: filtro de tipo ----------
 function renderFiltroSelect() {
   const sel = document.getElementById("filtroTipoSel");
+  if (!sel) return;
   const tiposEnUso = new Set(activos().map(it => it.tipo));
   let html = `<option value="todos">Todos los tipos</option>`;
   Object.keys(TIPOS).forEach(t => {
@@ -163,10 +185,11 @@ function renderFiltroSelect() {
   sel.innerHTML = html;
   sel.value = filtroTipo;
 }
-document.getElementById("filtroTipoSel").addEventListener("change", (e) => { filtroTipo = e.target.value; render(); });
 
 // ---------- render: lista ----------
 function render() {
+  const list = document.getElementById("list");
+  if (!list) return; // Inventario no es la página activa ahora mismo
   const q = (document.getElementById("search").value || "").toLowerCase().trim();
   const base = activos();
 
@@ -182,7 +205,6 @@ function render() {
     return a.nombre.localeCompare(b.nombre);
   });
 
-  const list = document.getElementById("list");
   if (filtered.length === 0) {
     list.innerHTML = `<div class="empty">${base.length === 0 ? "Todavía no cargaste dispositivos." : "Sin resultados."}</div>`;
   } else {
@@ -196,11 +218,102 @@ function render() {
   renderFiltroSelect();
 }
 
+// ============================================================
+// ROUTER / NAV LATERAL
+// ============================================================
+let _panel = "inventario";
+const PANELS = ["inventario", "reportes", "backup"];
+const TITULOS = { inventario: "Inventario", reportes: "Reportes", backup: "Backup" };
+const RENDERS = { inventario: renderInventario, reportes: () => renderReportes(), backup: () => renderBackup() };
+
+function toggleNav() {
+  document.getElementById("nav").classList.toggle("open");
+  document.getElementById("nav-overlay").classList.toggle("open");
+}
+function cerrarNav() {
+  document.getElementById("nav").classList.remove("open");
+  document.getElementById("nav-overlay").classList.remove("open");
+}
+function goTo(panel) {
+  cerrarNav();
+  _panel = panel;
+  PANELS.forEach(p => { const el = document.getElementById("nav-" + p); if (el) el.classList.remove("on"); });
+  const navEl = document.getElementById("nav-" + panel);
+  if (navEl) navEl.classList.add("on");
+  document.getElementById("ptitle").textContent = TITULOS[panel] || panel;
+  document.getElementById("pacts").innerHTML = "";
+  (RENDERS[panel] || renderInventario)();
+}
+
+// ============================================================
+// PÁGINA: REPORTES (placeholder — a definir)
+// ============================================================
+function renderReportes() {
+  document.getElementById("content").innerHTML = `
+    <div class="card">
+      <div class="ch"><span class="ct">Reportes</span></div>
+      <div class="card-body">
+        <p class="text2" style="font-size:12px;">Todavía no hay reportes definidos para este módulo. Contame qué querés ver acá (por ejemplo: dispositivos por ubicación, próximos cambios de batería, historial de reemplazos) y lo armamos.</p>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================
+// PÁGINA: BACKUP
+// ============================================================
+function renderBackup() {
+  const conectado = DriveSync.conectado();
+  const snaps = JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || "[]").slice().reverse();
+  const snapsHtml = snaps.length === 0
+    ? `<p class="text3" style="font-size:12px;">Sin snapshots todavía. Se crean automáticamente al cerrar o minimizar la app.</p>`
+    : snaps.map(s => {
+        const d = new Date(s.t);
+        const label = d.toLocaleDateString("es-AR", { day: "2-digit", month: "2-digit", year: "2-digit" }) + " " + d.toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" });
+        return `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;">
+          <span class="text2">🔄 ${label} · ${s.data.length} dispositivo${s.data.length === 1 ? "" : "s"}</span>
+          <div style="display:flex;gap:6px;">
+            <button class="btn btn-sm" onclick="restaurarSnapshot(${s.t})">↩️ Restaurar</button>
+          </div>
+        </div>`;
+      }).join("");
+
+  document.getElementById("content").innerHTML = `
+    <div class="card">
+      <div class="ch"><span class="ct">Google Drive</span></div>
+      <div class="card-body">
+        <p class="text2" id="backup-drive-status" style="font-size:12px;margin-bottom:12px;">${conectado ? "🟢 Conectado" : "🔌 No conectado"}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          ${conectado
+            ? `<button class="btn btn-p" onclick="backupAhora()">☁️ Backup ahora</button>`
+            : `<button class="btn btn-p" onclick="conectarDrive()">🔌 Conectar Google Drive</button>`
+          }
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">Snapshots locales <span class="text3" style="font-size:11px;font-weight:400;">(últimos ${snaps.length}/${MAX_SNAPSHOTS})</span></span></div>
+      <div class="card-body">${snapsHtml}</div>
+    </div>
+  `;
+}
+
+function restaurarSnapshot(ts) {
+  const snaps = JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || "[]");
+  const snap = snaps.find(s => s.t === ts);
+  if (!snap) return;
+  if (!confirm("¿Restaurar este snapshot? Reemplaza los datos actuales por los de ese momento.")) return;
+  items = snap.data;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  saveSnapshot();
+  render();
+  renderBackup();
+  showToast("Snapshot restaurado");
+}
+
+
 function renderCard(it) {
   const estado = estadoDispositivo(it);
-  const pill = pillInfo(estado);
-  const metaExtra = estado === "bateria_baja" ? ` · hace ${diasDesde(ultimoCambioBateria(it))} días` : "";
-  const marcaModelo = [it.marca, it.modelo].filter(Boolean).join(" ");
   return `
     <div class="dev-card ${estado === "reemplazado" ? "reemplazado" : ""}" data-id="${it.id}">
       <div class="dev-card-top">
@@ -380,8 +493,6 @@ function guardarForm() {
   }
 }
 
-document.getElementById("btnAgregar").addEventListener("click", () => openForm(null));
-
 // ============================================================
 // FICHA DE DISPOSITIVO
 // ============================================================
@@ -491,9 +602,6 @@ document.getElementById("toastUndo").addEventListener("click", () => {
   document.getElementById("toast").classList.remove("show");
 });
 
-// ---------- búsqueda ----------
-document.getElementById("search").addEventListener("input", render);
-
 // ============================================================
 // AYUDA
 // ============================================================
@@ -529,9 +637,8 @@ const DriveSync = {
     this._updateDriveBtn();
   },
   _updateDriveBtn() {
-    const btn = document.getElementById("btnDrive");
-    if (this.conectado()) { btn.textContent = "🟢"; btn.title = "Drive conectado"; }
-    else { btn.textContent = "🔌"; btn.title = "Conectar Google Drive"; }
+    // Si la página Backup está activa, refresca su estado; si no, no hace nada (no hay botón fijo en el topbar).
+    if (typeof renderBackup === "function" && document.getElementById("backup-drive-status")) renderBackup();
   },
   conectado() { return !!(this.token && this.tokenExpiry > Date.now()); },
   _persistToken() {
@@ -634,7 +741,7 @@ const DriveSync = {
 };
 DriveSync.init();
 
-document.getElementById("btnDrive").addEventListener("click", async () => {
+async function conectarDrive() {
   if (DriveSync.conectado()) { showToast("Drive ya está conectado"); return; }
   try {
     await DriveSync.conectar();
@@ -642,13 +749,15 @@ document.getElementById("btnDrive").addEventListener("click", async () => {
     await DriveSync.sync();
     showToast("Sincronizado con Drive");
   } catch (e) { showToast("No se pudo conectar a Drive"); }
-});
-document.getElementById("btnBackup").addEventListener("click", async () => {
-  if (!DriveSync.conectado()) { showToast("Conectá Drive primero (🔌)"); return; }
+  renderBackup();
+}
+async function backupAhora() {
+  if (!DriveSync.conectado()) { showToast("Conectá Drive primero"); return; }
   showToast("Sincronizando con Drive...");
   await DriveSync.sync();
   showToast("Backup a Drive completo");
-});
+  renderBackup();
+}
 
 // ---------- safe close ----------
 window.addEventListener("beforeunload", saveSnapshot);
@@ -734,11 +843,11 @@ function mostrarSplash() {
   el.addEventListener('click', cerrarSplash);
 }
 
-document.getElementById("topbar-version").textContent = "v" + APP_VERSION;
+document.getElementById("nav-version").textContent = "v" + APP_VERSION;
 
 // ---------- init ----------
 loadItems();
-render();
+goTo("inventario");
 mostrarSplash();
 if (DriveSync.conectado()) DriveSync.sync();
 
