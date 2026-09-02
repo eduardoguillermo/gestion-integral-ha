@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.03-dev
+// GESTIÓN INTEGRAL DE HA — v0.05-dev
 // ============================================================
-const APP_VERSION = "0.03-dev";
+const APP_VERSION = "0.05-dev";
 const STORAGE_KEY = "giha_items";
 const SNAPSHOT_KEY = "giha_snapshots";
 const DRIVE_TOKEN_KEY = "giha_drive_token";
@@ -20,7 +20,13 @@ const TIPOS = {
   wifi:   { label: "WiFi",   icono: "📶" },
   otro:   { label: "Otro",   icono: "🔘" },
 };
-const BATERIAS = { cr2032: "CR2032", aa: "AA", aaa: "AAA", recargable: "Recargable", na: "N/A - cableado" };
+const BATERIAS = { cr2032: "CR2032", aa: "AA", aaa: "AAA", recargable: "Recargable", na: "N/A - cableado", otro: "Otra" };
+
+// Etiqueta visible de la batería: si es "otro", usa el texto libre cargado.
+function bateriaLabel(it) {
+  if (it.bateria === "otro" && it.bateriaOtro) return it.bateriaOtro;
+  return BATERIAS[it.bateria] || it.bateria;
+}
 
 let items = [];
 let editingId = null;
@@ -201,7 +207,7 @@ function renderCard(it) {
         <span class="dev-card-icon">${tipoIcono(it)}</span>
         <span class="dev-card-title">${escapeHtml(it.nombre)}</span>
       </div>
-      <div class="dev-card-meta">${escapeHtml(it.ubicacion || "sin ubicación")} · ${BATERIAS[it.bateria] || it.bateria}${metaExtra}</div>
+      <div class="dev-card-meta">${escapeHtml(it.ubicacion || "sin ubicación")} · ${bateriaLabel(it)}${metaExtra}</div>
       ${marcaModelo ? `<div class="dev-card-meta">${escapeHtml(marcaModelo)}</div>` : ""}
       <span class="pill ${pill.cls}">${pill.txt}</span>
     </div>
@@ -239,7 +245,7 @@ function openForm(id, reemplazaAId) {
   const entidadesIniciales = entidades.length ? entidades : [""];
 
   const body = `
-    <div class="fg"><label>Nombre</label><input type="text" id="fNombre" placeholder="Ej: Sensor puerta cocina" value="${escapeHtml(it ? it.nombre : "")}"></div>
+    <div class="fg"><label>Nombre</label><input type="text" id="fNombre" autocomplete="off" placeholder="Ej: Sensor puerta cocina" value="${escapeHtml(it ? it.nombre : "")}"></div>
     <div class="fg"><label>Tipo</label>
       <select id="fTipo">
         ${Object.keys(TIPOS).map(t => `<option value="${t}" ${it && it.tipo === t ? "selected" : ""}>${TIPOS[t].label}</option>`).join("")}
@@ -247,13 +253,13 @@ function openForm(id, reemplazaAId) {
     </div>
     <div class="fg" id="fTipoOtroWrap" style="display:${it && it.tipo === "otro" ? "flex" : "none"};">
       <label>Especificar tipo</label>
-      <input type="text" id="fTipoOtro" placeholder="Ej: Bluetooth, Matter, LoRa" value="${escapeHtml(it ? (it.tipoOtro || "") : "")}">
+      <input type="text" id="fTipoOtro" autocomplete="off" placeholder="Ej: Bluetooth, Matter, LoRa" value="${escapeHtml(it ? (it.tipoOtro || "") : "")}">
     </div>
     <div class="fgrid">
-      <div class="fg"><label>Marca</label><input type="text" id="fMarca" placeholder="Ej: Aqara" value="${escapeHtml(it ? (it.marca || "") : "")}"></div>
-      <div class="fg"><label>Modelo</label><input type="text" id="fModelo" placeholder="Ej: WSDCGQ11LM" value="${escapeHtml(it ? (it.modelo || "") : "")}"></div>
+      <div class="fg"><label>Marca</label><input type="text" id="fMarca" autocomplete="off" placeholder="Ej: Aqara" value="${escapeHtml(it ? (it.marca || "") : "")}"></div>
+      <div class="fg"><label>Modelo</label><input type="text" id="fModelo" autocomplete="off" placeholder="Ej: WSDCGQ11LM" value="${escapeHtml(it ? (it.modelo || "") : "")}"></div>
     </div>
-    <div class="fg"><label>Ubicación</label><input type="text" id="fUbicacion" placeholder="Ej: Cocina" value="${escapeHtml(it ? (it.ubicacion || "") : "")}"></div>
+    <div class="fg"><label>Ubicación</label><input type="text" id="fUbicacion" autocomplete="off" placeholder="Ej: Cocina" value="${escapeHtml(it ? (it.ubicacion || "") : "")}"></div>
     <div class="fg"><label>Entidades HA</label>
       <div id="entidadesWrap"></div>
       <button type="button" class="btn btn-sm" id="btnAgregarEntidad" style="margin-top:2px;">+ Agregar otra entidad</button>
@@ -265,6 +271,10 @@ function openForm(id, reemplazaAId) {
           ${Object.keys(BATERIAS).map(b => `<option value="${b}" ${it && it.bateria === b ? "selected" : ""}>${BATERIAS[b]}</option>`).join("")}
         </select>
       </div>
+    </div>
+    <div class="fg" id="fBateriaOtroWrap" style="display:${it && it.bateria === "otro" ? "flex" : "none"};">
+      <label>Especificar batería</label>
+      <input type="text" id="fBateriaOtro" autocomplete="off" placeholder="Ej: CR123A, 18650" value="${escapeHtml(it ? (it.bateriaOtro || "") : "")}">
     </div>
     <div class="fg"><label>Notas</label><textarea id="fNotas" placeholder="Observaciones opcionales">${escapeHtml(it ? (it.notas || "") : "")}</textarea></div>
   `;
@@ -281,6 +291,9 @@ function openForm(id, reemplazaAId) {
   document.getElementById("fTipo").addEventListener("change", (e) => {
     document.getElementById("fTipoOtroWrap").style.display = e.target.value === "otro" ? "flex" : "none";
   });
+  document.getElementById("fBateria").addEventListener("change", (e) => {
+    document.getElementById("fBateriaOtroWrap").style.display = e.target.value === "otro" ? "flex" : "none";
+  });
 }
 
 function renderEntidadesInputs(valores) {
@@ -294,7 +307,7 @@ function agregarFilaEntidad(valor) {
   const row = document.createElement("div");
   row.className = "entidad-row";
   row.innerHTML = `
-    <input type="text" class="entidad-input" placeholder="binary_sensor.puerta_cocina" value="${escapeHtml(valor || "")}">
+    <input type="text" class="entidad-input" autocomplete="off" placeholder="binary_sensor.puerta_cocina" value="${escapeHtml(valor || "")}">
     <button type="button" class="quitar">✕</button>
   `;
   row.querySelector(".quitar").addEventListener("click", () => {
@@ -316,6 +329,10 @@ function guardarForm() {
   const tipoOtro = document.getElementById("fTipoOtro").value.trim();
   if (tipo === "otro" && !tipoOtro) { alert("Especificá el tipo en el campo de texto"); return; }
 
+  const bateria = document.getElementById("fBateria").value;
+  const bateriaOtro = document.getElementById("fBateriaOtro").value.trim();
+  if (bateria === "otro" && !bateriaOtro) { alert("Especificá la batería en el campo de texto"); return; }
+
   const fechaInstalacion = document.getElementById("fFechaInstalacion").value || hoyYMD();
   const data = {
     nombre,
@@ -326,7 +343,8 @@ function guardarForm() {
     ubicacion: document.getElementById("fUbicacion").value.trim(),
     entidades: leerEntidadesForm(),
     fechaInstalacion,
-    bateria: document.getElementById("fBateria").value,
+    bateria,
+    bateriaOtro: bateria === "otro" ? bateriaOtro : "",
     notas: document.getElementById("fNotas").value.trim(),
     lastModified: Date.now(),
   };
