@@ -1,9 +1,11 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.11-dev
+// GESTIÓN INTEGRAL DE HA — v0.12-dev
 // ============================================================
-const APP_VERSION = "0.11-dev";
+const APP_VERSION = "0.12-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
+const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
+const STORAGE_KEY_BATERIAS_CUSTOM = "giha_baterias_custom";
 const SNAPSHOT_KEY = "giha_snapshots";
 const DRIVE_TOKEN_KEY = "giha_drive_token";
 const MAX_SNAPSHOTS = 10;
@@ -19,18 +21,18 @@ const UMBRAL_BATERIA_DIAS = 180;
 const TIPOS = {
   zigbee: { label: "Zigbee", icono: "📡" },
   wifi:   { label: "WiFi",   icono: "📶" },
-  otro:   { label: "Otro",   icono: "🔘" },
 };
-const BATERIAS = { cr2032: "CR2032", aa: "AA", aaa: "AAA", recargable: "Recargable", na: "N/A - cableado", otro: "Otra" };
+const BATERIAS = { cr2032: "CR2032", aa: "AA", aaa: "AAA", recargable: "Recargable", na: "N/A - cableado" };
 
-// Etiqueta visible de la batería: si es "otro", usa el texto libre cargado.
+// Etiqueta visible de la batería: si es un tipo custom (no está en BATERIAS), el valor ya es el texto legible.
 function bateriaLabel(it) {
-  if (it.bateria === "otro" && it.bateriaOtro) return it.bateriaOtro;
-  return BATERIAS[it.bateria] || it.bateria;
+  return BATERIAS[it.bateria] || it.bateria || "Otra";
 }
 
 let items = [];
 let automatizaciones = [];
+let tiposCustom = [];    // tipos de dispositivo agregados a mano ("Otro" -> se vuelven opción permanente)
+let bateriasCustom = []; // tipos de batería agregados a mano, ídem
 let editingId = null;
 let fichaAbiertaId = null;
 let reemplazandoId = null;
@@ -99,13 +101,12 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
-// Etiqueta visible del tipo: si es "otro", usa el texto libre cargado en vez de "Otro".
+// Etiqueta visible del tipo: si es un tipo custom (no está en TIPOS), el valor ya es el texto legible.
 function tipoLabel(it) {
-  if (it.tipo === "otro" && it.tipoOtro) return it.tipoOtro;
-  return (TIPOS[it.tipo] || TIPOS.otro).label;
+  return (TIPOS[it.tipo] && TIPOS[it.tipo].label) || it.tipo || "Otro";
 }
 function tipoIcono(it) {
-  return (TIPOS[it.tipo] || TIPOS.otro).icono;
+  return (TIPOS[it.tipo] && TIPOS[it.tipo].icono) || "🔘";
 }
 
 // ---------- storage ----------
@@ -124,6 +125,42 @@ function loadItems() {
     console.error("Error leyendo storage de automatizaciones", e);
     automatizaciones = [];
   }
+  try {
+    tiposCustom = JSON.parse(localStorage.getItem(STORAGE_KEY_TIPOS_CUSTOM) || "[]");
+  } catch (e) { tiposCustom = []; }
+  try {
+    bateriasCustom = JSON.parse(localStorage.getItem(STORAGE_KEY_BATERIAS_CUSTOM) || "[]");
+  } catch (e) { bateriasCustom = []; }
+  migrarTiposBaterias();
+}
+
+// Migración única: dispositivos cargados antes de este cambio guardaban tipo/bateria = "otro"
+// + un campo de texto libre aparte (tipoOtro / bateriaOtro). Acá se pasan a guardar el valor
+// directamente (igual que un tipo nuevo escrito a mano) y ese valor queda como opción reutilizable.
+function migrarTiposBaterias() {
+  let cambios = false;
+  items.forEach(it => {
+    if (it.tipo === "otro" && it.tipoOtro) {
+      const v = it.tipoOtro.trim();
+      if (v) {
+        it.tipo = v;
+        if (!TIPOS[v] && !tiposCustom.includes(v)) { tiposCustom.push(v); cambios = true; }
+      }
+      delete it.tipoOtro;
+    }
+    if (it.bateria === "otro" && it.bateriaOtro) {
+      const v = it.bateriaOtro.trim();
+      if (v) {
+        it.bateria = v;
+        if (!BATERIAS[v] && !bateriasCustom.includes(v)) { bateriasCustom.push(v); cambios = true; }
+      }
+      delete it.bateriaOtro;
+    }
+  });
+  if (cambios) {
+    localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
+    localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
+  }
 }
 
 // Persiste ambas colecciones (dispositivos + automatizaciones) juntas: un solo snapshot,
@@ -131,6 +168,8 @@ function loadItems() {
 function persistAll() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
+  localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
+  localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
   saveSnapshot();
   if (typeof DriveSync !== "undefined" && DriveSync.conectado()) DriveSync.sync();
 }
@@ -140,7 +179,7 @@ function saveAutomatizaciones() { persistAll(); renderAutomatizaciones(); }
 function saveSnapshot() {
   try {
     let snaps = JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || "[]");
-    snaps.push({ t: Date.now(), data: items, dataAuto: automatizaciones });
+    snaps.push({ t: Date.now(), data: items, dataAuto: automatizaciones, dataTiposCustom: tiposCustom, dataBateriasCustom: bateriasCustom });
     if (snaps.length > MAX_SNAPSHOTS) snaps = snaps.slice(snaps.length - MAX_SNAPSHOTS);
     localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(snaps));
   } catch (e) {
@@ -187,12 +226,12 @@ function renderStats() {
 function renderFiltroSelect() {
   const sel = document.getElementById("filtroTipoSel");
   if (!sel) return;
-  const tiposEnUso = new Set(activos().map(it => it.tipo));
+  const tiposEnUso = Array.from(new Set(activos().map(it => it.tipo))).filter(Boolean);
   let html = `<option value="todos">Todos los tipos</option>`;
-  Object.keys(TIPOS).forEach(t => {
-    if (!tiposEnUso.has(t)) return;
-    html += `<option value="${t}">${TIPOS[t].label}</option>`;
-  });
+  tiposEnUso
+    .map(t => ({ value: t, label: (TIPOS[t] && TIPOS[t].label) || t }))
+    .sort((a, b) => a.label.localeCompare(b.label))
+    .forEach(o => { html += `<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`; });
   sel.innerHTML = html;
   sel.value = filtroTipo;
 }
@@ -462,8 +501,12 @@ function restaurarSnapshot(ts) {
   if (!confirm("¿Restaurar este snapshot? Reemplaza los datos actuales por los de ese momento.")) return;
   items = snap.data;
   automatizaciones = snap.dataAuto || [];
+  tiposCustom = snap.dataTiposCustom || [];
+  bateriasCustom = snap.dataBateriasCustom || [];
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
+  localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
+  localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
   saveSnapshot();
   render();
   renderAutomatizaciones();
@@ -523,12 +566,12 @@ function openForm(id, reemplazaAId) {
     <div class="fg"><label>Nombre</label><input type="text" id="fNombre" autocomplete="off" placeholder="Ej: Sensor puerta cocina" value="${escapeHtml(it ? it.nombre : "")}"></div>
     <div class="fg"><label>Tipo</label>
       <select id="fTipo">
-        ${Object.keys(TIPOS).map(t => `<option value="${t}" ${it && it.tipo === t ? "selected" : ""}>${TIPOS[t].label}</option>`).join("")}
+        ${opcionesTipo(it ? it.tipo : null)}
       </select>
     </div>
-    <div class="fg" id="fTipoOtroWrap" style="display:${it && it.tipo === "otro" ? "flex" : "none"};">
-      <label>Especificar tipo</label>
-      <input type="text" id="fTipoOtro" autocomplete="off" placeholder="Ej: Bluetooth, Matter, LoRa" value="${escapeHtml(it ? (it.tipoOtro || "") : "")}">
+    <div class="fg" id="fTipoOtroWrap" style="display:none;">
+      <label>Escribir tipo nuevo</label>
+      <input type="text" id="fTipoOtro" autocomplete="off" placeholder="Ej: Bluetooth, Matter, LoRa">
     </div>
     <div class="fgrid">
       <div class="fg"><label>Marca</label><input type="text" id="fMarca" autocomplete="off" placeholder="Ej: Aqara" value="${escapeHtml(it ? (it.marca || "") : "")}"></div>
@@ -543,13 +586,13 @@ function openForm(id, reemplazaAId) {
       <div class="fg"><label>Fecha instalación</label><input type="date" id="fFechaInstalacion" value="${it ? (it.fechaInstalacion || "") : hoyYMD()}"></div>
       <div class="fg"><label>Tipo batería</label>
         <select id="fBateria">
-          ${Object.keys(BATERIAS).map(b => `<option value="${b}" ${it && it.bateria === b ? "selected" : ""}>${BATERIAS[b]}</option>`).join("")}
+          ${opcionesBateria(it ? it.bateria : null)}
         </select>
       </div>
     </div>
-    <div class="fg" id="fBateriaOtroWrap" style="display:${it && it.bateria === "otro" ? "flex" : "none"};">
-      <label>Especificar batería</label>
-      <input type="text" id="fBateriaOtro" autocomplete="off" placeholder="Ej: CR123A, 18650" value="${escapeHtml(it ? (it.bateriaOtro || "") : "")}">
+    <div class="fg" id="fBateriaOtroWrap" style="display:none;">
+      <label>Escribir batería nueva</label>
+      <input type="text" id="fBateriaOtro" autocomplete="off" placeholder="Ej: CR123A, 18650">
     </div>
     <div class="fg"><label>Notas</label><textarea id="fNotas" placeholder="Observaciones opcionales">${escapeHtml(it ? (it.notas || "") : "")}</textarea></div>
   `;
@@ -564,11 +607,32 @@ function openForm(id, reemplazaAId) {
   document.getElementById("btnCancelForm").addEventListener("click", cerrarModal);
   document.getElementById("btnSaveForm").addEventListener("click", guardarForm);
   document.getElementById("fTipo").addEventListener("change", (e) => {
-    document.getElementById("fTipoOtroWrap").style.display = e.target.value === "otro" ? "flex" : "none";
+    document.getElementById("fTipoOtroWrap").style.display = e.target.value === "__nuevo__" ? "flex" : "none";
   });
   document.getElementById("fBateria").addEventListener("change", (e) => {
-    document.getElementById("fBateriaOtroWrap").style.display = e.target.value === "otro" ? "flex" : "none";
+    document.getElementById("fBateriaOtroWrap").style.display = e.target.value === "__nuevo__" ? "flex" : "none";
   });
+}
+
+// Arma las <option> del select de Tipo: fijos (Zigbee/WiFi) + los agregados a mano
+// + una última opción para escribir uno nuevo. valorActual es el tipo del dispositivo si se está editando.
+function opcionesTipo(valorActual) {
+  const fijos = Object.keys(TIPOS).map(k => ({ value: k, label: TIPOS[k].label }));
+  const custom = tiposCustom.map(t => ({ value: t, label: t }));
+  let html = fijos.concat(custom).map(o =>
+    `<option value="${escapeHtml(o.value)}" ${valorActual === o.value ? "selected" : ""}>${escapeHtml(o.label)}</option>`
+  ).join("");
+  html += `<option value="__nuevo__">➕ Escribir un tipo nuevo…</option>`;
+  return html;
+}
+function opcionesBateria(valorActual) {
+  const fijos = Object.keys(BATERIAS).map(k => ({ value: k, label: BATERIAS[k] }));
+  const custom = bateriasCustom.map(b => ({ value: b, label: b }));
+  let html = fijos.concat(custom).map(o =>
+    `<option value="${escapeHtml(o.value)}" ${valorActual === o.value ? "selected" : ""}>${escapeHtml(o.label)}</option>`
+  ).join("");
+  html += `<option value="__nuevo__">➕ Escribir una batería nueva…</option>`;
+  return html;
 }
 
 function renderEntidadesInputs(valores) {
@@ -600,26 +664,32 @@ function guardarForm() {
   const nombre = document.getElementById("fNombre").value.trim();
   if (!nombre) { alert("Ingresá el nombre del dispositivo"); return; }
 
-  const tipo = document.getElementById("fTipo").value;
-  const tipoOtro = document.getElementById("fTipoOtro").value.trim();
-  if (tipo === "otro" && !tipoOtro) { alert("Especificá el tipo en el campo de texto"); return; }
+  let tipo = document.getElementById("fTipo").value;
+  if (tipo === "__nuevo__") {
+    const nuevoTipo = document.getElementById("fTipoOtro").value.trim();
+    if (!nuevoTipo) { alert("Escribí el tipo nuevo en el campo de texto"); return; }
+    tipo = nuevoTipo;
+    if (!TIPOS[tipo] && !tiposCustom.includes(tipo)) tiposCustom.push(tipo);
+  }
 
-  const bateria = document.getElementById("fBateria").value;
-  const bateriaOtro = document.getElementById("fBateriaOtro").value.trim();
-  if (bateria === "otro" && !bateriaOtro) { alert("Especificá la batería en el campo de texto"); return; }
+  let bateria = document.getElementById("fBateria").value;
+  if (bateria === "__nuevo__") {
+    const nuevaBateria = document.getElementById("fBateriaOtro").value.trim();
+    if (!nuevaBateria) { alert("Escribí la batería nueva en el campo de texto"); return; }
+    bateria = nuevaBateria;
+    if (!BATERIAS[bateria] && !bateriasCustom.includes(bateria)) bateriasCustom.push(bateria);
+  }
 
   const fechaInstalacion = document.getElementById("fFechaInstalacion").value || hoyYMD();
   const data = {
     nombre,
     tipo,
-    tipoOtro: tipo === "otro" ? tipoOtro : "",
     marca: document.getElementById("fMarca").value.trim(),
     modelo: document.getElementById("fModelo").value.trim(),
     ubicacion: document.getElementById("fUbicacion").value.trim(),
     entidades: leerEntidadesForm(),
     fechaInstalacion,
     bateria,
-    bateriaOtro: bateria === "otro" ? bateriaOtro : "",
     notas: document.getElementById("fNotas").value.trim(),
     lastModified: Date.now(),
   };
@@ -904,13 +974,19 @@ const DriveSync = {
     const remoteData = await this.descargar();
     const remoteItems = remoteData && remoteData.items ? remoteData.items : [];
     const remoteAuto = remoteData && remoteData.automatizaciones ? remoteData.automatizaciones : [];
+    const remoteTiposCustom = (remoteData && remoteData.tiposCustom) || [];
+    const remoteBateriasCustom = (remoteData && remoteData.bateriasCustom) || [];
     items = this.merge(items, remoteItems);
     automatizaciones = this.merge(automatizaciones, remoteAuto);
+    tiposCustom = Array.from(new Set([...tiposCustom, ...remoteTiposCustom]));
+    bateriasCustom = Array.from(new Set([...bateriasCustom, ...remoteBateriasCustom]));
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
+    localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
+    localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
     render();
     renderAutomatizaciones();
-    await this.subir({ items, automatizaciones, updatedAt: Date.now() }, keepalive);
+    await this.subir({ items, automatizaciones, tiposCustom, bateriasCustom, updatedAt: Date.now() }, keepalive);
   },
 };
 DriveSync.init();
@@ -934,7 +1010,7 @@ async function backupAhora() {
 }
 
 function exportarJSON() {
-  const payload = { items, automatizaciones, exportedAt: Date.now() };
+  const payload = { items, automatizaciones, tiposCustom, bateriasCustom, exportedAt: Date.now() };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -959,6 +1035,8 @@ function importarJSON(event) {
     // Mismo criterio de merge que Drive: por id, gana el que tenga lastModified más reciente.
     items = DriveSync.merge(items, nuevosItems);
     automatizaciones = DriveSync.merge(automatizaciones, nuevasAuto);
+    tiposCustom = Array.from(new Set([...tiposCustom, ...(Array.isArray(payload.tiposCustom) ? payload.tiposCustom : [])]));
+    bateriasCustom = Array.from(new Set([...bateriasCustom, ...(Array.isArray(payload.bateriasCustom) ? payload.bateriasCustom : [])]));
     saveItems();
     saveAutomatizaciones();
     showToast(`Importado: ${nuevosItems.length} dispositivo${nuevosItems.length === 1 ? "" : "s"}, ${nuevasAuto.length} automatización${nuevasAuto.length === 1 ? "" : "es"}`);
