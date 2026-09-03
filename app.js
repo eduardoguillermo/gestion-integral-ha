@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.09-dev
+// GESTIÓN INTEGRAL DE HA — v0.10-dev
 // ============================================================
-const APP_VERSION = "0.09-dev";
+const APP_VERSION = "0.10-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const SNAPSHOT_KEY = "giha_snapshots";
@@ -242,7 +242,10 @@ function automatizacionesActivas() {
 }
 
 function renderAutomatizaciones() {
-  document.getElementById("content").innerHTML = `
+  const contentEl = document.getElementById("content");
+  const yaEnPagina = document.getElementById("listAuto");
+  if (!yaEnPagina && _panel !== "automatizaciones") return; // no pisar otra pestaña si esto se dispara en segundo plano
+  contentEl.innerHTML = `
     <div class="sbar">
       <input type="text" id="searchAuto" autocomplete="off" placeholder="Buscar por nombre, categoría o descripción">
       <select id="filtroCategoriaSel"></select>
@@ -471,6 +474,9 @@ function restaurarSnapshot(ts) {
 
 function renderCard(it) {
   const estado = estadoDispositivo(it);
+  const pill = pillInfo(estado);
+  const metaExtra = estado === "bateria_baja" ? ` · hace ${diasDesde(ultimoCambioBateria(it))} días` : "";
+  const marcaModelo = [it.marca, it.modelo].filter(Boolean).join(" ");
   return `
     <div class="dev-card ${estado === "reemplazado" ? "reemplazado" : ""}" data-id="${it.id}">
       <div class="dev-card-top">
