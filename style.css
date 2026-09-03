@@ -113,6 +113,13 @@ body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:v
 /* ── FICHA DE DISPOSITIVO ─────────────────────────────────── */
 .ficha-meta-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
 .ficha-entidades{font-size:11px;color:var(--text3);font-family:monospace}
+.ficha-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-bottom:16px}
+.fdg-item{display:flex;flex-direction:column;gap:3px}
+.fdg-label{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.fdg-value{font-size:13px;color:var(--text)}
+.ficha-entidades-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.entidad-chip{font-family:monospace;font-size:11px;color:var(--text2);background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:3px 8px}
+.ficha-detail-empty{font-size:12px;color:var(--text3);margin-bottom:16px}
 .ficha-acciones{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
 .ficha-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .ficha-link{margin-top:12px;padding:10px 12px;background:var(--surface2);border-radius:var(--r);border-left:3px solid var(--primary);font-size:12px;color:var(--primary-light);cursor:pointer}
@@ -147,5 +154,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:v
 @media(max-width:520px){
   .fgrid{grid-template-columns:1fr}
   .ficha-acciones{grid-template-columns:1fr}
+  .ficha-detail-grid{grid-template-columns:1fr}
   .topbar{flex-direction:column;align-items:flex-start}
 }
