@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.15-dev
+// GESTIÓN INTEGRAL DE HA — v0.16-dev
 // ============================================================
-const APP_VERSION = "0.15-dev";
+const APP_VERSION = "0.16-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
@@ -983,7 +983,15 @@ function abrirAyuda() {
     <div class="help-item"><p class="help-title">🔌 Conectar Drive</p><p class="help-desc">Vincula tu cuenta de Google para sincronizar entre dispositivos. Se crea una carpeta "GestionIntegralHA" en tu Drive.</p></div>
     <div class="help-item"><p class="help-title">🚪 Salir</p><p class="help-desc">Guarda un backup local y sincroniza con Drive antes de cerrar. Si el backup falla, la app no se cierra para que puedas reintentar.</p></div>
   `;
-  abrirModal("Cómo usar Gestión Integral de HA", body, `<button class="btn btn-p" onclick="cerrarModal()">Entendido</button>`);
+  const anclaActual = PANELS.includes(_panel) ? _panel : "inventario";
+  const foot = `
+    <button class="btn" id="btnVerInstructivo">📖 Ver instructivo completo</button>
+    <button class="btn btn-p" onclick="cerrarModal()">Entendido</button>
+  `;
+  abrirModal("Cómo usar Gestión Integral de HA", body, foot);
+  document.getElementById("btnVerInstructivo").addEventListener("click", () => {
+    window.open("instructivo.html#" + anclaActual, "_blank");
+  });
 }
 document.getElementById("btnHelp").addEventListener("click", abrirAyuda);
 
