@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.07-dev
+// GESTIÓN INTEGRAL DE HA — v0.08-dev
 // ============================================================
-const APP_VERSION = "0.07-dev";
+const APP_VERSION = "0.08-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const SNAPSHOT_KEY = "giha_snapshots";
@@ -427,10 +427,11 @@ function renderBackup() {
         <p class="text2" id="backup-drive-status" style="font-size:12px;margin-bottom:12px;">${conectado ? "🟢 Conectado" : "🔌 No conectado"}</p>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
           ${conectado
-            ? `<button class="btn btn-p" onclick="backupAhora()">☁️ Backup ahora</button>`
+            ? `<button class="btn btn-p" onclick="backupAhora()">☁️ Sincronizar ahora</button><button class="btn btn-d" onclick="desconectarDrive()">🔌 Desconectar</button>`
             : `<button class="btn btn-p" onclick="conectarDrive()">🔌 Conectar Google Drive</button>`
           }
         </div>
+        <p class="text3" style="font-size:11px;margin-top:8px;">"Sincronizar ahora" trae los cambios de Drive y sube los tuyos, en un solo paso.</p>
       </div>
     </div>
     <div class="card">
@@ -836,7 +837,16 @@ const DriveSync = {
   async descargar() {
     await this.ensureFile();
     if (!this.fileId) return null;
-    const res = await fetch(`https://www.googleapis.com/drive/v3/files/${this.fileId}?alt=media`, { headers: this._authHeader() });
+    let res = await fetch(`https://www.googleapis.com/drive/v3/files/${this.fileId}?alt=media`, { headers: this._authHeader() });
+    if (res.status === 404) {
+      // El archivo que teníamos guardado ya no existe (borrado o reemplazado) — nos olvidamos
+      // del id viejo y volvemos a buscarlo por nombre, en vez de quedar apuntando al vacío.
+      this.fileId = null;
+      this._persistToken();
+      await this.ensureFile();
+      if (!this.fileId) return null;
+      res = await fetch(`https://www.googleapis.com/drive/v3/files/${this.fileId}?alt=media`, { headers: this._authHeader() });
+    }
     if (!res.ok) return null;
     try { return await res.json(); } catch (e) { return null; }
   },
@@ -903,7 +913,17 @@ async function backupAhora() {
   if (!DriveSync.conectado()) { showToast("Conectá Drive primero"); return; }
   showToast("Sincronizando con Drive...");
   await DriveSync.sync();
-  showToast("Backup a Drive completo");
+  showToast("Sincronización completa");
+  renderBackup();
+}
+function desconectarDrive() {
+  if (!confirm("¿Desconectar Google Drive de este dispositivo? Se olvida la conexión guardada (útil si el archivo remoto cambió y no lo está encontrando). Podés reconectar cuando quieras.")) return;
+  localStorage.removeItem(DRIVE_TOKEN_KEY);
+  DriveSync.token = null;
+  DriveSync.tokenExpiry = 0;
+  DriveSync.folderId = null;
+  DriveSync.fileId = null;
+  showToast("Drive desconectado");
   renderBackup();
 }
 
