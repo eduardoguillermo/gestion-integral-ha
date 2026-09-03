@@ -56,7 +56,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:v
 
 /* ── BARRA DE BÚSQUEDA ────────────────────────────────────── */
 .sbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
-.resultados-count{font-size:11px;color:var(--text3);margin:-6px 0 12px;text-transform:uppercase;letter-spacing:.03em}
+.resultados-count{font-size:11px;color:#ffd60a;font-weight:700;margin:-6px 0 12px;text-transform:uppercase;letter-spacing:.03em}
 .sbar input,.sbar select{padding:7px 10px;border:1px solid var(--border);border-radius:var(--r);font-size:12px;background:var(--surface2);color:var(--text);outline:none}
 .sbar input{flex:1;min-width:180px}
 .sbar input:focus,.sbar select:focus{border-color:var(--primary)}
