@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.08-dev
+// GESTIÓN INTEGRAL DE HA — v0.09-dev
 // ============================================================
-const APP_VERSION = "0.08-dev";
+const APP_VERSION = "0.09-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const SNAPSHOT_KEY = "giha_snapshots";
@@ -432,6 +432,17 @@ function renderBackup() {
           }
         </div>
         <p class="text3" style="font-size:11px;margin-top:8px;">"Sincronizar ahora" trae los cambios de Drive y sube los tuyos, en un solo paso.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">Importar / Exportar JSON</span></div>
+      <div class="card-body">
+        <p class="text2" style="font-size:12px;margin-bottom:10px;">Para cargar datos preparados por fuera de la app (por ejemplo, un import armado a mano) o para pasar datos entre dispositivos sin depender de Drive.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <button class="btn" onclick="document.getElementById('inputImportarJson').click()">📥 Importar JSON</button>
+          <input type="file" id="inputImportarJson" accept="application/json" style="display:none;" onchange="importarJSON(event)">
+          <button class="btn" onclick="exportarJSON()">📤 Exportar JSON</button>
+        </div>
       </div>
     </div>
     <div class="card">
@@ -916,6 +927,42 @@ async function backupAhora() {
   showToast("Sincronización completa");
   renderBackup();
 }
+
+function exportarJSON() {
+  const payload = { items, automatizaciones, exportedAt: Date.now() };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `gestion-integral-ha-${hoyYMD()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function importarJSON(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    let payload;
+    try { payload = JSON.parse(e.target.result); } catch (err) { alert("El archivo no es un JSON válido."); return; }
+    const nuevosItems = Array.isArray(payload.items) ? payload.items : [];
+    const nuevasAuto = Array.isArray(payload.automatizaciones) ? payload.automatizaciones : [];
+    if (!nuevosItems.length && !nuevasAuto.length) { alert("El archivo no tiene dispositivos ni automatizaciones para importar."); return; }
+    // Mismo criterio de merge que Drive: por id, gana el que tenga lastModified más reciente.
+    items = DriveSync.merge(items, nuevosItems);
+    automatizaciones = DriveSync.merge(automatizaciones, nuevasAuto);
+    saveItems();
+    saveAutomatizaciones();
+    showToast(`Importado: ${nuevosItems.length} dispositivo${nuevosItems.length === 1 ? "" : "s"}, ${nuevasAuto.length} automatización${nuevasAuto.length === 1 ? "" : "es"}`);
+    renderBackup();
+  };
+  reader.readAsText(file);
+  event.target.value = ""; // permite volver a elegir el mismo archivo si hace falta
+}
+
 function desconectarDrive() {
   if (!confirm("¿Desconectar Google Drive de este dispositivo? Se olvida la conexión guardada (útil si el archivo remoto cambió y no lo está encontrando). Podés reconectar cuando quieras.")) return;
   localStorage.removeItem(DRIVE_TOKEN_KEY);
