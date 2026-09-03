@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructivo — Gestión Integral de HA</title>
+<style>
+:root{
+  --primary:#1a6faa;--primary-dark:#0d4a72;--primary-light:#4a9fd8;
+  --bg:#0d1117;--surface:#161b22;--surface2:#21262d;
+  --border:#30363d;--text:#e6edf3;--text2:#a8b3bd;--text3:#6b7480;
+  --green:#3fb950;--red:#f85149;--amber:#d29922;--blue:#58a6ff;
+  --r:6px;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;margin:0;display:flex;min-height:100vh}
+
+/* TOC lateral */
+.toc{width:220px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);padding:20px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
+.toc-title{padding:0 18px 14px;font-weight:700;font-size:14px;color:var(--text);border-bottom:1px solid var(--border);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.toc a{display:block;padding:7px 18px;font-size:12.5px;color:var(--text2);text-decoration:none;transition:background .15s,color .15s}
+.toc a:hover{background:var(--surface2);color:var(--text)}
+
+/* Contenido */
+.main{flex:1;max-width:760px;padding:32px 40px 80px}
+.section{margin-bottom:44px;scroll-margin-top:20px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.section-icon{width:38px;height:38px;border-radius:9px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.section-title{font-size:19px;font-weight:700;color:var(--text)}
+.section-subtitle{font-size:12.5px;color:var(--text3);margin-top:2px}
+h2{font-size:15px;font-weight:700;color:var(--text);margin:22px 0 8px}
+p{color:var(--text2);margin:8px 0}
+ul{margin:8px 0;padding-left:20px;color:var(--text2)}
+li{margin-bottom:5px}
+b{color:var(--text)}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:12px;color:var(--primary-light);font-family:ui-monospace,monospace}
+
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:6px;text-transform:uppercase;letter-spacing:.03em}
+.badge-new{background:rgba(63,185,80,.15);color:var(--green)}
+.badge-soon{background:rgba(210,153,34,.15);color:var(--amber)}
+
+.tip{background:rgba(26,111,170,.1);border-left:3px solid var(--primary);border-radius:0 var(--r) var(--r) 0;padding:10px 14px;margin:14px 0;font-size:13px;color:var(--text2)}
+.note{background:var(--surface2);border-radius:var(--r);padding:10px 14px;margin:14px 0;font-size:13px;color:var(--text2)}
+
+hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+
+/* Changelog */
+.changelog-details{margin-top:4px}
+.changelog-summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--primary-light);padding:8px 0;list-style:none;user-select:none}
+.changelog-summary::-webkit-details-marker{display:none}
+.changelog-summary::before{content:"▸ ";display:inline-block;transition:transform .15s}
+.changelog-details[open] .changelog-summary::before{transform:rotate(90deg)}
+.changelog-entry{border-left:3px solid var(--primary);padding:4px 0 4px 16px;margin:16px 0 20px}
+.changelog-version{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.v-num{font-weight:700;font-size:13px;color:var(--text)}
+.changelog-tag{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px}
+.tag-feature{background:rgba(63,185,80,.15);color:var(--green)}
+.tag-fix{background:rgba(210,153,34,.15);color:var(--amber)}
+.changelog-list{margin:0;padding-left:20px;font-size:13.5px;color:var(--text2);line-height:1.7}
+
+@media(max-width:720px){
+  body{flex-direction:column}
+  .toc{width:100%;height:auto;position:static;padding:14px 0}
+  .main{padding:24px 18px 60px}
+}
+</style>
+</head>
+<body>
+
+<nav class="toc">
+  <div class="toc-title">📘 Instructivo</div>
+  <a href="#inventario">📦 Inventario</a>
+  <a href="#automatizaciones">🤖 Automatizaciones</a>
+  <a href="#reportes">📈 Reportes</a>
+  <a href="#backup">💾 Backup</a>
+  <a href="#changelog">🧾 Historial de cambios</a>
+</nav>
+
+<main class="main">
+
+  <div style="margin-bottom:36px;">
+    <h1 style="font-size:24px;margin:0 0 6px;">Gestión Integral de HA</h1>
+    <p style="color:var(--text3);margin:0;">Inventario de dispositivos y catálogo de automatizaciones de tu instalación Home Assistant — no es una conexión en vivo a HA, es un registro que se mantiene al día por chat o a mano.</p>
+  </div>
+
+  <!-- INVENTARIO -->
+  <section class="section" id="inventario">
+    <div class="section-header">
+      <span class="section-icon">📦</span>
+      <div>
+        <div class="section-title">Inventario</div>
+        <div class="section-subtitle">Dispositivos físicos, su estado y su historial</div>
+      </div>
+    </div>
+    <p>Cada tarjeta es un dispositivo real (sensor, enchufe, luz, cámara, etc.) con su tipo, marca, modelo, ubicación, entidades de HA asociadas y batería. La app calcula el estado automáticamente:</p>
+    <ul>
+      <li><b>Activo</b> — funcionando normal</li>
+      <li><b>Batería baja</b> — pasaron 180 días o más desde el último cambio registrado</li>
+      <li><b>Fuera de servicio</b> — marcado a mano, se puede reactivar en cualquier momento</li>
+      <li><b>Reemplazado</b> — quedó reemplazado por otro dispositivo; su ficha queda linkeada al nuevo, nunca se borra</li>
+    </ul>
+
+    <h2>Tipo y batería: escribir uno nuevo <span class="badge badge-new">Nuevo</span></h2>
+    <p>Los desplegables de <b>Tipo</b> y <b>Tipo de batería</b> tienen una opción "➕ Escribir un tipo nuevo…". Lo que escribas ahí queda guardado como opción permanente — el próximo dispositivo con ese mismo tipo ya lo vas a poder elegir directo del desplegable, sin volver a tipearlo.</p>
+
+    <h2>Ficha de dispositivo</h2>
+    <p>Al hacer clic en una tarjeta se abre la ficha completa: tipo, marca, modelo, ubicación, fecha de instalación, batería y fecha del último cambio — cada dato en su propio campo, igual que en el formulario de edición. Debajo, las entidades de HA asociadas y el historial completo de eventos (instalación, cambios de batería, reemplazos, bajas).</p>
+    <p>Desde la ficha se puede <b>cambiar la batería</b> (registra la fecha), <b>reemplazar</b> el dispositivo (abre el alta del nuevo y linkea ambos), o marcarlo <b>fuera de servicio</b>.</p>
+
+    <h2>Búsqueda y filtros <span class="badge badge-new">Nuevo</span></h2>
+    <p>El buscador de texto funciona sobre nombre y entidades. Además hay cuatro filtros combinables entre sí y con el texto:</p>
+    <ul>
+      <li><b>Tipo</b> — Zigbee, WiFi, o cualquier tipo custom que hayas creado</li>
+      <li><b>Ubicación</b> — el área donde está instalado</li>
+      <li><b>Estado</b> — Activo / Batería baja / Fuera de servicio / Reemplazado</li>
+      <li><b>Marca</b></li>
+      <li><b>Batería</b> — tipo de pila, o "N/A - cableado"</li>
+    </ul>
+    <p>Cada select solo muestra las opciones que realmente están en uso — no listas fijas. Cuando hay algún filtro o texto activo aparece un botón "✕ Limpiar filtros" para resetear todo de una.</p>
+
+    <div class="tip">💡 Podés pedirle a Claude que traiga dispositivos directo desde tu instancia de HA (por integración: Zigbee, Tuya, Tasmota, ESPHome, etc.) y arme el inventario inicial — mucho más rápido que cargarlo a mano dispositivo por dispositivo.</div>
+  </section>
+
+  <!-- AUTOMATIZACIONES -->
+  <section class="section" id="automatizaciones">
+    <div class="section-header">
+      <span class="section-icon">🤖</span>
+      <div>
+        <div class="section-title">Automatizaciones</div>
+        <div class="section-subtitle">Catálogo de tus automatizaciones de HA, con categoría y ubicación</div>
+      </div>
+    </div>
+    <p>Un registro simple por automatización: nombre, categoría, ubicación y una descripción de qué hace y cuándo se dispara. Hoy se carga a mano (o vía chat con Claude), pero el modelo de datos ya queda listo para sincronizar directo desde el registro de HA en el futuro.</p>
+
+    <h2>Categoría y Ubicación</h2>
+    <p>Ambos son campos de texto libre con sugerencias (autocompletado) de lo que ya usaste antes — no hay una lista cerrada de categorías. La <b>Ubicación</b> además sugiere las áreas que ya tenés cargadas en el Inventario, para mantener la misma nomenclatura entre ambos módulos.</p>
+    <div class="note">📌 Si tenés categorías definidas en el propio HA (Ajustes → Automatizaciones → categorías), pedile a Claude que las traiga y las matchee contra el registro real — evita que la categoría quede adivinada a partir del nombre.</div>
+
+    <h2>Búsqueda y filtros <span class="badge badge-new">Nuevo</span></h2>
+    <p>El buscador de texto revisa nombre, categoría, ubicación y descripción. Los filtros de <b>Categoría</b> y <b>Ubicación</b> son combinables entre sí y con el texto, y —como en Inventario— solo muestran las opciones en uso. "✕ Limpiar filtros" resetea todo.</p>
+  </section>
+
+  <!-- REPORTES -->
+  <section class="section" id="reportes">
+    <div class="section-header">
+      <span class="section-icon">📈</span>
+      <div>
+        <div class="section-title">Reportes</div>
+        <div class="section-subtitle">Todavía sin definir <span class="badge badge-soon">Placeholder</span></div>
+      </div>
+    </div>
+    <p>Este módulo está vacío por ahora — es un placeholder a la espera de que se defina qué reportes tienen sentido. Algunas ideas ya anotadas en la propia app: dispositivos por ubicación, próximos cambios de batería, historial de reemplazos.</p>
+    <div class="tip">💡 Si tenés en mente qué te gustaría ver acá, contáselo a Claude y lo armamos.</div>
+  </section>
+
+  <!-- BACKUP -->
+  <section class="section" id="backup">
+    <div class="section-header">
+      <span class="section-icon">💾</span>
+      <div>
+        <div class="section-title">Backup</div>
+        <div class="section-subtitle">Google Drive, import/export y snapshots locales</div>
+      </div>
+    </div>
+
+    <h2>Google Drive</h2>
+    <p>Conectá tu cuenta de Google para sincronizar el inventario entre dispositivos. Se crea (o reutiliza) una carpeta <code>GestionIntegralHA</code> en tu Drive, con un único archivo <code>data.json</code> adentro. "☁️ Sincronizar ahora" trae los cambios de Drive y sube los tuyos en un solo paso.</p>
+
+    <h2>Importar / Exportar JSON</h2>
+    <p>Sirve para cargar datos preparados por fuera de la app — por ejemplo, un archivo que Claude armó con dispositivos traídos desde HA — o para pasar datos entre equipos sin depender de Drive. El import hace <b>merge por id</b>: si el registro ya existe, gana el que tenga la fecha de modificación más reciente; si no existe, se agrega. Nunca duplica ni pisa datos más nuevos.</p>
+
+    <h2>Snapshots locales</h2>
+    <p>Se crean automáticamente al cerrar o minimizar la app (hasta 10, se van rotando los más viejos). Cada uno se puede restaurar con "↩️ Restaurar", que reemplaza los datos actuales por los de ese momento — pedí confirmación antes, es una acción que no se puede deshacer.</p>
+
+    <div class="note">📌 Si en algún momento ves más de un archivo <code>data.json</code> en la carpeta de Drive, es un problema — la app espera exactamente uno. Avisale a Claude para que lo detecte y limpie el duplicado.</div>
+  </section>
+
+  <hr>
+
+  <!-- CHANGELOG -->
+  <section class="section" id="changelog">
+    <div class="section-header">
+      <span class="section-icon">🧾</span>
+      <div>
+        <div class="section-title">Historial de cambios</div>
+        <div class="section-subtitle">Registro de versiones — de más reciente a más antigua</div>
+      </div>
+    </div>
+
+    <details class="changelog-details">
+      <summary class="changelog-summary">Ver historial de versiones</summary>
+
+      <div class="changelog-entry">
+        <div class="changelog-version"><span class="v-num">v0.15-dev</span><span class="changelog-tag tag-feature">feature</span></div>
+        <ul class="changelog-list">
+          <li>Automatizaciones: nuevo campo Ubicación (con sugerencias desde Inventario) y su filtro correspondiente</li>
+          <li>Inventario: filtros nuevos de Ubicación, Estado, Marca y Batería, combinables entre sí y con el buscador</li>
+          <li>Botón "✕ Limpiar filtros" en ambos módulos cuando hay algún filtro activo</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-version"><span class="v-num">v0.14-dev</span><span class="changelog-tag tag-fix">fix</span></div>
+        <ul class="changelog-list">
+          <li>Orden alfabético del filtro y del autocompletado de categorías en Automatizaciones deja de ser sensible a mayúsculas/minúsculas</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-version"><span class="v-num">v0.13-dev</span><span class="changelog-tag tag-feature">feature</span></div>
+        <ul class="changelog-list">
+          <li>Ficha de dispositivo rediseñada: grilla de detalle (Tipo, Marca, Modelo, Ubicación, Fecha instalación, Batería, Último cambio) en vez de una sola línea, más las entidades HA como chips separados</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-version"><span class="v-num">v0.12-dev</span><span class="changelog-tag tag-feature">feature</span></div>
+        <ul class="changelog-list">
+          <li>Tipo y Batería: opción "Escribir uno nuevo" que queda guardada como opción reutilizable, en vez del viejo esquema "Otro" + texto libre</li>
+          <li>Migración automática de dispositivos ya cargados con el esquema viejo</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-version"><span class="v-num">v0.11-dev</span><span class="changelog-tag tag-feature">feature</span></div>
+        <ul class="changelog-list">
+          <li>Punto de partida de este historial: Inventario, Automatizaciones, Reportes (placeholder) y Backup con Drive, import/export y snapshots</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+</main>
+</body>
+</html>
