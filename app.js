@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.16-dev
+// GESTIÓN INTEGRAL DE HA — v0.17-dev
 // ============================================================
-const APP_VERSION = "0.16-dev";
+const APP_VERSION = "0.17-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
@@ -207,6 +207,7 @@ function renderInventario() {
       <button class="btn btn-sm" id="btnLimpiarFiltros" style="display:none;">✕ Limpiar filtros</button>
       <button class="btn btn-p" id="btnAgregar">+ Agregar dispositivo</button>
     </div>
+    <div class="resultados-count" id="resultadosCount"></div>
     <div class="dev-grid" id="list"></div>
   `;
   document.getElementById("filtroTipoSel").addEventListener("change", (e) => { filtroTipo = e.target.value; render(); });
@@ -347,6 +348,12 @@ function render() {
   const hayFiltrosActivos = filtroTipo !== "todos" || filtroUbicacion !== "todas" || filtroEstado !== "todos" || filtroMarca !== "todas" || filtroBateria !== "todas" || q;
   const btnLimpiar = document.getElementById("btnLimpiarFiltros");
   if (btnLimpiar) btnLimpiar.style.display = hayFiltrosActivos ? "" : "none";
+  const countEl = document.getElementById("resultadosCount");
+  if (countEl) {
+    countEl.textContent = hayFiltrosActivos
+      ? `${filtered.length} de ${base.length} dispositivo${base.length === 1 ? "" : "s"}`
+      : `${base.length} dispositivo${base.length === 1 ? "" : "s"}`;
+  }
 }
 
 // ============================================================
@@ -374,6 +381,7 @@ function renderAutomatizaciones() {
       <button class="btn btn-sm" id="btnLimpiarFiltrosAuto" style="display:none;">✕ Limpiar filtros</button>
       <button class="btn btn-p" id="btnAgregarAuto">+ Agregar automatización</button>
     </div>
+    <div class="resultados-count" id="resultadosCountAuto"></div>
     <div class="dev-grid" id="listAuto"></div>
   `;
   document.getElementById("searchAuto").addEventListener("input", renderListaAuto);
@@ -446,6 +454,12 @@ function renderListaAuto() {
   const hayFiltrosActivos = filtroCategoria !== "todas" || filtroUbicacionAuto !== "todas" || q;
   const btnLimpiar = document.getElementById("btnLimpiarFiltrosAuto");
   if (btnLimpiar) btnLimpiar.style.display = hayFiltrosActivos ? "" : "none";
+  const countEl = document.getElementById("resultadosCountAuto");
+  if (countEl) {
+    countEl.textContent = hayFiltrosActivos
+      ? `${filtered.length} de ${base.length} automatización${base.length === 1 ? "" : "es"}`
+      : `${base.length} automatización${base.length === 1 ? "" : "es"}`;
+  }
 }
 
 function openFormAuto(id) {
