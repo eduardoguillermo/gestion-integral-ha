@@ -4,7 +4,7 @@
 :root{
   --primary:#1a6faa;--primary-dark:#0d4a72;--primary-light:#4a9fd8;
   --bg:#0d1117;--surface:#161b22;--surface2:#21262d;
-  --border:#30363d;--text:#e6edf3;--text2:#8b949e;--text3:#484f58;
+  --border:#30363d;--text:#e6edf3;--text2:#a8b3bd;--text3:#6b7480;
   --green:#3fb950;--red:#f85149;--amber:#d29922;--blue:#58a6ff;
   --r:6px;
 }
@@ -73,14 +73,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:v
 .btn:disabled{opacity:.4;cursor:not-allowed}
 
 /* ── GRID DE DISPOSITIVOS ─────────────────────────────────── */
-.dev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.dev-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;cursor:pointer;transition:border-color .15s,background .15s}
+.dev-grid{display:flex;flex-direction:column;gap:6px}
+.dev-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color .15s,background .15s}
 .dev-card:hover{border-color:var(--primary);background:var(--surface2)}
-.dev-card.reemplazado{opacity:.55}
-.dev-card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
-.dev-card-icon{font-size:18px;flex-shrink:0}
-.dev-card-title{font-weight:700;font-size:13px;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.dev-card-meta{font-size:11px;color:var(--text2);margin-bottom:10px}
+.dev-card.reemplazado{opacity:.6}
+.dev-card-icon{font-size:20px;flex-shrink:0;width:26px;text-align:center}
+.dev-card-info{flex:1;min-width:0}
+.dev-card-title{font-weight:700;font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dev-card-meta{font-size:12.5px;color:var(--text2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dev-card .pill{flex-shrink:0}
 .empty{padding:32px;text-align:center;color:var(--text3);font-size:12px;grid-column:1/-1}
 
 /* ── PILLS DE ESTADO ──────────────────────────────────────── */
