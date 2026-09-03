@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.14-dev
+// GESTIÓN INTEGRAL DE HA — v0.15-dev
 // ============================================================
-const APP_VERSION = "0.14-dev";
+const APP_VERSION = "0.15-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
@@ -37,6 +37,10 @@ let editingId = null;
 let fichaAbiertaId = null;
 let reemplazandoId = null;
 let filtroTipo = "todos";
+let filtroUbicacion = "todas";
+let filtroEstado = "todos";
+let filtroMarca = "todas";
+let filtroBateria = "todas";
 let lastAction = null;
 
 // ---------- utils ----------
@@ -196,11 +200,25 @@ function renderInventario() {
     <div class="sbar">
       <input type="text" id="search" autocomplete="off" placeholder="Buscar por nombre o entidad">
       <select id="filtroTipoSel"></select>
+      <select id="filtroUbicacionSel"></select>
+      <select id="filtroEstadoSel"></select>
+      <select id="filtroMarcaSel"></select>
+      <select id="filtroBateriaSel"></select>
+      <button class="btn btn-sm" id="btnLimpiarFiltros" style="display:none;">✕ Limpiar filtros</button>
       <button class="btn btn-p" id="btnAgregar">+ Agregar dispositivo</button>
     </div>
     <div class="dev-grid" id="list"></div>
   `;
   document.getElementById("filtroTipoSel").addEventListener("change", (e) => { filtroTipo = e.target.value; render(); });
+  document.getElementById("filtroUbicacionSel").addEventListener("change", (e) => { filtroUbicacion = e.target.value; render(); });
+  document.getElementById("filtroEstadoSel").addEventListener("change", (e) => { filtroEstado = e.target.value; render(); });
+  document.getElementById("filtroMarcaSel").addEventListener("change", (e) => { filtroMarca = e.target.value; render(); });
+  document.getElementById("filtroBateriaSel").addEventListener("change", (e) => { filtroBateria = e.target.value; render(); });
+  document.getElementById("btnLimpiarFiltros").addEventListener("click", () => {
+    filtroTipo = "todos"; filtroUbicacion = "todas"; filtroEstado = "todos"; filtroMarca = "todas"; filtroBateria = "todas";
+    document.getElementById("search").value = "";
+    render();
+  });
   document.getElementById("search").addEventListener("input", render);
   document.getElementById("btnAgregar").addEventListener("click", () => openForm(null));
   render();
@@ -230,10 +248,62 @@ function renderFiltroSelect() {
   let html = `<option value="todos">Todos los tipos</option>`;
   tiposEnUso
     .map(t => ({ value: t, label: (TIPOS[t] && TIPOS[t].label) || t }))
-    .sort((a, b) => a.label.localeCompare(b.label))
+    .sort((a, b) => a.label.localeCompare(b.label, "es", { sensitivity: "base" }))
     .forEach(o => { html += `<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`; });
   sel.innerHTML = html;
   sel.value = filtroTipo;
+}
+
+// ---------- render: filtro de ubicación ----------
+function renderFiltroUbicacionSelect() {
+  const sel = document.getElementById("filtroUbicacionSel");
+  if (!sel) return;
+  const ubicaciones = Array.from(new Set(activos().map(it => it.ubicacion).filter(Boolean)))
+    .sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  let html = `<option value="todas">Todas las ubicaciones</option>`;
+  ubicaciones.forEach(u => { html += `<option value="${escapeHtml(u)}">${escapeHtml(u)}</option>`; });
+  sel.innerHTML = html;
+  sel.value = filtroUbicacion;
+}
+
+// ---------- render: filtro de estado ----------
+const ESTADOS_ORDEN = ["activo", "bateria_baja", "fuera_servicio", "reemplazado"];
+function renderFiltroEstadoSelect() {
+  const sel = document.getElementById("filtroEstadoSel");
+  if (!sel) return;
+  const estadosEnUso = new Set(activos().map(it => estadoDispositivo(it)));
+  let html = `<option value="todos">Todos los estados</option>`;
+  ESTADOS_ORDEN.filter(e => estadosEnUso.has(e)).forEach(e => {
+    html += `<option value="${e}">${escapeHtml(pillInfo(e).txt)}</option>`;
+  });
+  sel.innerHTML = html;
+  sel.value = filtroEstado;
+}
+
+// ---------- render: filtro de marca ----------
+function renderFiltroMarcaSelect() {
+  const sel = document.getElementById("filtroMarcaSel");
+  if (!sel) return;
+  const marcas = Array.from(new Set(activos().map(it => it.marca).filter(Boolean)))
+    .sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  let html = `<option value="todas">Todas las marcas</option>`;
+  marcas.forEach(m => { html += `<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`; });
+  sel.innerHTML = html;
+  sel.value = filtroMarca;
+}
+
+// ---------- render: filtro de batería ----------
+function renderFiltroBateriaSelect() {
+  const sel = document.getElementById("filtroBateriaSel");
+  if (!sel) return;
+  const baterias = Array.from(new Set(activos().map(it => it.bateria).filter(Boolean)));
+  let html = `<option value="todas">Todas las baterías</option>`;
+  baterias
+    .map(b => ({ value: b, label: b === "na" ? "N/A - cableado" : (BATERIAS[b] || b) }))
+    .sort((a, b) => a.label.localeCompare(b.label, "es", { sensitivity: "base" }))
+    .forEach(o => { html += `<option value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</option>`; });
+  sel.innerHTML = html;
+  sel.value = filtroBateria;
 }
 
 // ---------- render: lista ----------
@@ -245,6 +315,10 @@ function render() {
 
   const filtered = base.filter(it => {
     if (filtroTipo !== "todos" && it.tipo !== filtroTipo) return false;
+    if (filtroUbicacion !== "todas" && it.ubicacion !== filtroUbicacion) return false;
+    if (filtroEstado !== "todos" && estadoDispositivo(it) !== filtroEstado) return false;
+    if (filtroMarca !== "todas" && it.marca !== filtroMarca) return false;
+    if (filtroBateria !== "todas" && it.bateria !== filtroBateria) return false;
     if (!q) return true;
     const enEntidades = (it.entidades || []).some(e => e.toLowerCase().includes(q));
     return it.nombre.toLowerCase().includes(q) || enEntidades;
@@ -266,6 +340,13 @@ function render() {
 
   renderStats();
   renderFiltroSelect();
+  renderFiltroUbicacionSelect();
+  renderFiltroEstadoSelect();
+  renderFiltroMarcaSelect();
+  renderFiltroBateriaSelect();
+  const hayFiltrosActivos = filtroTipo !== "todos" || filtroUbicacion !== "todas" || filtroEstado !== "todos" || filtroMarca !== "todas" || filtroBateria !== "todas" || q;
+  const btnLimpiar = document.getElementById("btnLimpiarFiltros");
+  if (btnLimpiar) btnLimpiar.style.display = hayFiltrosActivos ? "" : "none";
 }
 
 // ============================================================
@@ -275,6 +356,7 @@ function render() {
 // nombre, descripcion — sin agregarle nada extra que no se haya pedido.)
 // ============================================================
 let filtroCategoria = "todas";
+let filtroUbicacionAuto = "todas";
 
 function automatizacionesActivas() {
   return automatizaciones.filter(a => !a.deleted);
@@ -286,14 +368,22 @@ function renderAutomatizaciones() {
   if (!yaEnPagina && _panel !== "automatizaciones") return; // no pisar otra pestaña si esto se dispara en segundo plano
   contentEl.innerHTML = `
     <div class="sbar">
-      <input type="text" id="searchAuto" autocomplete="off" placeholder="Buscar por nombre, categoría o descripción">
+      <input type="text" id="searchAuto" autocomplete="off" placeholder="Buscar por nombre, categoría, ubicación o descripción">
       <select id="filtroCategoriaSel"></select>
+      <select id="filtroUbicacionAutoSel"></select>
+      <button class="btn btn-sm" id="btnLimpiarFiltrosAuto" style="display:none;">✕ Limpiar filtros</button>
       <button class="btn btn-p" id="btnAgregarAuto">+ Agregar automatización</button>
     </div>
     <div class="dev-grid" id="listAuto"></div>
   `;
   document.getElementById("searchAuto").addEventListener("input", renderListaAuto);
   document.getElementById("filtroCategoriaSel").addEventListener("change", (e) => { filtroCategoria = e.target.value; renderListaAuto(); });
+  document.getElementById("filtroUbicacionAutoSel").addEventListener("change", (e) => { filtroUbicacionAuto = e.target.value; renderListaAuto(); });
+  document.getElementById("btnLimpiarFiltrosAuto").addEventListener("click", () => {
+    filtroCategoria = "todas"; filtroUbicacionAuto = "todas";
+    document.getElementById("searchAuto").value = "";
+    renderListaAuto();
+  });
   document.getElementById("btnAgregarAuto").addEventListener("click", () => openFormAuto(null));
   renderListaAuto();
 }
@@ -309,6 +399,18 @@ function renderFiltroCategoriaSelect() {
   sel.value = filtroCategoria;
 }
 
+// ---------- render: filtro de ubicación (Automatizaciones) ----------
+function renderFiltroUbicacionAutoSelect() {
+  const sel = document.getElementById("filtroUbicacionAutoSel");
+  if (!sel) return;
+  const ubicaciones = [...new Set(automatizacionesActivas().map(a => a.ubicacion).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  let html = `<option value="todas">Todas las ubicaciones</option>`;
+  ubicaciones.forEach(u => { html += `<option value="${escapeHtml(u)}">${escapeHtml(u)}</option>`; });
+  sel.innerHTML = html;
+  sel.value = filtroUbicacionAuto;
+}
+
 function renderListaAuto() {
   const list = document.getElementById("listAuto");
   if (!list) return;
@@ -317,8 +419,9 @@ function renderListaAuto() {
 
   const filtered = base.filter(a => {
     if (filtroCategoria !== "todas" && a.categoria !== filtroCategoria) return false;
+    if (filtroUbicacionAuto !== "todas" && a.ubicacion !== filtroUbicacionAuto) return false;
     if (!q) return true;
-    return a.nombre.toLowerCase().includes(q) || (a.categoria || "").toLowerCase().includes(q) || (a.descripcion || "").toLowerCase().includes(q);
+    return a.nombre.toLowerCase().includes(q) || (a.categoria || "").toLowerCase().includes(q) || (a.ubicacion || "").toLowerCase().includes(q) || (a.descripcion || "").toLowerCase().includes(q);
   }).sort((a, b) => a.nombre.localeCompare(b.nombre));
 
   if (filtered.length === 0) {
@@ -329,7 +432,7 @@ function renderListaAuto() {
         <span class="dev-card-icon">🤖</span>
         <div class="dev-card-info">
           <div class="dev-card-title">${escapeHtml(a.nombre)}</div>
-          <div class="dev-card-meta">${a.descripcion ? escapeHtml(a.descripcion.length > 90 ? a.descripcion.slice(0, 90) + "…" : a.descripcion) : "sin descripción"}</div>
+          <div class="dev-card-meta">${a.ubicacion ? escapeHtml(a.ubicacion) + " · " : ""}${a.descripcion ? escapeHtml(a.descripcion.length > 90 ? a.descripcion.slice(0, 90) + "…" : a.descripcion) : "sin descripción"}</div>
         </div>
         <span class="pill p-muted">${escapeHtml(a.categoria || "sin categoría")}</span>
       </div>
@@ -339,6 +442,10 @@ function renderListaAuto() {
     });
   }
   renderFiltroCategoriaSelect();
+  renderFiltroUbicacionAutoSelect();
+  const hayFiltrosActivos = filtroCategoria !== "todas" || filtroUbicacionAuto !== "todas" || q;
+  const btnLimpiar = document.getElementById("btnLimpiarFiltrosAuto");
+  if (btnLimpiar) btnLimpiar.style.display = hayFiltrosActivos ? "" : "none";
 }
 
 function openFormAuto(id) {
@@ -346,11 +453,19 @@ function openFormAuto(id) {
   const titulo = a ? "Editar automatización" : "Agregar automatización";
   const categoriasExistentes = [...new Set(automatizacionesActivas().map(x => x.categoria).filter(Boolean))]
     .sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  const ubicacionesExistentes = [...new Set([
+    ...automatizacionesActivas().map(x => x.ubicacion).filter(Boolean),
+    ...activos().map(it => it.ubicacion).filter(Boolean),
+  ])].sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
 
   const body = `
     <div class="fg"><label>Categoría</label>
       <input type="text" id="faCategoria" autocomplete="off" list="listaCategorias" placeholder="Ej: Seguridad, Riego, Iluminación" value="${escapeHtml(a ? (a.categoria || "") : "")}">
       <datalist id="listaCategorias">${categoriasExistentes.map(c => `<option value="${escapeHtml(c)}">`).join("")}</datalist>
+    </div>
+    <div class="fg"><label>Ubicación</label>
+      <input type="text" id="faUbicacion" autocomplete="off" list="listaUbicacionesAuto" placeholder="Ej: Cocina, Suite, Taller" value="${escapeHtml(a ? (a.ubicacion || "") : "")}">
+      <datalist id="listaUbicacionesAuto">${ubicacionesExistentes.map(u => `<option value="${escapeHtml(u)}">`).join("")}</datalist>
     </div>
     <div class="fg"><label>Nombre</label><input type="text" id="faNombre" autocomplete="off" placeholder="Ej: Apagar luces al salir" value="${escapeHtml(a ? a.nombre : "")}"></div>
     <div class="fg"><label>Descripción</label><textarea id="faDescripcion" placeholder="Qué hace y cuándo se dispara">${escapeHtml(a ? (a.descripcion || "") : "")}</textarea></div>
@@ -374,6 +489,7 @@ function guardarFormAuto(id) {
 
   const data = {
     categoria: document.getElementById("faCategoria").value.trim(),
+    ubicacion: document.getElementById("faUbicacion").value.trim(),
     nombre,
     descripcion: document.getElementById("faDescripcion").value.trim(),
     lastModified: Date.now(),
