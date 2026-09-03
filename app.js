@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.13-dev
+// GESTIÓN INTEGRAL DE HA — v0.14-dev
 // ============================================================
-const APP_VERSION = "0.13-dev";
+const APP_VERSION = "0.14-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
@@ -301,7 +301,8 @@ function renderAutomatizaciones() {
 function renderFiltroCategoriaSelect() {
   const sel = document.getElementById("filtroCategoriaSel");
   if (!sel) return;
-  const categorias = [...new Set(automatizacionesActivas().map(a => a.categoria).filter(Boolean))].sort();
+  const categorias = [...new Set(automatizacionesActivas().map(a => a.categoria).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
   let html = `<option value="todas">Todas las categorías</option>`;
   categorias.forEach(c => { html += `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`; });
   sel.innerHTML = html;
@@ -343,7 +344,8 @@ function renderListaAuto() {
 function openFormAuto(id) {
   const a = id ? automatizaciones.find(x => x.id === id) : null;
   const titulo = a ? "Editar automatización" : "Agregar automatización";
-  const categoriasExistentes = [...new Set(automatizacionesActivas().map(x => x.categoria).filter(Boolean))].sort();
+  const categoriasExistentes = [...new Set(automatizacionesActivas().map(x => x.categoria).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
 
   const body = `
     <div class="fg"><label>Categoría</label>
