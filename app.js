@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.12-dev
+// GESTIÓN INTEGRAL DE HA — v0.13-dev
 // ============================================================
-const APP_VERSION = "0.12-dev";
+const APP_VERSION = "0.13-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
@@ -752,13 +752,31 @@ function abrirFicha(id) {
   }
 
   const notasHtml = it.notas ? `<div class="ficha-notas">${escapeHtml(it.notas)}</div>` : "";
-  const marcaModelo = [it.marca, it.modelo].filter(Boolean).join(" ");
+
+  const entidadesHtml = (it.entidades || []).length
+    ? `<div class="ficha-entidades-list">${it.entidades.map(e => `<span class="entidad-chip">${escapeHtml(e)}</span>`).join("")}</div>`
+    : `<div class="ficha-detail-empty">Sin entidades HA asociadas.</div>`;
+
+  const detalleHtml = `
+    <div class="ficha-detail-grid">
+      <div class="fdg-item"><span class="fdg-label">Tipo</span><span class="fdg-value">${tipoIcono(it)} ${escapeHtml(tipoLabel(it))}</span></div>
+      <div class="fdg-item"><span class="fdg-label">Marca</span><span class="fdg-value">${it.marca ? escapeHtml(it.marca) : "—"}</span></div>
+      <div class="fdg-item"><span class="fdg-label">Modelo</span><span class="fdg-value">${it.modelo ? escapeHtml(it.modelo) : "—"}</span></div>
+      <div class="fdg-item"><span class="fdg-label">Ubicación</span><span class="fdg-value">${escapeHtml(it.ubicacion || "sin ubicación")}</span></div>
+      <div class="fdg-item"><span class="fdg-label">Fecha instalación</span><span class="fdg-value">${it.fechaInstalacion ? fmtFecha(it.fechaInstalacion) : "—"}</span></div>
+      <div class="fdg-item"><span class="fdg-label">Batería</span><span class="fdg-value">${it.bateria === "na" ? "N/A - cableado" : escapeHtml(bateriaLabel(it))}</span></div>
+      <div class="fdg-item"><span class="fdg-label">Último cambio batería</span><span class="fdg-value">${it.bateria !== "na" && ultimoCambioBateria(it) ? fmtFecha(ultimoCambioBateria(it)) : "—"}</span></div>
+    </div>
+  `;
 
   const body = `
     <div class="ficha-meta-row">
       <span class="pill ${pill.cls}">${pill.txt}</span>
-      <span class="ficha-entidades">${escapeHtml(it.ubicacion || "sin ubicación")} · ${tipoLabel(it)}${marcaModelo ? " · " + escapeHtml(marcaModelo) : ""}${(it.entidades || []).length ? " · " + it.entidades.map(escapeHtml).join(", ") : ""}</span>
     </div>
+    <div class="ficha-section-title">Detalle</div>
+    ${detalleHtml}
+    <div class="ficha-section-title">Entidades HA</div>
+    ${entidadesHtml}
     <div class="ficha-acciones">
       ${(!esReemplazado && it.bateria !== "na") ? `<button class="btn" id="btnCambiarBateria">🔋 Cambiar batería</button>` : ""}
       ${!esReemplazado ? `<button class="btn" id="btnReemplazar">🔄 Reemplazar</button>` : ""}
@@ -768,7 +786,7 @@ function abrirFicha(id) {
     <div class="ficha-section-title">Historial</div>
     <div id="fichaHistorial">${historialHtml}</div>
     ${linkHtml}
-    ${notasHtml}
+    ${notasHtml ? `<div class="ficha-section-title">Notas</div>${notasHtml}` : ""}
   `;
   const foot = `<button class="btn btn-sm" id="btnEditarDesdeFicha">✏️ Editar</button>`;
 
