@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.10-dev
+// GESTIÓN INTEGRAL DE HA — v0.11-dev
 // ============================================================
-const APP_VERSION = "0.10-dev";
+const APP_VERSION = "0.11-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const SNAPSHOT_KEY = "giha_snapshots";
@@ -286,11 +286,11 @@ function renderListaAuto() {
   } else {
     list.innerHTML = filtered.map(a => `
       <div class="dev-card" data-id="${a.id}">
-        <div class="dev-card-top">
-          <span class="dev-card-icon">🤖</span>
-          <span class="dev-card-title">${escapeHtml(a.nombre)}</span>
+        <span class="dev-card-icon">🤖</span>
+        <div class="dev-card-info">
+          <div class="dev-card-title">${escapeHtml(a.nombre)}</div>
+          <div class="dev-card-meta">${a.descripcion ? escapeHtml(a.descripcion.length > 90 ? a.descripcion.slice(0, 90) + "…" : a.descripcion) : "sin descripción"}</div>
         </div>
-        <div class="dev-card-meta">${a.descripcion ? escapeHtml(a.descripcion.length > 90 ? a.descripcion.slice(0, 90) + "…" : a.descripcion) : "sin descripción"}</div>
         <span class="pill p-muted">${escapeHtml(a.categoria || "sin categoría")}</span>
       </div>
     `).join("");
@@ -479,12 +479,11 @@ function renderCard(it) {
   const marcaModelo = [it.marca, it.modelo].filter(Boolean).join(" ");
   return `
     <div class="dev-card ${estado === "reemplazado" ? "reemplazado" : ""}" data-id="${it.id}">
-      <div class="dev-card-top">
-        <span class="dev-card-icon">${tipoIcono(it)}</span>
-        <span class="dev-card-title">${escapeHtml(it.nombre)}</span>
+      <span class="dev-card-icon">${tipoIcono(it)}</span>
+      <div class="dev-card-info">
+        <div class="dev-card-title">${escapeHtml(it.nombre)}</div>
+        <div class="dev-card-meta">${escapeHtml(it.ubicacion || "sin ubicación")} · ${bateriaLabel(it)}${metaExtra}${marcaModelo ? " · " + escapeHtml(marcaModelo) : ""}</div>
       </div>
-      <div class="dev-card-meta">${escapeHtml(it.ubicacion || "sin ubicación")} · ${bateriaLabel(it)}${metaExtra}</div>
-      ${marcaModelo ? `<div class="dev-card-meta">${escapeHtml(marcaModelo)}</div>` : ""}
       <span class="pill ${pill.cls}">${pill.txt}</span>
     </div>
   `;
