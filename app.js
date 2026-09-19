@@ -1,11 +1,12 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.17-dev
+// GESTIÓN INTEGRAL DE HA — v0.18-dev
 // ============================================================
-const APP_VERSION = "0.17-dev";
+const APP_VERSION = "0.18-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
 const STORAGE_KEY_BATERIAS_CUSTOM = "giha_baterias_custom";
+const STORAGE_KEY_MANT = "giha_mantenimiento";
 const SNAPSHOT_KEY = "giha_snapshots";
 const DRIVE_TOKEN_KEY = "giha_drive_token";
 const MAX_SNAPSHOTS = 10;
@@ -33,6 +34,7 @@ let items = [];
 let automatizaciones = [];
 let tiposCustom = [];    // tipos de dispositivo agregados a mano ("Otro" -> se vuelven opción permanente)
 let bateriasCustom = []; // tipos de batería agregados a mano, ídem
+let mantenimiento = null; // fechas de las rutinas del módulo Mantenimiento (null = todavía sin registros propios)
 let editingId = null;
 let fichaAbiertaId = null;
 let reemplazandoId = null;
@@ -135,6 +137,10 @@ function loadItems() {
   try {
     bateriasCustom = JSON.parse(localStorage.getItem(STORAGE_KEY_BATERIAS_CUSTOM) || "[]");
   } catch (e) { bateriasCustom = []; }
+  try {
+    const rawMant = localStorage.getItem(STORAGE_KEY_MANT);
+    mantenimiento = rawMant ? JSON.parse(rawMant) : null;
+  } catch (e) { mantenimiento = null; }
   migrarTiposBaterias();
 }
 
@@ -174,6 +180,7 @@ function persistAll() {
   localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
   localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
   localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
+  if (mantenimiento) localStorage.setItem(STORAGE_KEY_MANT, JSON.stringify(mantenimiento));
   saveSnapshot();
   if (typeof DriveSync !== "undefined" && DriveSync.conectado()) DriveSync.sync();
 }
@@ -183,7 +190,7 @@ function saveAutomatizaciones() { persistAll(); renderAutomatizaciones(); }
 function saveSnapshot() {
   try {
     let snaps = JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || "[]");
-    snaps.push({ t: Date.now(), data: items, dataAuto: automatizaciones, dataTiposCustom: tiposCustom, dataBateriasCustom: bateriasCustom });
+    snaps.push({ t: Date.now(), data: items, dataAuto: automatizaciones, dataTiposCustom: tiposCustom, dataBateriasCustom: bateriasCustom, dataMantenimiento: mantenimiento });
     if (snaps.length > MAX_SNAPSHOTS) snaps = snaps.slice(snaps.length - MAX_SNAPSHOTS);
     localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(snaps));
   } catch (e) {
@@ -538,9 +545,9 @@ function eliminarAuto(id) {
 // ROUTER / NAV LATERAL
 // ============================================================
 let _panel = "inventario";
-const PANELS = ["inventario", "automatizaciones", "reportes", "backup"];
-const TITULOS = { inventario: "Inventario", automatizaciones: "Automatizaciones", reportes: "Reportes", backup: "Backup" };
-const RENDERS = { inventario: renderInventario, automatizaciones: () => renderAutomatizaciones(), reportes: () => renderReportes(), backup: () => renderBackup() };
+const PANELS = ["inventario", "automatizaciones", "reportes", "mantenimiento", "backup"];
+const TITULOS = { inventario: "Inventario", automatizaciones: "Automatizaciones", reportes: "Reportes", mantenimiento: "Mantenimiento", backup: "Backup" };
+const RENDERS = { inventario: renderInventario, automatizaciones: () => renderAutomatizaciones(), reportes: () => renderReportes(), mantenimiento: () => renderMantenimiento(), backup: () => renderBackup() };
 
 function toggleNav() {
   document.getElementById("nav").classList.toggle("open");
@@ -573,6 +580,23 @@ function renderReportes() {
       </div>
     </div>
   `;
+}
+
+// ============================================================
+// PÁGINA: MANTENIMIENTO (manual de rutinas del servidor HA — módulo mantenimiento.js)
+// ============================================================
+function renderMantenimiento() {
+  const cont = document.getElementById("content");
+  if (typeof Mantenimiento === "undefined") {
+    cont.innerHTML = `<div class="card"><div class="card-body"><p class="text2" style="font-size:12px;">No se pudo cargar el módulo de Mantenimiento (mantenimiento.js). Recargá la app; si sigue igual, revisá que el archivo esté en el repo.</p></div></div>`;
+    return;
+  }
+  cont.innerHTML = `<div id="mod-mantenimiento"></div>`;
+  Mantenimiento.render(document.getElementById("mod-mantenimiento"), {
+    storageKey: STORAGE_KEY_MANT,
+    initialState: mantenimiento || undefined,
+    onChange: (estado) => { mantenimiento = estado; persistAll(); },
+  });
 }
 
 // ============================================================
@@ -635,10 +659,12 @@ function restaurarSnapshot(ts) {
   automatizaciones = snap.dataAuto || [];
   tiposCustom = snap.dataTiposCustom || [];
   bateriasCustom = snap.dataBateriasCustom || [];
+  if (snap.dataMantenimiento) mantenimiento = snap.dataMantenimiento; // snapshots viejos no lo traen: se conserva el actual
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
   localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
   localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
+  if (mantenimiento) localStorage.setItem(STORAGE_KEY_MANT, JSON.stringify(mantenimiento));
   saveSnapshot();
   render();
   renderAutomatizaciones();
@@ -994,6 +1020,7 @@ function abrirAyuda() {
     <div class="help-item"><p class="help-title">🔄 Reemplazar</p><p class="help-desc">Marca el dispositivo actual como reemplazado y abre el formulario para el nuevo. El viejo queda en el historial con link al nuevo — nunca se borra.</p></div>
     <div class="help-item"><p class="help-title">⛔ Fuera de servicio</p><p class="help-desc">Para un dispositivo dado de baja sin reemplazo. Se puede reactivar en cualquier momento.</p></div>
     <div class="help-item"><p class="help-title">Estados</p><p class="help-desc">Activo (verde): funcionando normal. Batería baja (ámbar): pasó el umbral desde el último cambio. Fuera de servicio (rojo). Reemplazado (gris): ver el reemplazo desde su ficha.</p></div>
+    <div class="help-item"><p class="help-title">🛠️ Mantenimiento</p><p class="help-desc">Manual de rutinas del servidor Home Assistant (NUC): pasos, comandos y valores normales y anormales. "Marcar como hecha" guarda la fecha y calcula cuándo vence la próxima; las fechas se sincronizan con Drive.</p></div>
     <div class="help-item"><p class="help-title">🔌 Conectar Drive</p><p class="help-desc">Vincula tu cuenta de Google para sincronizar entre dispositivos. Se crea una carpeta "GestionIntegralHA" en tu Drive.</p></div>
     <div class="help-item"><p class="help-title">🚪 Salir</p><p class="help-desc">Guarda un backup local y sincroniza con Drive antes de cerrar. Si el backup falla, la app no se cierra para que puedas reintentar.</p></div>
   `;
@@ -1134,17 +1161,24 @@ const DriveSync = {
     const remoteAuto = remoteData && remoteData.automatizaciones ? remoteData.automatizaciones : [];
     const remoteTiposCustom = (remoteData && remoteData.tiposCustom) || [];
     const remoteBateriasCustom = (remoteData && remoteData.bateriasCustom) || [];
+    const remoteMant = (remoteData && remoteData.mantenimiento) || null;
+    const mantAntes = JSON.stringify(mantenimiento);
     items = this.merge(items, remoteItems);
     automatizaciones = this.merge(automatizaciones, remoteAuto);
     tiposCustom = Array.from(new Set([...tiposCustom, ...remoteTiposCustom]));
     bateriasCustom = Array.from(new Set([...bateriasCustom, ...remoteBateriasCustom]));
+    // Mantenimiento: merge por rutina, gana el registro con marca de modificación más reciente.
+    if (mantenimiento || remoteMant) mantenimiento = Mantenimiento.merge(mantenimiento, remoteMant);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     localStorage.setItem(STORAGE_KEY_AUTO, JSON.stringify(automatizaciones));
     localStorage.setItem(STORAGE_KEY_TIPOS_CUSTOM, JSON.stringify(tiposCustom));
     localStorage.setItem(STORAGE_KEY_BATERIAS_CUSTOM, JSON.stringify(bateriasCustom));
+    if (mantenimiento) localStorage.setItem(STORAGE_KEY_MANT, JSON.stringify(mantenimiento));
     render();
     renderAutomatizaciones();
-    await this.subir({ items, automatizaciones, tiposCustom, bateriasCustom, updatedAt: Date.now() }, keepalive);
+    // Solo redibuja el módulo si Drive trajo cambios: así no se cierran las rutinas abiertas en cada sync.
+    if (_panel === "mantenimiento" && JSON.stringify(mantenimiento) !== mantAntes) renderMantenimiento();
+    await this.subir({ items, automatizaciones, tiposCustom, bateriasCustom, mantenimiento, updatedAt: Date.now() }, keepalive);
   },
 };
 DriveSync.init();
@@ -1168,7 +1202,7 @@ async function backupAhora() {
 }
 
 function exportarJSON() {
-  const payload = { items, automatizaciones, tiposCustom, bateriasCustom, exportedAt: Date.now() };
+  const payload = { items, automatizaciones, tiposCustom, bateriasCustom, mantenimiento, exportedAt: Date.now() };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -1195,6 +1229,7 @@ function importarJSON(event) {
     automatizaciones = DriveSync.merge(automatizaciones, nuevasAuto);
     tiposCustom = Array.from(new Set([...tiposCustom, ...(Array.isArray(payload.tiposCustom) ? payload.tiposCustom : [])]));
     bateriasCustom = Array.from(new Set([...bateriasCustom, ...(Array.isArray(payload.bateriasCustom) ? payload.bateriasCustom : [])]));
+    if (payload.mantenimiento && typeof payload.mantenimiento === "object") mantenimiento = Mantenimiento.merge(mantenimiento, payload.mantenimiento);
     saveItems();
     saveAutomatizaciones();
     showToast(`Importado: ${nuevosItems.length} dispositivo${nuevosItems.length === 1 ? "" : "s"}, ${nuevasAuto.length} automatización${nuevasAuto.length === 1 ? "" : "es"}`);

@@ -1,7 +1,8 @@
-const CACHE_NAME = "gestion-integral-ha-v0.17-dev";
+const CACHE_NAME = "gestion-integral-ha-v0.18-dev";
 const ASSETS = [
   "./gestion_integral_ha.html",
   "./app.js",
+  "./mantenimiento.js",
   "./style.css",
   "./manifest.json"
 ];

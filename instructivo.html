@@ -72,6 +72,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
   <a href="#inventario">📦 Inventario</a>
   <a href="#automatizaciones">🤖 Automatizaciones</a>
   <a href="#reportes">📈 Reportes</a>
+  <a href="#mantenimiento">🛠️ Mantenimiento</a>
   <a href="#backup">💾 Backup</a>
   <a href="#changelog">🧾 Historial de cambios</a>
 </nav>
@@ -153,6 +154,30 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <div class="tip">💡 Si tenés en mente qué te gustaría ver acá, contáselo a Claude y lo armamos.</div>
   </section>
 
+  <!-- MANTENIMIENTO -->
+  <section class="section" id="mantenimiento">
+    <div class="section-header">
+      <span class="section-icon">🛠️</span>
+      <div>
+        <div class="section-title">Mantenimiento</div>
+        <div class="section-subtitle">Manual de rutinas del servidor Home Assistant (NUC)</div>
+      </div>
+    </div>
+
+    <h2>Rutinas</h2>
+    <p>Cada rutina indica con qué frecuencia hacerla, cuánto tarda, dónde se hace, los pasos, los comandos (con botón <b>Copiar</b>) y cómo leer el resultado: qué es <b>normal</b> y qué es <b>anormal</b>, con la acción recomendada. Hay filtros por categoría y frecuencia, y un buscador que mira también los comandos y los síntomas.</p>
+
+    <h2>Marcar como hecha</h2>
+    <p>Al terminar una rutina, tocá <b>Marcar como hecha</b>: se guarda la fecha y la app calcula cuándo vence la próxima (Al día, Por vencer o Vencida). Los contadores de arriba resumen el estado de todas. "Quitar último registro" deshace un registro cargado por error. Las fechas se sincronizan con Drive y entran en los snapshots, el export y el import.</p>
+
+    <h2>Resumen y valores de referencia</h2>
+    <p>La pestaña <b>Resumen por frecuencia</b> agrupa las rutinas en semanales, mensuales, semestrales, etc. La pestaña <b>Valores de referencia</b> junta en una tabla los umbrales de temperatura, carga, disco, backups y SMART del SSD.</p>
+
+    <div class="note">📌 Los comandos y los nombres de menú de Home Assistant pueden cambiar entre versiones. Si alguno no coincide con lo que ves, avisale a Claude para ajustarlo en el manual.</div>
+  </section>
+
+  <hr>
+
   <!-- BACKUP -->
   <section class="section" id="backup">
     <div class="section-header">
@@ -189,6 +214,14 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 
     <details class="changelog-details">
       <summary class="changelog-summary">Ver historial de versiones</summary>
+
+      <div class="changelog-entry">
+        <div class="changelog-version"><span class="v-num">v0.18-dev</span><span class="changelog-tag tag-feature">feature</span></div>
+        <ul class="changelog-list">
+          <li>Nuevo módulo Mantenimiento: manual de 21 rutinas del servidor Home Assistant con pasos, comandos, frecuencia y resultados normales y anormales</li>
+          <li>Registro de cuándo se hizo cada rutina y cálculo de vencimientos, sincronizado con Drive y guardado en snapshots, export e import</li>
+        </ul>
+      </div>
 
       <div class="changelog-entry">
         <div class="changelog-version"><span class="v-num">v0.15-dev</span><span class="changelog-tag tag-feature">feature</span></div>
