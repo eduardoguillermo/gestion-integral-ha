@@ -8,7 +8,7 @@
 (function (global) {
   'use strict';
 
-  const VERSION = '1.1.0';
+  const VERSION = '1.0.0';
   const DEFAULT_KEY = 'gihaMantenimiento';
 
   /* ------------------------------------------------------------------ */
@@ -22,7 +22,6 @@
     { id: 'updates', nombre: 'Actualizaciones' },
     { id: 'bd', nombre: 'Base de datos' },
     { id: 'hardware', nombre: 'Hardware del NUC' },
-    { id: 'ups', nombre: 'UPS Forza SL-1012UL-A' },
     { id: 'seguridad', nombre: 'Seguridad y accesos' },
     { id: 'limpieza', nombre: 'Orden dentro de Home Assistant' }
   ];
@@ -34,8 +33,7 @@
     trimestral: { n: 'Trimestral', d: 90, sub: 'Cada 3 meses' },
     semestral: { n: 'Semestral', d: 182, sub: 'Cada 6 meses' },
     anual: { n: 'Anual', d: 365, sub: 'Una vez por año' },
-    multianual: { n: 'Cada varios años', d: 1460, sub: 'Cada 3 a 5 años, o antes si el equipo lo pide' },
-    eventual: { n: 'Cuando ocurre', d: null, sub: 'Solo cuando aparece el síntoma' }
+    multianual: { n: 'Cada varios años', d: 1460, sub: 'Cada 3 a 5 años, o antes si el equipo lo pide' }
   };
 
   const PRIOS = { critica: 'Crítica', alta: 'Alta', media: 'Media', baja: 'Baja' };
@@ -464,223 +462,6 @@
       prec: ["Sin UPS, no pruebes cortando la energía con el equipo encendido: podés dañar el sistema de archivos. Apagá siempre desde Home Assistant."]
     },
 
-    /* ------------------------------ UPS FORZA ------------------------------ */
-    {
-      id: 'ups-chequeo', cat: 'ups', titulo: 'Chequeo mensual de los sensores de la UPS',
-      freq: 'mensual', prio: 'media', dur: '2 min', donde: 'Home Assistant: Herramientas para desarrolladores → Estados (filtrá «forza»)',
-      obj: 'Comparar los valores de la UPS con tu referencia y detectar a tiempo una batería que se degrada o una comunicación que falla.',
-      pasos: [
-        "Abrí Herramientas para desarrolladores → Estados y escribí `sensor.forza` en el filtro.",
-        "Verificá que `sensor.forza_estado` diga Online y que `sensor.forza_datos_de_estado` diga OL.",
-        "Compará la carga de la batería, la tensión de la batería y las tensiones de entrada y salida con los valores de referencia de abajo.",
-        "Abrí el historial de `sensor.forza_datos_de_estado` del último mes y fijate si apareció OB, LB o RB sin que un corte de luz lo explique."
-      ],
-      normal: [
-        "Estado Online (OL) y carga de la batería al 100 %.",
-        "Tensión de entrada y de salida casi iguales, y tensión del pack cerca de 27,2 V.",
-        "Ningún OB, LB ni RB en el historial, salvo los cortes de luz reales."
-      ],
-      anormal: [
-        ["Algún sensor forza_* en unavailable", "Seguí la rutina «Diagnóstico: sensores forza_* en unavailable»."],
-        ["Aparecen OB, LB o RB sin corte de luz", "Seguí «Diagnóstico: pita o el estado no es Online»."],
-        ["La tensión del pack baja de a poco de un mes al otro", "La batería se está degradando: adelantá la prueba de descarga controlada."],
-        ["La carga no llega al 100 % con la red presente", "Dejala cargar 12 horas. Si sigue igual, seguí «Diagnóstico: dura poco en los cortes o dice RB / LB»."]
-      ],
-      ref: "Valores del 21/09/2026: estado Online (OL), carga 100 %, pack 27,18 V, entrada 228,7 V, salida 228,7 V, frecuencia 50,8 Hz, 2 baterías de 12 V, umbrales por batería de 11,0 V (piso) y 13,8 V (techo). Tu UPS no informa por NUT el consumo ni la autonomía: el nivel de carga se lee en su pantalla LCD."
-    },
-    {
-      id: 'ups-avisos', cat: 'ups', titulo: 'Probar los avisos de la UPS',
-      freq: 'trimestral', prio: 'alta', dur: '5 min', donde: 'Home Assistant: Ajustes → Automatizaciones y escenas',
-      obj: 'Confirmar que las notificaciones de la UPS te llegan al celular antes de necesitarlas.',
-      pasos: [
-        "Abrí Ajustes → Automatizaciones y escenas.",
-        "Abrí cada una de estas cuatro: «Notificación: Alerta de Energía UPS Forza», «Notificación: UPS Batería Crítica», «UPS Forza: sin comunicación» y «UPS Forza: reemplazar baterías».",
-        "En el menú ⋮ tocá «Ejecutar acciones». Esto saltea el disparador y prueba solo el envío del mensaje.",
-        "Confirmá que la notificación llega al celular."
-      ],
-      normal: ["Las cuatro notificaciones llegan en pocos segundos."],
-      anormal: [
-        ["No llega ninguna", "Probá el servicio `notify.mobile_app_2312dra50g` desde Herramientas para desarrolladores → Acciones. Si falla, revisá la app del celular y sus permisos."],
-        ["Llega al ejecutar las acciones pero un corte real no avisa", "El disparador no coincide. Seguí «Diagnóstico: la UPS está bien pero no llega el aviso»."]
-      ],
-      ref: "Canal de aviso de las cuatro automatizaciones: `notify.mobile_app_2312dra50g`."
-    },
-    {
-      id: 'ups-descarga', cat: 'ups', titulo: 'Prueba de descarga controlada',
-      freq: 'trimestral', prio: 'alta', dur: '20 a 60 min', donde: 'UPS desenchufada de la pared y sensores en Home Assistant',
-      obj: 'Medir la autonomía real y detectar el desgaste de las baterías antes de que fallen en un corte.',
-      pasos: [
-        "Hacé un backup manual y confirmá que llegó a Google Drive.",
-        "Verificá que la batería esté al 100 % desde hace 12 horas o más, y avisá a quien use la red.",
-        "Calculá cuánto debería durar: `(2 × 12 V × 7 Ah × 0,6) ÷ watts conectados`. Con 50 W da unas 2 horas. La ficha de fábrica dice 50 min con una PC y un monitor.",
-        "Desenchufá la UPS de la pared y empezá a cronometrar. El estado tiene que pasar a OB.",
-        "Mirá `sensor.forza_carga_de_la_bateria` y `sensor.forza_tension_de_la_bateria` cada tanto y anotá cuánto baja la carga cada 10 minutos.",
-        "Volvé a enchufar cuando la carga baje del 30 %. No la descargues hasta el fondo.",
-        "Con la caída medida, proyectá el tiempo hasta el final y compará con el esperado."
-      ],
-      normal: [
-        "La carga baja de forma pareja y el tiempo proyectado es 70 % o más del esperado.",
-        "Al volver la red, la UPS pasa a CHRG y recarga (unas 4 horas hasta el 90 %)."
-      ],
-      anormal: [
-        ["El tiempo proyectado es entre 50 y 70 % del esperado", "Repetí la prueba en 30 días. Si sigue bajando, planificá el cambio del par."],
-        ["Menos de la mitad de lo esperado", "Reemplazá el par (seguí «Reemplazo de las baterías»)."],
-        ["Se apaga antes de llegar al 30 %", "Baterías agotadas: reemplazá el par y no repitas la prueba con las viejas."],
-        ["No pasa a OB al desenchufarla", "Falla de la UPS: servicio técnico."]
-      ],
-      prec: [
-        "Conectá a la UPS solo electrónica: nada de motores, bombas ni estufas.",
-        "Si el NUC está conectado a la UPS, un apagado brusco puede dañar la base de datos: por eso el backup previo.",
-        "Los umbrales de 70 % y 50 % son reglas prácticas orientativas, no datos del fabricante."
-      ]
-    },
-    {
-      id: 'ups-medicion', cat: 'ups', titulo: 'Medir las baterías en reposo (si hay acceso)',
-      freq: 'anual', prio: 'media', dur: '20 min', donde: 'Compartimiento de baterías de la UPS, con multímetro',
-      obj: 'Comparar las dos baterías entre sí y detectar una que esté fallando.',
-      pasos: [
-        "Comprobá si tu UPS tiene compuerta de acceso a las baterías. La ficha de Forza no lo indica: si hay que desarmar la carcasa, no la abras y hacé solo la prueba de descarga.",
-        "Apagá la UPS y desenchufala de la pared.",
-        "Abrí la compuerta y dejá los bornes a la vista, sin desconectar nada.",
-        "Con el multímetro en V CC, medí cada batería por separado: punta roja al «+» y negra al «−».",
-        "Anotá las dos lecturas y volvé a cerrar."
-      ],
-      normal: ["Cada batería en 12,6 V o más, con menos de unos 0,1 V de diferencia entre las dos."],
-      anormal: [
-        ["Entre 12,0 y 12,6 V", "Dejá cargar 12 horas con la UPS enchufada y volvé a medir en reposo."],
-        ["Menos de 12,0 V, o más de unos 0,3 V de diferencia entre las dos", "Una batería está fallando: reemplazá el par."],
-        ["Carcasa hinchada, olor a quemado o pérdida", "No sigas: desenchufá la UPS y llamá a servicio técnico."]
-      ],
-      prec: [
-        "No apoyes una herramienta metálica entre dos bornes: provoca un cortocircuito.",
-        "Sacate anillos y pulseras, y usá guantes y lentes.",
-        "No toques nada más adentro: hay condensadores con tensión peligrosa aunque la UPS esté apagada.",
-        "Los valores son reglas prácticas orientativas. Medí siempre en reposo, con la UPS desenchufada."
-      ]
-    },
-    {
-      id: 'ups-reemplazo', cat: 'ups', titulo: 'Reemplazo de las baterías',
-      freq: 'multianual', frecTxt: 'Control fuerte a los 3 años (mayo de 2027), cambio preventivo a los 4 (mayo de 2028), o antes si la descarga da mal',
-      prio: 'alta', dur: '30 min', donde: 'UPS Forza SL-1012UL-A, compartimiento de baterías',
-      obj: 'Cambiar el par de baterías antes de que fallen, sin quedarte sin respaldo.',
-      pasos: [
-        "Conseguí el par igual al original: Forza FUB-1270, o dos baterías VRLA de 12 V / 7 Ah de la misma marca y lote.",
-        "Si son de repuesto guardado, medí cada una en reposo: 12,6 V o más y parecidas entre sí.",
-        "Hacé un backup manual. Si el NUC está conectado a la UPS, apagalo de forma ordenada. Después apagá y desenchufá la UPS.",
-        "Sacale una foto al cableado antes de tocar nada.",
-        "Desconectá primero el puente entre las baterías y después los cables de la UPS, de a uno.",
-        "Conectá las nuevas respetando la polaridad: el «−» de una con el «+» de la otra mediante el puente, y los dos extremos libres a la UPS (rojo al «+», negro al «−»).",
-        "Cerrá, enchufá y dejá cargar entre 8 y 12 horas.",
-        "Repetí la prueba de descarga controlada y anotá la fecha del cambio: desde ahí cuentan los 3 a 5 años de vida útil."
-      ],
-      normal: [
-        "La UPS vuelve a Online (OL) con la carga al 100 %.",
-        "El pack queda cerca de 27,2 V en flotación.",
-        "La autonomía medida es 70 % o más de la esperada."
-      ],
-      anormal: [
-        ["Sigue mostrando RB con baterías nuevas", "Algunas UPS mantienen ese estado hasta un ciclo de carga o un test. Dejala cargar y hacé una descarga corta. Si persiste, falla el cargador o la placa: servicio técnico."],
-        ["No enciende o no carga", "Revisá la polaridad y el puente. Si está bien, servicio técnico."],
-        ["Una de las nuevas mide bastante menos que la otra", "No las uses juntas: reemplazá la que difiere por otra del mismo lote."]
-      ],
-      prec: [
-        "Apagá y desenchufá la UPS antes de abrir. Sacate anillos y pulseras y usá guantes y lentes.",
-        "Nunca pongas una herramienta metálica entre dos bornes.",
-        "Son baterías de plomo-ácido selladas: reciclalas, no las tires a la basura común."
-      ],
-      ref: "UPS instalada en mayo de 2024. La garantía de las baterías era de 2 años y ya venció. Repuesto disponible: dos baterías Ultracell UL7-12E (12 V / 7 Ah, VRLA) sin uso."
-    },
-    {
-      id: 'ups-diag-alarma', cat: 'ups', titulo: 'Diagnóstico: pita o el estado no es Online',
-      freq: 'eventual', prio: 'alta', dur: '10 min', donde: '`sensor.forza_datos_de_estado` y pantalla LCD de la UPS',
-      obj: 'Identificar por qué la UPS pita o cambió de estado y decidir si es un corte real, una sobrecarga o una falla.',
-      pasos: [
-        "Leé el código en `sensor.forza_datos_de_estado`. Puede traer varios juntos, por ejemplo «OL CHRG».",
-        "Escuchá el patrón del pitido: cada 10 s es batería, cada 1 s es batería baja, cada 0,5 s es sobrecarga y continuo es falla.",
-        "Mirá `sensor.forza_tension_de_entrada`. La UPS pasa a batería solo si la entrada baja de 162 V o supera 268 V.",
-        "Si es sobrecarga, desenchufá todo y volvé a conectar de a un equipo por vez.",
-        "Revisá que las rejillas estén libres y sin polvo, y que no haya calor alrededor."
-      ],
-      normal: [
-        "Corte real: entrada en 0 V o fuera de 162 a 268 V, estado OB, y la UPS vuelve a OL cuando regresa la red.",
-        "CHRG durante unas horas después de un corte."
-      ],
-      anormal: [
-        ["OB con la entrada en unos 228 V", "La UPS cree que no hay red: revisá el cable de entrada y la térmica. Si sigue, es una falla interna: servicio técnico."],
-        ["OVER o pitido cada 0,5 s", "Sobrecarga: retirá cargas y no conectes motores, bombas ni estufas."],
-        ["RB", "Seguí «Diagnóstico: dura poco en los cortes o dice RB / LB»."],
-        ["BYPASS", "Lo conectado no está protegido. Si no lo activaste vos, servicio técnico."],
-        ["Pitido continuo, ALARM o FSD", "Falla de la UPS: desconectala y llamá a servicio técnico."],
-        ["TRIM o BOOST", "Está regulando la tensión. Es normal si es breve; si dura, mirá la tensión de entrada."]
-      ]
-    },
-    {
-      id: 'ups-diag-bateria', cat: 'ups', titulo: 'Diagnóstico: dura poco en los cortes o dice RB / LB',
-      freq: 'eventual', prio: 'alta', dur: '30 min', donde: 'Sensores de la UPS y, si hay acceso, compartimiento de baterías',
-      obj: 'Confirmar si las baterías están agotadas y decidir si hay que cambiarlas.',
-      pasos: [
-        "Anotá el estado que muestra `sensor.forza_datos_de_estado`: LB (batería baja) o RB (reemplazar).",
-        "Verificá la edad de las baterías: instaladas en mayo de 2024, la garantía de 2 años ya venció.",
-        "Hacé la rutina «Prueba de descarga controlada».",
-        "Si tenés acceso, hacé la rutina «Medir las baterías en reposo».",
-        "Según el resultado, cambiá el par con la rutina «Reemplazo de las baterías»."
-      ],
-      normal: ["Autonomía de 70 % o más de la esperada y sin RB."],
-      anormal: [
-        ["RB o LB con la red presente", "Baterías agotadas o mal cargadas: dejalas cargar 12 horas y repetí la prueba. Si sigue, reemplazá el par."],
-        ["La UPS se apaga apenas se va la luz", "Baterías agotadas: reemplazá el par."],
-        ["Carcasa hinchada, olor a ácido o pérdida", "Desenchufá la UPS y llamá a servicio técnico."]
-      ],
-      ref: "Repuesto de Forza: FUB-1270 (2 unidades, 12 V / 7 Ah). Según la ficha de fábrica, la autonomía es de 50 min con una PC y un monitor, y la recarga llega al 90 % en 4 horas."
-    },
-    {
-      id: 'ups-diag-nut', cat: 'ups', titulo: 'Diagnóstico: sensores forza_* en unavailable',
-      freq: 'eventual', prio: 'alta', dur: '15 min', donde: 'Host de HA, app Network UPS Tools e integración NUT',
-      obj: 'Recuperar la comunicación entre la UPS y Home Assistant.',
-      pasos: [
-        "Cambiá el cable USB por uno corto y bueno, directo al host y sin hub.",
-        "Desde el terminal del host, ejecutá `lsusb` y verificá que aparezca un dispositivo tipo UPS.",
-        "Si Home Assistant corre en una máquina virtual, confirmá que el USB siga pasado a la VM.",
-        "Abrí Ajustes → Apps → Network UPS Tools → Registro y buscá errores.",
-        "Reiniciá la app NUT y, cuando arranque bien, recargá la integración: Ajustes → Dispositivos y servicios → NUT → ⋮ → Recargar.",
-        "Opcional: desde otra PC con `nut-client`, ejecutá `upsc` para ver si el servidor responde."
-      ],
-      cmds: [
-        { l: 'Listar los dispositivos USB del host', c: 'lsusb', n: 'La UPS suele figurar como «UPS», «HID UPS», «Cypress» o «Megatec».' },
-        { l: 'Consultar la UPS por red (desde otra PC con nut-client)', c: 'upsc <nombre-ups>@<ip-de-HA>', n: 'El nombre de la UPS es el que figura en la configuración de la app.' }
-      ],
-      normal: [
-        "`lsusb` lista la UPS.",
-        "El registro de la app muestra la conexión establecida.",
-        "Los sensores forza_* vuelven a tener valor."
-      ],
-      anormal: [
-        ["`lsusb` no lista la UPS", "Es el cable, el puerto o la UPS. Probala en otra PC con USB."],
-        ["Error «can't claim USB device»", "Otro proceso usa el dispositivo o faltan permisos: reiniciá la app y verificá que no haya dos instancias."],
-        ["Error «data stale»", "Se perdió la comunicación con el equipo: cambiá el cable y reiniciá la app."],
-        ["Falta solo un sensor (carga o autonomía)", "Es normal: tu modelo no los informa por NUT."],
-        ["Se cortó después de una actualización", "Revisá el registro de la app y la versión de la integración."]
-      ]
-    },
-    {
-      id: 'ups-diag-avisos', cat: 'ups', titulo: 'Diagnóstico: la UPS está bien pero no llega el aviso',
-      freq: 'eventual', prio: 'media', dur: '15 min', donde: 'Home Assistant: Ajustes → Automatizaciones y escenas',
-      obj: 'Encontrar por qué una automatización de la UPS no te avisa.',
-      pasos: [
-        "Probá la automatización con «Ejecutar acciones» (menú ⋮). Si el mensaje llega, el envío funciona y el problema está en el disparador.",
-        "Si no llega, probá el canal: Herramientas para desarrolladores → Acciones → `notify.mobile_app_2312dra50g` con un mensaje de prueba.",
-        "Abrí Ajustes → Automatizaciones y escenas → la automatización → Trazas y mirá dónde se cortó.",
-        "Revisá que el router y todo lo que participa del aviso estén conectados a la UPS.",
-        "En el celular, revisá los permisos de notificación de la app de Home Assistant y que no esté limitada por el ahorro de batería."
-      ],
-      normal: ["Llega el mensaje de prueba de las cuatro automatizaciones y un corte real también avisa."],
-      anormal: [
-        ["Ejecutar acciones funciona pero un corte real no avisa", "«Alerta de Energía» compara el estado exacto de OL a OB y «Batería Crítica» exige OB exacto. Si la UPS informa varios códigos juntos (por ejemplo «OB DISCHRG»), pueden no dispararse: cambiá el disparador para que busque «OB» entre los códigos."],
-        ["No llega ni con Ejecutar acciones", "Falla el canal: revisá el nombre del servicio de notificación y la app del celular."],
-        ["En un corte real no hay internet", "El router o el módem no están en la UPS: conectalos."]
-      ]
-    },
-
     /* ------------------------------ SEGURIDAD ------------------------------ */
     {
       id: 'seg-apps', cat: 'seguridad', titulo: 'Apps con acceso privilegiado',
@@ -778,12 +559,7 @@
     ['Media_Wearout_Indicator (233)', '100 a 50', '49 a 20', 'Menos de 20'],
     ['Tamaño de la base de datos', 'Estable', 'Crece de a poco', 'Crece sin parar semana tras semana'],
     ['Apps críticas', 'Iniciadas', 'Reinicios ocasionales', 'En Error o reiniciando en bucle'],
-    ['Entidades no disponibles', 'Cero, o las que sabés', 'Unas pocas sin explicación', 'Muchas de golpe'],
-    ['UPS: tensión de entrada', 'Cerca de 228 V (tu base: 228,7 V)', '162 a 204 V o 236 a 268 V: la UPS regula la tensión', 'Menos de 162 V o más de 268 V: pasa a batería'],
-    ['UPS: tensión del pack de baterías con red presente', 'Cerca de 27,2 V (tu base: 27,18 V)', 'Baja de a poco de un mes al otro', 'Menos de 22,0 V o más de 27,6 V (piso y techo de tus sensores)'],
-    ['UPS: carga de la batería', '100 % con red presente', 'No vuelve al 100 % unas 12 h después de un corte', 'Menos de 20 % estando en batería'],
-    ['UPS: autonomía en la prueba de descarga (regla práctica)', '70 % o más de la esperada', '50 a 70 % de la esperada', 'Menos de 50 % de la esperada'],
-    ['UPS: baterías en reposo, medidas una por una (regla práctica)', '12,6 V o más, con menos de 0,1 V de diferencia', '12,0 a 12,6 V', 'Menos de 12,0 V, o más de 0,3 V de diferencia entre las dos']
+    ['Entidades no disponibles', 'Cero, o las que sabés', 'Unas pocas sin explicación', 'Muchas de golpe']
   ];
 
   /* ------------------------------------------------------------------ */
@@ -866,10 +642,9 @@
   const recOf = id => ctx.state.tasks[id] || { done: null, history: [], m: 0 };
 
   function statusOf(t) {
-    const days = FREQS[t.freq].d;
-    if (days == null) return { k: 'na', txt: 'Según necesidad', next: null };
     const last = recOf(t.id).done;
     if (!last) return { k: 'none', txt: 'Sin registro', next: null };
+    const days = FREQS[t.freq].d;
     const due = new Date(new Date(last).getTime() + days * 86400000);
     const diff = Math.ceil((due.getTime() - Date.now()) / 86400000);
     if (diff < 0) return { k: 'late', txt: 'Vencida hace ' + fmtSpan(-diff), next: due };
@@ -921,7 +696,6 @@ color:var(--mnt-text);font:inherit;font-size:13px;line-height:1.55;max-width:960
 .mnt-st-soon{color:var(--mnt-warn);border-color:var(--mnt-warn)}
 .mnt-st-ok{color:var(--mnt-ok);border-color:var(--mnt-ok)}
 .mnt-st-none{border-style:dashed}
-.mnt-st-na{color:var(--mnt-mute)}
 .mnt-body{padding:4px 14px 14px;border-top:1px solid var(--mnt-line)}
 .mnt-goal{margin:10px 0}
 .mnt-meta{display:grid;gap:6px;margin:0 0 4px}
@@ -1112,7 +886,7 @@ color:var(--mnt-text);font:inherit;font-size:13px;line-height:1.55;max-width:960
 
   function updateStats() {
     const c = { late: 0, soon: 0, none: 0, ok: 0 };
-    TASKS.forEach(t => { const k = statusOf(t).k; if (k in c) c[k]++; });
+    TASKS.forEach(t => { c[statusOf(t).k]++; });
     Object.keys(c).forEach(k => {
       const el = ctx.root.querySelector('[data-stat="' + k + '"]');
       if (el) el.textContent = c[k];
@@ -1140,7 +914,7 @@ color:var(--mnt-text);font:inherit;font-size:13px;line-height:1.55;max-width:960
   function renderAll() {
     ctx.root.innerHTML =
       '<div class="mnt">' +
-        '<p class="mnt-sub">Manual de rutinas del servidor Home Assistant (NUC) y de su UPS</p>' +
+        '<p class="mnt-sub">Manual de rutinas del servidor Home Assistant (NUC)</p>' +
         '<div class="mnt-stats">' + statsHTML() + '</div>' +
         '<div class="mnt-tabs" role="tablist">' +
           '<button type="button" class="mnt-tab" role="tab" data-act="tab" data-tab="rutinas">Rutinas</button>' +

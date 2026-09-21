@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.19-dev
+// GESTIÓN INTEGRAL DE HA — v0.20-dev
 // ============================================================
-const APP_VERSION = "0.19-dev";
+const APP_VERSION = "0.20-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
@@ -545,9 +545,9 @@ function eliminarAuto(id) {
 // ROUTER / NAV LATERAL
 // ============================================================
 let _panel = "inventario";
-const PANELS = ["inventario", "automatizaciones", "reportes", "mantenimiento", "backup"];
-const TITULOS = { inventario: "Inventario", automatizaciones: "Automatizaciones", reportes: "Reportes", mantenimiento: "Mantenimiento", backup: "Backup" };
-const RENDERS = { inventario: renderInventario, automatizaciones: () => renderAutomatizaciones(), reportes: () => renderReportes(), mantenimiento: () => renderMantenimiento(), backup: () => renderBackup() };
+const PANELS = ["inventario", "automatizaciones", "reportes", "mantenimiento", "troubleshooting", "backup"];
+const TITULOS = { inventario: "Inventario", automatizaciones: "Automatizaciones", reportes: "Reportes", mantenimiento: "Mantenimiento", troubleshooting: "Troubleshooting", backup: "Backup" };
+const RENDERS = { inventario: renderInventario, automatizaciones: () => renderAutomatizaciones(), reportes: () => renderReportes(), mantenimiento: () => renderMantenimiento(), troubleshooting: () => renderTroubleshooting(), backup: () => renderBackup() };
 
 function toggleNav() {
   document.getElementById("nav").classList.toggle("open");
@@ -597,6 +597,19 @@ function renderMantenimiento() {
     initialState: mantenimiento || undefined,
     onChange: (estado) => { mantenimiento = estado; persistAll(); },
   });
+}
+
+// ============================================================
+// PÁGINA: TROUBLESHOOTING (diagnóstico y reparación de equipos — módulo troubleshooting.js)
+// ============================================================
+function renderTroubleshooting() {
+  const cont = document.getElementById("content");
+  if (typeof Troubleshooting === "undefined") {
+    cont.innerHTML = `<div class="card"><div class="card-body"><p class="text2" style="font-size:12px;">No se pudo cargar el módulo de Troubleshooting (troubleshooting.js). Recargá la app; si sigue igual, revisá que el archivo esté en el repo.</p></div></div>`;
+    return;
+  }
+  cont.innerHTML = `<div id="mod-troubleshooting"></div>`;
+  Troubleshooting.render(document.getElementById("mod-troubleshooting"));
 }
 
 // ============================================================
@@ -1021,6 +1034,7 @@ function abrirAyuda() {
     <div class="help-item"><p class="help-title">⛔ Fuera de servicio</p><p class="help-desc">Para un dispositivo dado de baja sin reemplazo. Se puede reactivar en cualquier momento.</p></div>
     <div class="help-item"><p class="help-title">Estados</p><p class="help-desc">Activo (verde): funcionando normal. Batería baja (ámbar): pasó el umbral desde el último cambio. Fuera de servicio (rojo). Reemplazado (gris): ver el reemplazo desde su ficha.</p></div>
     <div class="help-item"><p class="help-title">🛠️ Mantenimiento</p><p class="help-desc">Manual de rutinas del servidor Home Assistant (NUC): pasos, comandos y valores normales y anormales. "Marcar como hecha" guarda la fecha y calcula cuándo vence la próxima; las fechas se sincronizan con Drive.</p></div>
+    <div class="help-item"><p class="help-title">🩺 Troubleshooting</p><p class="help-desc">Guía de diagnóstico y reparación de la UPS Forza: síntomas con sus pasos, pruebas de batería, plan preventivo y valores de referencia. Es una guía de consulta: no guarda datos.</p></div>
     <div class="help-item"><p class="help-title">🔌 Conectar Drive</p><p class="help-desc">Vincula tu cuenta de Google para sincronizar entre dispositivos. Se crea una carpeta "GestionIntegralHA" en tu Drive.</p></div>
     <div class="help-item"><p class="help-title">🚪 Salir</p><p class="help-desc">Guarda un backup local y sincroniza con Drive antes de cerrar. Si el backup falla, la app no se cierra para que puedas reintentar.</p></div>
   `;
