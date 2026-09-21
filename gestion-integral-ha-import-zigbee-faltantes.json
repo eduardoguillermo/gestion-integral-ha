@@ -1,0 +1,1083 @@
+{
+  "items": [
+    {
+      "id": "842b1129-6c00-4897-b9f7-cf5e9ab0a44b",
+      "nombre": "Retroluz",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCT015",
+      "ubicacion": "Espacio de emi",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "d958e3ac41da6709a8aa81f6c5535b7d"
+    },
+    {
+      "id": "26f515d7-6e0f-4268-b777-4ea51222cebb",
+      "nombre": "velador",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCT015",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "04e788fdc0004e1cc4430772bd775afc"
+    },
+    {
+      "id": "45533cf7-9d49-4c9c-b7ff-10afa60aefd9",
+      "nombre": "lampara chica",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "unk_model",
+      "ubicacion": "Sala",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "243495717b303af3f3f930217914bad8"
+    },
+    {
+      "id": "4b600ab9-9f59-4159-b1da-dc670b6c4a9d",
+      "nombre": "Desk",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCA001",
+      "ubicacion": "Espacio de emi",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "18cad6d1f9592d4325b8d79e3148f554"
+    },
+    {
+      "id": "3d70e5d1-85a7-4e75-a946-3ad1ba82cd26",
+      "nombre": "Mi velador",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCT015",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4604ad10855337a4ff772b099b9692f7"
+    },
+    {
+      "id": "b7311581-4704-4848-a2c3-6048f83eda6b",
+      "nombre": "velador Mariela",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCA001",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a6c95e8cc4ff01bc7edcbc13636a01cd"
+    },
+    {
+      "id": "2c4f0736-234f-48f6-92f0-dabc342feaa9",
+      "nombre": "Lampara de pie",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCA001",
+      "ubicacion": "Sala",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a644a61a0f302d58b5f5b6bfe49c1b13"
+    },
+    {
+      "id": "2a6def3d-e70e-4124-aea5-40ba85d6ba76",
+      "nombre": "Luz plafón",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "Sala",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "57726f0decec954c6ab3e1a2f4f1c70c"
+    },
+    {
+      "id": "71d4019e-9c71-47c4-b3c9-8bf06e17b5ea",
+      "nombre": "Luz entrada",
+      "tipo": "zigbee",
+      "marca": "Signify Netherlands B.V.",
+      "modelo": "LCT015",
+      "ubicacion": "ingreso",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "3a37105fead68a2041ac7aad8bb0191a"
+    },
+    {
+      "id": "07e0494e-cf62-4b4e-9de7-a069f0df617d",
+      "nombre": "luz parrillero",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "parrillero",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "368e4b661c9c6051838643dbf04872fa"
+    },
+    {
+      "id": "29f51965-2dea-4791-b0b3-c1c7d4c01be2",
+      "nombre": "Alacena",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Cocina",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b416d9dde61d640e865f34601f3cb627"
+    },
+    {
+      "id": "94fbe2d2-54f8-41fe-bdee-38dbececeda0",
+      "nombre": "Luz corredor",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "General",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "11ebf457c436bb0158a6dd547c7db615"
+    },
+    {
+      "id": "7e924d0c-e749-40c8-9988-9308b3dce1df",
+      "nombre": "Luz Galeria",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "7298b44a39ef0431dfa5440a546eacbf"
+    },
+    {
+      "id": "72784f0a-a30f-4104-8efb-740008ebff50",
+      "nombre": "luz piso",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Cochera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "83aeb9e7ce2dc7ad37a4445fa49c192b"
+    },
+    {
+      "id": "17224fa5-0d7b-44a2-89da-2efe14b38e84",
+      "nombre": "Luz techo sur",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "73e7d02cd2eca7a0c7eb5d8cdb2ab9de"
+    },
+    {
+      "id": "0071158a-84bd-4b6e-989c-b6c7d7c6fded",
+      "nombre": "Luz vestidor",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "vestidor",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a82a4d3fcbf5ed3e54250970f66accd1"
+    },
+    {
+      "id": "315089db-b3a0-4090-abad-66912015e08d",
+      "nombre": "Bocha",
+      "tipo": "zigbee",
+      "marca": "Philips",
+      "modelo": "LCT026",
+      "ubicacion": "Sala",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "ee9e7f3f6c954c91da3448d397cbe838"
+    },
+    {
+      "id": "45788c5b-a7f6-4127-b10d-901e2c7161ad",
+      "nombre": "reflector parrillero",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "534dbc000c05955e7c180c8f9ed763f5"
+    },
+    {
+      "id": "abbe3114-b9bc-42d1-b862-d97e073e7428",
+      "nombre": "baño entrada",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "baño visita",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b1af545fa9a100b03dd60cd38a23815e"
+    },
+    {
+      "id": "c335b30d-75c9-4e48-abf5-8affaba534fb",
+      "nombre": "Antebaño",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "27409d53ae5537ec4be867369f31b0c9"
+    },
+    {
+      "id": "3a36bc91-ad6c-4609-94d7-1372deccb55d",
+      "nombre": "Corredor lado espacio",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "Espacio de emi",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "7e89ed62259789ef1eef45fd9f67af4e"
+    },
+    {
+      "id": "0f9e1fb7-f6df-49fa-913f-599b9043c3dd",
+      "nombre": "Techo Suite",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "e260bf183984542c0f44850fe8641dff"
+    },
+    {
+      "id": "9b7e8e27-32f4-467d-943b-fa6a90b5a9b5",
+      "nombre": "Guirnalda",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c604ebebe42653af7789fc86090f4000"
+    },
+    {
+      "id": "4df57da9-6304-428a-b306-eb36858d6ce3",
+      "nombre": "Sirena Nautica",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "Security",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "01919fef49bca531bfe9dffda26a4547"
+    },
+    {
+      "id": "7edb7e61-e9bb-41a4-b3cb-395a3df95b75",
+      "nombre": "Plug Xiaomi blanco",
+      "tipo": "zigbee",
+      "marca": "LUMI",
+      "modelo": "lumi.plug.mmeu01",
+      "ubicacion": "Espacio de emi",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "978c779bb52e5a75b28af776a60a53b0"
+    },
+    {
+      "id": "c3b51e1b-9f78-4f5c-ba88-fbe031373c4c",
+      "nombre": "plug xiaomi amarillo",
+      "tipo": "zigbee",
+      "marca": "LUMI",
+      "modelo": "lumi.plug.mmeu01",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6b5cc546196e347ea816fbe221521a0e"
+    },
+    {
+      "id": "f9121ee3-0377-4a6d-9d5e-143c93b89ffa",
+      "nombre": "xiaomi plug 3",
+      "tipo": "zigbee",
+      "marca": "LUMI",
+      "modelo": "lumi.plug.mmeu01",
+      "ubicacion": "Cocina",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "8aa0d5cb08506c1fde3b52e4bc2bdd4f"
+    },
+    {
+      "id": "cb60830d-ceaf-4f81-82ea-99a79422ddb1",
+      "nombre": "baño pasillo",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Baño grande",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "55f607bd6f8bfb0d0391f45f8015953f"
+    },
+    {
+      "id": "16642e65-b753-4c12-a6d1-fc4a4f50bf79",
+      "nombre": "ducha suite",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4734cb73f844e19148ec053a52864976"
+    },
+    {
+      "id": "1d37f86b-b387-4adb-9b60-98c73407f5eb",
+      "nombre": "hall",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Frente",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "3b120f6c89a87c6c75c825cd754c0baa"
+    },
+    {
+      "id": "14dc6065-620f-4125-aa8e-6eebc564573a",
+      "nombre": "Exterior habitaciones",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "2dad537741e79987833580206eade737"
+    },
+    {
+      "id": "44acaa15-fd0c-4c7b-aec4-1a9590db9d07",
+      "nombre": "patio_chico",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4d23b5f91fe764e29122f00946e7d6fc"
+    },
+    {
+      "id": "2859a182-e8cf-41ba-858a-bff61213c164",
+      "nombre": "Entrada lateral",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "309775ac0f3ec11bca41a170e0fa47f4"
+    },
+    {
+      "id": "352e7763-93da-4f36-8c86-54633c39ff92",
+      "nombre": "Luz exterior Suite",
+      "tipo": "zigbee",
+      "marca": "_TZ3000_gjrubzje",
+      "modelo": "TS0001",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "505a2d04923fa0cdc183e80258d7c9b8"
+    },
+    {
+      "id": "3a076741-094f-49ab-be3c-1edc05dfeeb8",
+      "nombre": "Radar Baño pasillo",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-06P",
+      "ubicacion": "Baño grande",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "ac77c8c28c487024913e2ab7d07c5a39"
+    },
+    {
+      "id": "7d6cafa5-d245-4913-9077-e9107ad0ebed",
+      "nombre": "Radar baño suite",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-06P",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "f027b0b0b0f9846f72097cd30ba1cf7f"
+    },
+    {
+      "id": "a19d1ee7-ecb1-4877-962e-c7382ab4186b",
+      "nombre": "Radar baño visita",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-06P",
+      "ubicacion": "baño visita",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "16fde2177655ad42a4bba11f9cb9646f"
+    },
+    {
+      "id": "c44a4a95-a74a-4261-a1b8-7b7c4a0fadd9",
+      "nombre": "movimiento taller",
+      "tipo": "zigbee",
+      "marca": "ORVIBO",
+      "modelo": "895a2d80097f4ae2b2d40500d5e03dcc",
+      "ubicacion": "Taller",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b1b1d6b32db4f5e9622d99fe21ffdf63"
+    },
+    {
+      "id": "a9a49a1c-75a2-45f7-bee8-80166614e029",
+      "nombre": "Movimiento 100",
+      "tipo": "zigbee",
+      "marca": "TUYATEC-a8xmaxno",
+      "modelo": "RH3040",
+      "ubicacion": "ensayos",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6071c82fdbdd45f6edb405c348637853"
+    },
+    {
+      "id": "5bee033c-c53b-4d58-b6ac-7cb9d711d1ff",
+      "nombre": "movimiento parrillero",
+      "tipo": "zigbee",
+      "marca": "ORVIBO",
+      "modelo": "895a2d80097f4ae2b2d40500d5e03dcc",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c90e8f1672e89e11011f7d006b68ae0e"
+    },
+    {
+      "id": "c686169d-7893-4683-9988-b30d42574e47",
+      "nombre": "mov_tuya_soporte",
+      "tipo": "zigbee",
+      "marca": "TUYATEC-a8xmaxno",
+      "modelo": "RH3040",
+      "ubicacion": "Espacio de emi",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "ae99c149d6733c34572ad0e6109cc37e"
+    },
+    {
+      "id": "067ea444-1ec3-4729-9da6-e68863b3b834",
+      "nombre": "Movimiento cochera 1",
+      "tipo": "zigbee",
+      "marca": "ORVIBO",
+      "modelo": "895a2d80097f4ae2b2d40500d5e03dcc",
+      "ubicacion": "Cochera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "fa4c9c83da3734e9fbda12b7f9c0f72e"
+    },
+    {
+      "id": "83e4ff50-92be-43ed-ada8-6c08dc0f19b0",
+      "nombre": "temperatura suite",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-02D",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "notas": "",
+      "lastModified": 1788466356316,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6f7fe11266bcc6c4e2dc7629da78c523"
+    }
+  ],
+  "automatizaciones": [],
+  "tiposCustom": [],
+  "bateriasCustom": [],
+  "exportedAt": 1788466356316
+}

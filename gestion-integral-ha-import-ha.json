@@ -1,0 +1,2011 @@
+{
+  "items": [
+    {
+      "id": "a8734380-890f-4b29-9aa9-d79d4f385b80",
+      "nombre": "Turbo (enchufe lavadero)",
+      "tipo": "wifi",
+      "marca": "coolkit",
+      "modelo": "0186",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_10007bd474"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "7877a804c235fa84bc6abfc3e459b7be"
+    },
+    {
+      "id": "18c4d180-7ac8-4e6c-b0dd-0e7895c13b8e",
+      "nombre": "Lavanderia (luz)",
+      "tipo": "wifi",
+      "marca": "coolkit",
+      "modelo": "CK-BL602-4SW-AY(138)",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_1001e433b9_1"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "07e7d1759edcd9b6abd1cc01fc40484d"
+    },
+    {
+      "id": "edde30ec-2cdd-44c3-bb08-a1cb17ea7953",
+      "nombre": "Velador Sur (cama juli)",
+      "tipo": "wifi",
+      "marca": "coolkit",
+      "modelo": "0186",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [
+        "switch.sonoff_10007bd9ea"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4f91224b245403a2f6869b1634a9dda5"
+    },
+    {
+      "id": "1f626768-20d1-4668-a453-360542bc12dd",
+      "nombre": "Válvula",
+      "tipo": "wifi",
+      "marca": "XZ",
+      "modelo": "XZ-FK",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_1000be9912"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "635c2f7190d93e6f85b3b262159e15f1"
+    },
+    {
+      "id": "b0f50cf2-db7e-4723-bae4-dbf923629ef6",
+      "nombre": "Turbo",
+      "tipo": "wifi",
+      "marca": "coolkit",
+      "modelo": "0186",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_10007bd22a"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "bc444f57444b71ac17cdbb66cc107ca2"
+    },
+    {
+      "id": "a7b1b429-2530-4e3b-a20b-94decae00706",
+      "nombre": "Cama (calienta cama)",
+      "tipo": "wifi",
+      "marca": "coolkit",
+      "modelo": "0186",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [
+        "switch.sonoff_10007bd4e0"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b5e3d83ac6c62e8993fecc33e0779de3"
+    },
+    {
+      "id": "e37dc636-769c-4f08-98dd-21db61737d86",
+      "nombre": "S60TPF (enchufe medidor)",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "S60TPF",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_10023c650b"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0bafdd9f994179e4e3a35041109e65b0"
+    },
+    {
+      "id": "e97337db-8a07-4f82-9b37-f28d18d69de2",
+      "nombre": "Portón",
+      "tipo": "zigbee",
+      "marca": "coolkit",
+      "modelo": "ZIGBEE_DOOR_AND_WINDOW_SENSOR",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.sonoff_a44003bc3f"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "CR2032 (a confirmar)",
+      "notas": "Dato incierto: revisar tipo de batería en HA (via ZBBridge-P)",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "5073a166e1aa179902f724a39dcc679e"
+    },
+    {
+      "id": "b29a154e-5e2b-4bf9-8120-9493861d8f5e",
+      "nombre": "Puerta frente",
+      "tipo": "zigbee",
+      "marca": "coolkit",
+      "modelo": "ZIGBEE_DOOR_AND_WINDOW_SENSOR",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.sonoff_a44003bc41"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "CR2032 (a confirmar)",
+      "notas": "Dato incierto: revisar tipo de batería en HA (via ZBBridge-P)",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0ac9d6dae7c9af81970934eff9afe669"
+    },
+    {
+      "id": "b1920543-e21e-41b5-be3a-9e13af65400e",
+      "nombre": "Puerta cocina",
+      "tipo": "zigbee",
+      "marca": "coolkit",
+      "modelo": "ZIGBEE_DOOR_AND_WINDOW_SENSOR",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.sonoff_a44003bc40"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "CR2032 (a confirmar)",
+      "notas": "Dato incierto: revisar tipo de batería en HA (via ZBBridge-P)",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "30a9825c2e270abd5974c19941d253e6"
+    },
+    {
+      "id": "017c0635-86cb-48ea-b41b-ab1a9fed7638",
+      "nombre": "Radar baño (mmWave)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-06P",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.sonoff_a44003899e_occupancy"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "018884f6c57a74f6f5295c4597ab3cbf"
+    },
+    {
+      "id": "1049b264-d9ea-41d4-95e2-6c2289967503",
+      "nombre": "Portátil (lámpara)",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "B05-BL",
+      "ubicacion": "",
+      "entidades": [
+        "light.sonoff_1002174af8"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Lámpara portátil con batería recargable interna (no expuesta como entidad en HA)",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a4c7b3ccc35c9025a5abc1a175e25d63"
+    },
+    {
+      "id": "c36efc55-902c-4983-a58b-4248d53beb6f",
+      "nombre": "Pulsador",
+      "tipo": "zigbee",
+      "marca": "coolkit",
+      "modelo": "zigbee_ON_OFF_SWITCH_1000",
+      "ubicacion": "",
+      "entidades": [
+        "sensor.sonoff_a44003497a"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "CR2032 (a confirmar)",
+      "notas": "Dato incierto: revisar tipo de batería en HA (via ZBBridge-P)",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "d2c0b322104617f1f4c808f0821b7986"
+    },
+    {
+      "id": "e9ea41ae-ee98-46f2-b386-d2c96f6d1929",
+      "nombre": "Baño (relay)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIR2",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_a440038647"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "e4b56b421a40f2466ea6519e2e4c0642"
+    },
+    {
+      "id": "4faf739e-ec36-41ab-8ec2-4f65bf11c84e",
+      "nombre": "Mate (relay)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_a440034932"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0b32544c145856af66040eb2ed9dcddf"
+    },
+    {
+      "id": "985dab8e-bf40-452a-82b1-2dc5c3a989c2",
+      "nombre": "Cocina (relay)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_a440034934"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6f93c65999b5254320e843d20d3dfde1"
+    },
+    {
+      "id": "9c57784b-1c13-44bb-acab-b311a6405deb",
+      "nombre": "Espejo (relay)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_a440034931"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c2bd13e376244c00e4ee2d8d34c1b211"
+    },
+    {
+      "id": "0e1767f5-2dfe-4fc4-a5dc-e5a790daea56",
+      "nombre": "Living (relay)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_a440034891"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "3e87b4bfe69db5809b8771b7f4c32f59"
+    },
+    {
+      "id": "c89a8a06-597f-4e77-b031-14a98d8092a4",
+      "nombre": "Techo (relay)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "ZBMINIL2",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_a440034885"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "f4fa14e0efdedd085276a33c77dd2029"
+    },
+    {
+      "id": "fa538fdc-cfa5-474d-8862-efe9a66a799c",
+      "nombre": "ZBBridge-P (puente Zigbee-WiFi)",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "ZBBridge-P",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Puente/gateway Zigbee↔WiFi",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "1e54dfa09bd280010be1f14d49ab3e80"
+    },
+    {
+      "id": "091c4ab8-2b7c-49cf-932c-f2f4c476cce9",
+      "nombre": "Luz galpón",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "MINIR4",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_10022e971c_1"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "f46a6f0f83e4230fe737f95d1d891b0e"
+    },
+    {
+      "id": "2c45b36f-e8f1-4350-9a76-5d0f515e886d",
+      "nombre": "Luz fondo",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "MINIR4",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_10022e978e_1"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "625431e1f972173b4724b95dd53cfc7c"
+    },
+    {
+      "id": "4bc9bde5-d9e6-494b-accb-6c76de159a53",
+      "nombre": "Consumo riego (medidor)",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "POWR316D",
+      "ubicacion": "",
+      "entidades": [
+        "switch.sonoff_100201b3a6"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "414e8ef5b1453e3731d92e5b480e8140"
+    },
+    {
+      "id": "987d1532-1586-4940-83eb-982435a93b1a",
+      "nombre": "0643 (sensor puerta)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-04P",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.sonoff_a44003efb4"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "CR2477",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "1025453e23798eb4cd909e76117d41b0"
+    },
+    {
+      "id": "6b1bb03b-f354-4fdc-a04a-63a0f288e038",
+      "nombre": "1095 (sensor puerta)",
+      "tipo": "zigbee",
+      "marca": "SONOFF",
+      "modelo": "SNZB-04P",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.sonoff_a44003efb3"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "CR2477",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0e59b8b7a9510d47bae072144f413457"
+    },
+    {
+      "id": "62714b12-f5a8-4729-952b-d0f7ad7a0745",
+      "nombre": "ZBBridge-P #2 (puente Zigbee-WiFi)",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "ZBBridge-P",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Puente/gateway Zigbee↔WiFi",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "75bbe7ca6f8e07e1d6870bf9ebbda86f"
+    },
+    {
+      "id": "046690b9-0ce8-4f3d-b8a1-846aebcc520f",
+      "nombre": "Interruptor 02",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Wi-Fi Smart Switch",
+      "ubicacion": "",
+      "entidades": [
+        "switch.int_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "44174682b8ef6f7d581e1dfbf4d4225f"
+    },
+    {
+      "id": "b4246fcd-fe0c-4821-a7ad-4d9610ea74eb",
+      "nombre": "Regleta Espacio",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Wi-Fi Smart Switch",
+      "ubicacion": "",
+      "entidades": [
+        "switch.regleta_espacio"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0cdd6a9bedaa82d773050873706fbc42"
+    },
+    {
+      "id": "327564e6-42ae-48e7-b1cd-bdbd22fdae68",
+      "nombre": "Int 4",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Wi-Fi Smart Switch",
+      "ubicacion": "",
+      "entidades": [
+        "switch.int_4"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "095603b8c8026dee73d08644e1edb76f"
+    },
+    {
+      "id": "21379760-1de4-47d7-a77f-2236c4aab3aa",
+      "nombre": "Int 1",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Wi-Fi Smart Switch",
+      "ubicacion": "",
+      "entidades": [
+        "switch.int_1"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "8dc8387e58840b6dc17a612f5d5d2382"
+    },
+    {
+      "id": "1d1544f6-4f72-4c13-a650-822a3337a3f2",
+      "nombre": "Toma doble 2",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Modulo smart Akai Energy",
+      "ubicacion": "",
+      "entidades": [
+        "switch.toma_doble_izq",
+        "switch.toma_doble_derecha"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "cc24a6c4b545f6d7247899a0ad768aab"
+    },
+    {
+      "id": "0d0d31f9-aa01-46f8-99d9-d8921bb16742",
+      "nombre": "Socket doble",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Modulo smart Akai Energy",
+      "ubicacion": "",
+      "entidades": [
+        "switch.socket_doble_izquierda",
+        "switch.socket_doble_derecha"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "8a9b362ef9b30e7e2e0eb75f0fb54acf"
+    },
+    {
+      "id": "fa54cca0-6340-4342-864e-91f1fb47fef9",
+      "nombre": "TV Suite (enchufe)",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Enchufe wifi smart Akai Energy",
+      "ubicacion": "Suite",
+      "entidades": [
+        "switch.tv_suite"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "62bd3a7500b1deea121061fd2a2f880b"
+    },
+    {
+      "id": "e5763201-726e-4b8b-81ef-786f25c3c807",
+      "nombre": "Luces frente (Porche/Fachada)",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Tecla smart (2) Akai Energy Smart",
+      "ubicacion": "",
+      "entidades": [
+        "switch.tecla_smart_2_akai_energy_smart_interruptor_1",
+        "switch.tecla_smart_2_akai_energy_smart_interruptor_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "032d9e29e70c8eac89c5f6f0cf5685a3"
+    },
+    {
+      "id": "a0313043-be98-40f5-936b-9706da330736",
+      "nombre": "Labo (Luz Taller/Pasillo cocina)",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Tecla smart (2) Akai Energy Smart",
+      "ubicacion": "",
+      "entidades": [
+        "switch.luz_taller",
+        "switch.luz_pasillo_cocina"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "2f1046b87a8f7f9ef4e166c9a5c8985f"
+    },
+    {
+      "id": "e896eef2-32fa-47d5-be81-13f74164d0ee",
+      "nombre": "Enchufe wifi 100",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Enchufe wifi smart Akai Energy",
+      "ubicacion": "Espacio de emi",
+      "entidades": [
+        "switch.enchufe_wifi_100_enchufe_1"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "adacb4fa72cd6eea8d25ee0a22c6d86b"
+    },
+    {
+      "id": "fb11bdd4-ea67-4070-b745-8cdd0eaddeec",
+      "nombre": "Repelente (enchufe)",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Enchufe wifi smart Akai Energy",
+      "ubicacion": "",
+      "entidades": [
+        "switch.enchufe_repelente"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b3db15732fc93f5c2c9cacf221c02f05"
+    },
+    {
+      "id": "096f1fc9-a4cf-4110-a7eb-61fc147acee3",
+      "nombre": "Enchufe wifi 200 (Oma)",
+      "tipo": "wifi",
+      "marca": "Tuya",
+      "modelo": "Enchufe wifi smart Akai Energy",
+      "ubicacion": "",
+      "entidades": [
+        "switch.enchufe_wifi_200_enchufe_1"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "63912b8eefd8c42b2cf887e7d9aa0eb0"
+    },
+    {
+      "id": "d0ef6473-6bcc-4f90-9dad-7ab01bfef004",
+      "nombre": "guirnalda_atras",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "Lavadero",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a5ed032a8fdffcd94c36deef10e4f828"
+    },
+    {
+      "id": "026c292d-5fb7-494f-bb76-268a2090acce",
+      "nombre": "guirnalda_atras (2)",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "Lavadero",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "2211f38c02edf5fef2baf835d0025291"
+    },
+    {
+      "id": "26b36017-c429-4f15-80c1-032369950aff",
+      "nombre": "sala_entrada",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "15b789d47e36b7c3915e2ade9ed51cbb"
+    },
+    {
+      "id": "1fcac27f-4312-41bc-9d22-86d358789b13",
+      "nombre": "Lavarropas (medidor)",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "Lavadero",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c1173547967caf3daa302738bf8aebf6"
+    },
+    {
+      "id": "efd93864-8cf6-4977-92fc-8deb1d6f3c6f",
+      "nombre": "Zapatilla_amarilla",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "Taller",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "f336be4a98ec631fccb843f5a1e42769"
+    },
+    {
+      "id": "c246364d-66d5-49b6-a96e-576a1d923c6e",
+      "nombre": "piloto_termo",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b9ea7472a94522ebfa4176fd0c28a185"
+    },
+    {
+      "id": "51d0d36b-bf65-4cab-b5be-a0236089bb23",
+      "nombre": "Paloagua",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "449dc18316041496d6739a57edc7919c"
+    },
+    {
+      "id": "1ecd7969-46b2-46a1-8eb1-968606bd89c8",
+      "nombre": "dicroica emi",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "Espacio de emi",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "02202e5c93dbb3eca801c768662d684e"
+    },
+    {
+      "id": "80113acf-b3dc-4421-9653-a659a8f0a041",
+      "nombre": "Sirena",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "699b80725990332f276a2d0ef2cd98dc"
+    },
+    {
+      "id": "b3312cab-733b-4f35-adf8-1b306ab18c90",
+      "nombre": "Tasmota (Sonoff ZHABridge)",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "38a5ed53373479bfdf7b9c0e1d4fbb53"
+    },
+    {
+      "id": "54c9a9cb-f3b9-4acf-ac21-a1854a2ea7ee",
+      "nombre": "Riego (Sonoff 4CH Pro)",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "526cdf215e93a81f7222df5216b8b8e0"
+    },
+    {
+      "id": "078e086a-8175-402d-b0b5-dcf38dc04b60",
+      "nombre": "Medidor de agua",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "ff2494836aae6d902d3a12385f97cd14"
+    },
+    {
+      "id": "a8625744-882b-4b76-8a59-9e22ca8600de",
+      "nombre": "Basic",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4e2e0121a92f16854c001807971a04f5"
+    },
+    {
+      "id": "daeb2d85-882f-4360-b13f-759927b2f322",
+      "nombre": "Esp01",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "1d9c51a522d5456f9d6846c9ba25b480"
+    },
+    {
+      "id": "58d769a8-4663-4efe-8ee4-322b2ac5af72",
+      "nombre": "Tasmota-9",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b30a15fc5563bb08a8afe42ca18afc83"
+    },
+    {
+      "id": "a54d5a94-bf41-4424-b9f5-abe58dcfca0e",
+      "nombre": "Tasmota-7",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "2476b7b3d1595c7511ecbc3185d0fe4f"
+    },
+    {
+      "id": "79700b2d-6b79-41cb-862b-c07f1a42151c",
+      "nombre": "zapatilla_roja",
+      "tipo": "wifi",
+      "marca": "Tasmota",
+      "modelo": "Generic",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "83af4c507b4c1290c8c0ced5317d038a"
+    },
+    {
+      "id": "72a2eab2-a936-4cba-8070-f957f988b6c2",
+      "nombre": "Cámara 5",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0fba5d3e963e6c561a6e897571c0b560"
+    },
+    {
+      "id": "e3a99324-7619-455f-9ca7-2f16c307882b",
+      "nombre": "Cámara 5 (2)",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "Afuera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a615218290ffede7bb1a5761d395b6b8"
+    },
+    {
+      "id": "d748fd4d-323c-416e-86c7-d4c5dde85302",
+      "nombre": "socket esphome",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "cb2s",
+      "ubicacion": "General",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b4bf47d9542c7601d7513fb1745a8f18"
+    },
+    {
+      "id": "10f58a88-a927-48a0-b07a-c06dade0be99",
+      "nombre": "Anemometr0",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4bc50ac79aabfb25c2722420ab4276aa"
+    },
+    {
+      "id": "94db0846-37d9-4b44-ab65-65a95edb9d42",
+      "nombre": "cochera",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "Cochera",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "7c30ef797ea279daef52bc53c6a7fb19"
+    },
+    {
+      "id": "30fb239a-5368-4db8-9854-f0d822e7ce69",
+      "nombre": "rc522",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "Toda la casa",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "1c21defb8eee128bb13413109238ce49"
+    },
+    {
+      "id": "db07b8ec-63b1-4d16-ab6a-d3ae6b884f58",
+      "nombre": "el-82662",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp01_1m",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "5e12a2c0fcb8a7c0891d81bb23c6c547"
+    },
+    {
+      "id": "37632a85-ef6b-4bc5-9670-30f205be38be",
+      "nombre": "Campana",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "Cocina",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "49750e3aa78001333c5cb708a92048b5"
+    },
+    {
+      "id": "bf49e211-8f2d-44db-ab08-bc3998e9a4dc",
+      "nombre": "Extractor",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32dev",
+      "ubicacion": "Cocina",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6e4bdb501b132b00100c5059303e5015"
+    },
+    {
+      "id": "f882d145-c694-4c24-aaf5-c9c078aa5d45",
+      "nombre": "D1 de prueba",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp01_1m",
+      "ubicacion": "",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "662356540b8ab34b1be5f8cfbc06655a"
+    },
+    {
+      "id": "8df7cffb-80a6-4c32-9479-2fc5796ad010",
+      "nombre": "Camara-Taller",
+      "tipo": "wifi",
+      "marca": "Espressif",
+      "modelo": "esp32cam",
+      "ubicacion": "Taller",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "Entidades no completadas automáticamente — agregar a mano desde la ficha.",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "83ca659d6fea59d53bb005226e79ed4b"
+    },
+    {
+      "id": "7aad753c-5729-41ac-9145-22515ad15c1b",
+      "nombre": "Termostato Caldera",
+      "tipo": "wifi",
+      "marca": "Shelly",
+      "modelo": "Shelly 1",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "switch.termostato_caldera"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b305990d1ca23b077201d0cb5326e254"
+    },
+    {
+      "id": "cd0ed841-7525-4d81-9f2a-8d991ef45f97",
+      "nombre": "Smart Plug-in Unit (Matter)",
+      "tipo": "wifi",
+      "marca": "SONOFF",
+      "modelo": "Smart Plug-in Unit",
+      "ubicacion": "",
+      "entidades": [
+        "switch.smart_plug_in_unit"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6dba41c10744d38e337dfef571da2105"
+    },
+    {
+      "id": "ef9abb1d-992a-424d-aac3-b3d143e55c74",
+      "nombre": "Cámara Entrada",
+      "tipo": "wifi",
+      "marca": "TP-Link",
+      "modelo": "C200",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "camera.tapo_nueva_hd_stream"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "3f13a7e1afc72793d818739459ddf158"
+    },
+    {
+      "id": "11e0a854-54ee-4f3e-abcd-134e44c883fa",
+      "nombre": "Cámara Desayunador",
+      "tipo": "wifi",
+      "marca": "TP-Link",
+      "modelo": "C200",
+      "ubicacion": "Cocina",
+      "entidades": [
+        "camera.desayunador_hd_stream"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "dd9fc3d85b7e4ac83d77e70dd4e8423d"
+    },
+    {
+      "id": "88a43a14-5e13-4d0c-a817-5ed035f26303",
+      "nombre": "Cámara Aérea patio",
+      "tipo": "wifi",
+      "marca": "TP-Link",
+      "modelo": "C510W",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "camera.aerea_patio_hd_stream"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "e9b38c8dcbec3dfe073dabaf440e8fba"
+    },
+    {
+      "id": "2331f387-bb36-4324-924b-86a477f7f2ba",
+      "nombre": "Cerradura Acceso frente",
+      "tipo": "Cerradura BLE",
+      "marca": "TT Lock",
+      "modelo": "SN9246_PV53",
+      "ubicacion": "",
+      "entidades": [
+        "lock.acceso_frente",
+        "sensor.acceso_frente_battery"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "4x AA (según especificación TTLock)",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "5d88c54155502541040e37c314aa56e6"
+    },
+    {
+      "id": "dd9c25a8-49eb-417a-b606-60aed13a08fd",
+      "nombre": "Gateway Retamas",
+      "tipo": "wifi",
+      "marca": "TT Lock",
+      "modelo": "Gateway",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.retamas_status"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "76a2aed71f125b928641cea7aae28f64"
+    },
+    {
+      "id": "b550e119-ce54-4c6e-9eaf-42f9a3f6d095",
+      "nombre": "EZVIZ Alarm (panel)",
+      "tipo": "wifi",
+      "marca": "EZVIZ",
+      "modelo": "EZVIZ Alarm",
+      "ubicacion": "",
+      "entidades": [
+        "alarm_control_panel.ezviz_alarm"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "69c33d3c88d248d42410c60c94800743"
+    },
+    {
+      "id": "9562a34d-d5a6-41d7-9436-9c3206ff4fbd",
+      "nombre": "Cámara trasera",
+      "tipo": "wifi",
+      "marca": "EZVIZ",
+      "modelo": "C3TN",
+      "ubicacion": "parrillero",
+      "entidades": [
+        "camera.parrillero_camara_trasera"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c1b80346a45b893f51981b3e15311dda"
+    },
+    {
+      "id": "82f7da34-2bc8-4dd0-a86c-76c6cca1f579",
+      "nombre": "Cámara móvil",
+      "tipo": "wifi",
+      "marca": "EZVIZ",
+      "modelo": "C8C",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "camera.camara_movil"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "na",
+      "notas": "",
+      "lastModified": 1788462679514,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "22ae307d5b0dd4b77d1eb9eb62126b9f"
+    }
+  ],
+  "automatizaciones": [],
+  "tiposCustom": [
+    "Cerradura BLE"
+  ],
+  "bateriasCustom": [
+    "CR2032 (a confirmar)",
+    "CR2477",
+    "4x AA (según especificación TTLock)"
+  ],
+  "exportedAt": 1788462679515
+}

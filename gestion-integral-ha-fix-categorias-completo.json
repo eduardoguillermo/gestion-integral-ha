@@ -1,0 +1,818 @@
+{
+  "items": [],
+  "automatizaciones": [
+    {
+      "id": "baf460e7-23b0-447d-9c8e-897d6d75bf14",
+      "categoria": "adaptativo",
+      "nombre": "Respuesta y Control Fijo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.02_riego_respuesta_y_control_fijo_2"
+    },
+    {
+      "id": "72f76cbb-d96b-48f5-bfc0-6edcd8751c87",
+      "categoria": "Confort",
+      "nombre": "A dormir automatice ramdom",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.a_dormir_automatice_ramdom"
+    },
+    {
+      "id": "117c7fcd-9fa9-4d27-900d-0e8fbb0e74b7",
+      "categoria": "Confort",
+      "nombre": "Abrir cortina al sonar la alarma (Echo Show)",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.abrir_cortina_al_sonar_la_alarma_echo_show"
+    },
+    {
+      "id": "22575b26-7c78-402a-9603-23071a7f5aae",
+      "categoria": "Security",
+      "nombre": "Abrir entrada principal",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.abrir_entrada_principal"
+    },
+    {
+      "id": "25ee292e-926e-470f-8c27-30c0660da5e6",
+      "categoria": "Climatización",
+      "nombre": "Acción: Encender Calefacción desde Móvil",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.accion_encender_calefaccion_desde_movil"
+    },
+    {
+      "id": "f7d4e039-d918-423a-b039-bc3b41befe85",
+      "categoria": "Confort",
+      "nombre": "Activa a dormir",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.activa_a_dormir"
+    },
+    {
+      "id": "36f0abcb-120e-4ae1-9d8e-424efdefc316",
+      "categoria": "Iluminación",
+      "nombre": "Alterna luz mesa izquierda",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.alterna_luz_mesa_izquierda"
+    },
+    {
+      "id": "21558c4e-a137-4032-8de2-e0576739dc50",
+      "categoria": "Iluminación",
+      "nombre": "Alterna luz  mesa derecha",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.alterna_luz_mesa_trabajo"
+    },
+    {
+      "id": "7fdeede3-409a-472f-b3be-6eff6e02f8e4",
+      "categoria": "Safety",
+      "nombre": "Anuncio - Tablet Eco Batería completa",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.anuncio_bat_tablet_eco"
+    },
+    {
+      "id": "9ab2946f-a832-47f3-b5e6-61e86734682d",
+      "categoria": "Pruebas",
+      "nombre": "anuncios varios",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.anuncios_varios"
+    },
+    {
+      "id": "45bf2ecc-e95f-4561-b123-f0bd27c53e91",
+      "categoria": "Climatización",
+      "nombre": "Apaga Aire suite por ausencia Espresence",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.apaga_aire_suite_por_ausencia"
+    },
+    {
+      "id": "fc360318-11e3-4432-a343-944615343d62",
+      "categoria": "adaptativo",
+      "nombre": "Apagado total riego",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.apagado_total_riego"
+    },
+    {
+      "id": "7b8b617d-baad-4c59-8138-1f3e9fcc750a",
+      "categoria": "adaptativo",
+      "nombre": "Riego manual Norte",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.automation_84"
+    },
+    {
+      "id": "25bea9d4-a764-4751-b72c-c7c13e081abc",
+      "categoria": "Confort",
+      "nombre": "Aviso auto llegó",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.aviso_auto_llego"
+    },
+    {
+      "id": "3bf8e8a1-8468-4505-a074-24b613058449",
+      "categoria": "adaptativo",
+      "nombre": "Aviso de mal funcionamiento",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.aviso_de_mal_funcionamiento"
+    },
+    {
+      "id": "72d13eea-c19a-4262-ab20-d8f6e5773737",
+      "categoria": "Iluminación",
+      "nombre": "Enciende luz Sala por luminosidad cuando baja del 48%",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.aviso_luz_sala_46"
+    },
+    {
+      "id": "0ae157dc-911f-4af9-9e6e-a4b8985fba26",
+      "categoria": "Confort",
+      "nombre": "bajar black",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.bajar_black_2"
+    },
+    {
+      "id": "80b0e3ab-4e9b-4983-ad65-e44c707fc559",
+      "categoria": "Confort",
+      "nombre": "Conteo por radar (Alarma activada)",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.bano_conteo_por_radar_alarma_armada"
+    },
+    {
+      "id": "69fa7310-b3e0-4adf-8445-6c63e08a12a1",
+      "categoria": "Confort",
+      "nombre": "Guardar y Resetear al Desarmar",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.bano_guardar_y_resetear_al_desarmar"
+    },
+    {
+      "id": "8a90f448-a7fd-42d4-837d-c89d65a55829",
+      "categoria": "Security",
+      "nombre": "bypass puerta jardin",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.bypass_puerta_jardin"
+    },
+    {
+      "id": "86af212d-4c89-47e4-b908-286238d13e70",
+      "categoria": "Climatización",
+      "nombre": "Calefacción: Aviso al despertar (Presencia y Visitas)",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.calefaccion_aviso_al_despertar_presencia_y_visitas"
+    },
+    {
+      "id": "5a128700-0e7e-4dae-880a-4a1b9e02cd66",
+      "categoria": "Electrodomésticos",
+      "nombre": "4 Ciclo completo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_4_ciclo_completo"
+    },
+    {
+      "id": "f0b2029b-3d48-49ab-a184-7d503fa188dc",
+      "categoria": "Electrodomésticos",
+      "nombre": "5 Apaga",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_5_apaga"
+    },
+    {
+      "id": "b993ec50-6faa-449c-ba9c-7b0d5bc0eaec",
+      "categoria": "Electrodomésticos",
+      "nombre": "6 Aviso centrifugar",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_6_aviso_centrifugar"
+    },
+    {
+      "id": "9062307b-fa8c-4a3c-b99a-b12b92b2f6a9",
+      "categoria": "Electrodomésticos",
+      "nombre": "7 aviso ciclo completo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_7_aviso_ciclo_completo"
+    },
+    {
+      "id": "e7c53e66-776f-4fbf-8745-2f394b194be8",
+      "categoria": "Electrodomésticos",
+      "nombre": "8 llega a casa",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_8_llega_a_casa"
+    },
+    {
+      "id": "02173a18-2aad-49b5-8422-3e95f5bc12a2",
+      "categoria": "Electrodomésticos",
+      "nombre": "3 centrifugando",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_centrifugando"
+    },
+    {
+      "id": "88bfc2ed-ca09-40d9-87df-850103ea9347",
+      "categoria": "Electrodomésticos",
+      "nombre": "1 Inicio programa",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_inicio_programa"
+    },
+    {
+      "id": "0e845885-1bab-40ae-967d-ba5c1fb5a55a",
+      "categoria": "Electrodomésticos",
+      "nombre": "2 Lavado finalizado",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.candy_lavado_finalizado"
+    },
+    {
+      "id": "e514feed-55f7-46df-a695-2f31d737c310",
+      "categoria": "Climatización",
+      "nombre": "Ciclo Único de Caldera",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.ciclo_unico_de_caldera"
+    },
+    {
+      "id": "69a9cea6-5288-44b7-a1c2-e5861ad84ea0",
+      "categoria": "Safety",
+      "nombre": "apaga aire por bt",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.climatizacion_apaga_aire_por_bt"
+    },
+    {
+      "id": "ac9ae8aa-3c84-4a14-884c-27c2ee3a14bf",
+      "categoria": "Iluminación",
+      "nombre": "Luz galería de noche",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.confort_luz_galeria_de_noche"
+    },
+    {
+      "id": "2ab1b57f-18c9-4d09-b785-e4bf6e159b4d",
+      "categoria": "Confort",
+      "nombre": "Contar Movimiento Baño Suite",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.contar_movimiento_bano_suite"
+    },
+    {
+      "id": "0a0eb36e-fa35-4ea1-bb73-4389ca53e85a",
+      "categoria": "Security",
+      "nombre": "Detección de personas en patio",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.deteccion_de_personas_en_patio"
+    },
+    {
+      "id": "cbf20d58-e89b-4f7d-a750-2f815782d404",
+      "categoria": "",
+      "nombre": "Encendidos",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.encendidos_candy"
+    },
+    {
+      "id": "5dee52dd-9309-4daa-ad0c-ecc2b8ba8167",
+      "categoria": "Iluminación",
+      "nombre": "Enciende espacio de emi",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.enciende_espacio_de_emi"
+    },
+    {
+      "id": "96747a8e-1dab-4fef-a5a7-b20685a71be2",
+      "categoria": "adaptativo",
+      "nombre": "Palo - riego aut",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.ensayo_de_riego_automatico"
+    },
+    {
+      "id": "c74bece6-8f4d-438b-82f0-6fa983fb9675",
+      "categoria": "adaptativo",
+      "nombre": "Falla sensores",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.falla_sensores"
+    },
+    {
+      "id": "96d9ec33-000a-4f8e-8d80-07200606d327",
+      "categoria": "Electrodomésticos",
+      "nombre": "Freezer abierto",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.freezer_abierto"
+    },
+    {
+      "id": "b8c5a54f-852f-4e14-9d21-f0b03482eca9",
+      "categoria": "Confort",
+      "nombre": "Gestión repelente mosquitos",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.gestion_repelente_mosquitos"
+    },
+    {
+      "id": "25113742-127b-4b55-8c8c-905c15568ba9",
+      "categoria": "adaptativo",
+      "nombre": "Actualizar historial de temperatura",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.helada_actualizar_historial_de_temperatura"
+    },
+    {
+      "id": "07bb5395-6b54-4f06-94a4-6f48dcdb1a8f",
+      "categoria": "adaptativo",
+      "nombre": "Predicción y Aviso",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.helada_prediccion_y_aviso"
+    },
+    {
+      "id": "95d8effa-6f72-462e-8e0f-0573094cdbd1",
+      "categoria": "adaptativo",
+      "nombre": "Registro Horario",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.helada_registro_horario"
+    },
+    {
+      "id": "7a3d4aca-bca9-4494-89f6-9e5fcd07088d",
+      "categoria": "adaptativo",
+      "nombre": "Riego por temperatura actual",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.helada_riego_por_temperatura_actual"
+    },
+    {
+      "id": "0165de62-b50d-4b5f-bc62-432bf04e5ad5",
+      "categoria": "Safety",
+      "nombre": "Inundación en lavadero",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.inundacion_en_lavadero"
+    },
+    {
+      "id": "2901a776-8add-478d-8afb-0166edca5aa0",
+      "categoria": "Iluminación",
+      "nombre": "Luz baño pasillo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.luz_bano_pasillo"
+    },
+    {
+      "id": "885ae600-0ae4-4e49-a6b8-416b78837d4c",
+      "categoria": "Iluminación",
+      "nombre": "Luz baño suite con radar",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.luz_bano_suite_con_radar"
+    },
+    {
+      "id": "bc6a13a9-e896-4a73-a5ee-c96accab1b31",
+      "categoria": "Iluminación",
+      "nombre": "Luz baño visita",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.luz_bano_visita"
+    },
+    {
+      "id": "0822e732-8299-4387-b2d3-257e144433eb",
+      "categoria": "",
+      "nombre": "Batería baja, crear tarea",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_bateria_baja_crear_tarea_2"
+    },
+    {
+      "id": "4083b739-db4a-4fb4-b979-c361adf084b2",
+      "categoria": "",
+      "nombre": "Batería recuperada, descartar notificación",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_bateria_recuperada_descartar_notificacion_2"
+    },
+    {
+      "id": "303f0266-c791-4c0a-8d51-bc1e1790143c",
+      "categoria": "",
+      "nombre": "Batería reemplazada, completar tarea",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_bateria_reemplazada_completar_tarea_2"
+    },
+    {
+      "id": "8caee834-8a11-4172-ad74-000f35aab0ea",
+      "categoria": "",
+      "nombre": "Chequeo diario baterías",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_chequeo_diario_baterias_2"
+    },
+    {
+      "id": "68598865-097d-41bc-a3be-8a6ccd68f533",
+      "categoria": "",
+      "nombre": "Chequeo mensual sin reportar",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_chequeo_mensual_sin_reportar_2"
+    },
+    {
+      "id": "b8996a99-08e3-4a7c-8463-260c68b363a0",
+      "categoria": "",
+      "nombre": "Limpiar tareas completadas",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_limpiar_tareas_completadas_2"
+    },
+    {
+      "id": "3f02c5f2-256a-43fc-a4db-c63a53627d85",
+      "categoria": "",
+      "nombre": "Registrar reemplazo automático",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_registrar_reemplazo_automatico_2"
+    },
+    {
+      "id": "4b6efaa3-e5c5-4984-9389-8425134de493",
+      "categoria": "Security",
+      "nombre": "Alerta de Energía UPS Forza",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_alerta_de_energia_ups_forza"
+    },
+    {
+      "id": "3f829170-67ef-4eed-8ede-6e3c04016dda",
+      "categoria": "Security",
+      "nombre": "Notificación de batería baja - TTL",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_de_bateria_baja_ttl"
+    },
+    {
+      "id": "b31bfe84-ace3-4d3a-9d56-8273a9b7aa3c",
+      "categoria": "Confort",
+      "nombre": "Repuesto de Repelente Bajo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_repuesto_de_repelente_bajo"
+    },
+    {
+      "id": "5a10d799-65b4-4c45-ae4f-7751b9a243fd",
+      "categoria": "Security",
+      "nombre": "UPS Batería Crítica",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_ups_bateria_critica"
+    },
+    {
+      "id": "6e1bd5ff-0dcb-40eb-a2bb-660153dba935",
+      "categoria": "Confort",
+      "nombre": "parar black",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.parar_black"
+    },
+    {
+      "id": "1271619c-0750-484d-a966-6f4402d69000",
+      "categoria": "Confort",
+      "nombre": "parar black",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.parar_black_2"
+    },
+    {
+      "id": "73d3f3d5-60f4-49c0-abb8-5bc90f1ba47c",
+      "categoria": "Confort",
+      "nombre": "silla - pausa de trabajo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.pausa_de_trabajo"
+    },
+    {
+      "id": "fefc8185-e639-4c90-993f-f75925250f0b",
+      "categoria": "Geolocalización",
+      "nombre": "Proximidad a casa",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.proximidad_a_casa"
+    },
+    {
+      "id": "52448848-551f-4ed8-b1a1-90b71d7188b3",
+      "categoria": "Geolocalización",
+      "nombre": "pruebas",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.proximidad_pruebas"
+    },
+    {
+      "id": "22c8edff-024c-49c9-9ff0-964488b39b03",
+      "categoria": "Pruebas",
+      "nombre": "prueba para borrar",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.prueba_para_borrar"
+    },
+    {
+      "id": "a427ee85-06c2-4380-99b5-ab3b0801cd7c",
+      "categoria": "Electrodomésticos",
+      "nombre": "Puerta heladera",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.prueba_puerto_heladera"
+    },
+    {
+      "id": "1da59ad9-547b-446f-be85-c0dc064ecdca",
+      "categoria": "Security",
+      "nombre": "pupi",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.pupi"
+    },
+    {
+      "id": "6286e168-628d-4e51-897a-7bce466e1be0",
+      "categoria": "Safety",
+      "nombre": "Regleta mesa alterna",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.regleta_mesa_alterna"
+    },
+    {
+      "id": "9ae35b54-c792-4da9-a41c-064c7030440c",
+      "categoria": "Confort",
+      "nombre": "Reset y Registro al Desarmar suite",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.reset_y_registro_al_desarmar_suite"
+    },
+    {
+      "id": "4f17ca56-4422-4076-97b6-371d7f8667bf",
+      "categoria": "Security",
+      "nombre": "Acceso Autorizado",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.rfid_acceso_autorizado"
+    },
+    {
+      "id": "9a131a8f-327e-48b0-a6b2-80b07d747833",
+      "categoria": "Security",
+      "nombre": "Acceso Denegado",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.rfid_acceso_denegado"
+    },
+    {
+      "id": "fadba487-3381-4fd6-87bd-bf82d5a91fa8",
+      "categoria": "Security",
+      "nombre": "Reset contadores diarios",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.rfid_reset_contadores_diarios"
+    },
+    {
+      "id": "a2d9cc71-6020-4e70-9bd5-861b805e603d",
+      "categoria": "adaptativo",
+      "nombre": "Riego adaptativo interior (palo agua)",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_adaptativo_interior_palo_agua"
+    },
+    {
+      "id": "95576d37-4a0a-4ff1-af85-748c0cd99c26",
+      "categoria": "adaptativo",
+      "nombre": "Alerta suelo seco",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_alerta_suelo_seco"
+    },
+    {
+      "id": "e1adb077-4dc5-40c4-8c6e-56dbb6eddcb1",
+      "categoria": "adaptativo",
+      "nombre": "Riego manual sur",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_manual_sur"
+    },
+    {
+      "id": "3be38e90-250b-4b89-9ef2-1de1e62be496",
+      "categoria": "adaptativo",
+      "nombre": "Notificar Suelo Seco",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_notificar_necesidad"
+    },
+    {
+      "id": "fef323d9-a097-4ee5-9439-735a822b9e25",
+      "categoria": "adaptativo",
+      "nombre": "Riego palo de agua - aviso humedad baja",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_palo_de_agua_aviso_humedad_baja"
+    },
+    {
+      "id": "a327f006-fff7-421a-a6b7-143e17965255",
+      "categoria": "",
+      "nombre": "Respuesta desde Móvil",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_respuesta_desde_movil"
+    },
+    {
+      "id": "515c45c3-fc2f-4221-8ea4-02a81da09277",
+      "categoria": "adaptativo",
+      "nombre": "Sistema Adaptativo Profesional v 3.1",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.riego_sistema_adaptativo_profesional_v_3_1"
+    },
+    {
+      "id": "9e4f46ff-c754-4f71-ad93-457d045021f4",
+      "categoria": "Pruebas",
+      "nombre": "Secutity Cerco perimetral",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.secutity"
+    },
+    {
+      "id": "d8a92f9b-1099-46e1-acee-a3483d3ea517",
+      "categoria": "adaptativo",
+      "nombre": "Sensores de Riego Fuera del Suelo",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.seguridad_sensores_de_riego_fuera_del_suelo"
+    },
+    {
+      "id": "e90efca3-89d0-47b8-bb41-e31e2e41ed6e",
+      "categoria": "Confort",
+      "nombre": "Silla taller - descanso",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.silla_taller"
+    },
+    {
+      "id": "c112d099-7a54-4834-acba-a77bcbc93008",
+      "categoria": "Mantenimiento",
+      "nombre": "Recargar integración si hay dispositivo no disponible",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.sonoff_recargar_integracion_si_hay_dispositivo_no_disponible"
+    },
+    {
+      "id": "df15f481-8f5c-4c5c-ad2d-11b07d55c585",
+      "categoria": "",
+      "nombre": "Aviso obstrucción o pérdida de paquetes",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.starlink_aviso_obstruccion_o_perdida_de_paquetes"
+    },
+    {
+      "id": "94997978-1b8d-49dc-afcf-9b4221bacdff",
+      "categoria": "Confort",
+      "nombre": "black medio",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.subir_black"
+    },
+    {
+      "id": "ac3e17ed-c869-406b-84a5-cf206c2e1c41",
+      "categoria": "Confort",
+      "nombre": "Subir black",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.subir_black_2"
+    },
+    {
+      "id": "7961cbed-6710-4633-bbe2-0e1c07f8e018",
+      "categoria": "Confort",
+      "nombre": "Temporiza calienta cama suite 45 minutos",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.temporiza_calienta_cama_suite_45_minutos"
+    },
+    {
+      "id": "9b53ce44-7caf-4fed-a466-abdd0b0e70c3",
+      "categoria": "Security",
+      "nombre": "test cerradura",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.test_cerradura"
+    },
+    {
+      "id": "0418aca5-c9c7-4a12-a42f-78a0109814c6",
+      "categoria": "Mantenimiento",
+      "nombre": "Recargar integración si hay dispositivo no disponible",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.tuya_recargar_integracion_si_hay_dispositivo_no_disponible"
+    },
+    {
+      "id": "7b5c3d0d-09dc-421e-aa91-7b20098b07e2",
+      "categoria": "Iluminación",
+      "nombre": "Velador Oma - alterna",
+      "descripcion": "",
+      "lastModified": 1788463641318,
+      "deleted": false,
+      "haEntityId": "automation.velador_oma_alterna"
+    }
+  ],
+  "tiposCustom": [],
+  "bateriasCustom": [],
+  "exportedAt": 1788463641318
+}

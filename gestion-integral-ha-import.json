@@ -1,0 +1,3725 @@
+{
+  "items": [
+    {
+      "id": "4a5d3cb3-77ac-4190-80dd-5ad7897218a5",
+      "nombre": "puerta lavandería",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166287,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "d5b63ed14ee72c55f6c031fa6fa78fa0"
+    },
+    {
+      "id": "c48f6b82-4d29-43cb-8826-18c55d9e72bb",
+      "nombre": "puerta izquierda",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Safety",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_3"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "ad87304987aea840777590a6467c96fa"
+    },
+    {
+      "id": "7adb64bb-8f8c-4091-bf74-2524cf818f13",
+      "nombre": "puerta derecha",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Safety",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_4"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "507029ca96719e6e4b355012a74726f5"
+    },
+    {
+      "id": "0f36a12c-3b70-44c5-85d0-ef1d043c7c85",
+      "nombre": "flap norte",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_5"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "fca01e1adf62e928982f1d1d2f22cecb"
+    },
+    {
+      "id": "16c4667c-3682-4e6b-9eff-4dc2aa34ed3d",
+      "nombre": "flap sur",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_6"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "cc4c136224602918296e29932ff67195"
+    },
+    {
+      "id": "c15b749b-088b-4fd1-882a-90e1563298fc",
+      "nombre": "ventana cocina",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Cocina",
+      "entidades": [
+        "binary_sensor.ventana_cocina"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "26192a1349d9a6c4742ba72b1cfb88dd"
+    },
+    {
+      "id": "f550398e-3bdd-42ac-8bad-87bef3c03021",
+      "nombre": "puerta ventana sur",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_9"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "ff76baceabc5d4a720abd3a14a685330"
+    },
+    {
+      "id": "2d3ebf46-ed72-4bdb-9ca5-0a790a315375",
+      "nombre": "bicis",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_10"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "3dbeb41cda58839976f68f2a21ce7ac5"
+    },
+    {
+      "id": "2e617080-fc42-4b93-a4be-9378d0af0530",
+      "nombre": "depósito",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_11"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c55341e9b5296c7f2d8d5463dd9b01a8"
+    },
+    {
+      "id": "32aa8918-ba43-47f4-a4a3-1a26f4416f82",
+      "nombre": "puerta ventana norte",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_14"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-04-13",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "8494a254d756fe75a452819dedcebbd2"
+    },
+    {
+      "id": "99928aad-0ff2-4a71-abac-5c40a6acaad0",
+      "nombre": "puerta entrada",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "ingreso",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_15"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "18474f3e4c9945b7b0f32547067d1e94"
+    },
+    {
+      "id": "36b85ecf-842c-4ebd-96a8-86cfb80eda18",
+      "nombre": "banderola baño pasillo",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Baño grande",
+      "entidades": [
+        "binary_sensor.banderola_bano_pasillo_opening_6"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-09-02",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "c47935456c0b2f125ee4955f1686a35d"
+    },
+    {
+      "id": "04345ced-d4bc-480c-9f70-09e687e3874b",
+      "nombre": "ventana taller",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Taller",
+      "entidades": [
+        "binary_sensor.ventana_taller_opening_9"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b4eb4964c4e15d348f1d990ce6ac26af"
+    },
+    {
+      "id": "43371a49-ea62-48f0-829d-d25574532b03",
+      "nombre": "movimiento lavanderia",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "66666",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.reserva"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-06-11",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "31a754308d971f2b83c04f6778791bc6"
+    },
+    {
+      "id": "a8b622c8-e6b8-4b6d-afbd-c73a8f5d50bf",
+      "nombre": "flap sala",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Sala",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_17"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "62fb294a222eca3620986c4ca2cc34ec"
+    },
+    {
+      "id": "400297bc-65c0-4b55-a3a6-8ecb239a6bb5",
+      "nombre": "flap suite",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_18"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "9fad315e4356d38e2ad94a26b4994b73"
+    },
+    {
+      "id": "68d3c20b-5051-4986-9e70-f3f9745941e1",
+      "nombre": "puerta ventana suite",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_19"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4d17e5f274ac0f7b6cf2c3cc2664eddc"
+    },
+    {
+      "id": "b2ce8166-2c09-4d26-bdee-9a2b115c4c07",
+      "nombre": "botón xiaomi",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_switch",
+      "ubicacion": "Suite",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "aa6691bed6b2e41a7a01dd18228c0a16"
+    },
+    {
+      "id": "df3bd94d-6976-4aa0-8775-c07e020f0aa8",
+      "nombre": "clima externo",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "TH01",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "sensor.clima_externo_temperature_2",
+        "sensor.clima_externo_humidity_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "9745d3aafbe6670165e733d845fd378d"
+    },
+    {
+      "id": "79e14950-7788-4a84-b810-a2bb293214db",
+      "nombre": "movimento antebaño",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_motion",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_motion_occupancy_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0b057db30dfee36a9f1aaab9aaf2d8ab"
+    },
+    {
+      "id": "df2d4646-ab9e-4f0b-907c-37cfa24f942c",
+      "nombre": "movimiento pasillo 2",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_motion",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_motion_occupancy_3"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "5006d5905891b12ac61e2c9dcc4870f8"
+    },
+    {
+      "id": "e8896534-de09-404f-bcf8-6328b2688fea",
+      "nombre": "puerta heladera",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Cocina",
+      "entidades": [
+        "binary_sensor.puerta_heladera_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-08-30",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "7e57b51374bf6854dcb5a3e7e83e6d0e"
+    },
+    {
+      "id": "9259740a-7064-486d-8961-0f0397880cca",
+      "nombre": "Frezzer",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Cocina",
+      "entidades": [
+        "binary_sensor.freezer"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "cd898cf5cbe666a8880d969daee42b01"
+    },
+    {
+      "id": "f30ab129-b044-4d4f-b25f-728ef889cdb8",
+      "nombre": "ventana iz tele",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Sala",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_12"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "25b14d13acdf260037f1c76ee1833267"
+    },
+    {
+      "id": "c89e03ae-563e-4c78-81ad-17a72b96c11e",
+      "nombre": "Banderola vestidor",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "vestidor",
+      "entidades": [
+        "binary_sensor.banderola_vestidor_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-08-31",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "bf1ada1f891080fe2ae49c0652dd238a"
+    },
+    {
+      "id": "d1f6e032-9ffe-4f11-a519-a8a62a21063b",
+      "nombre": "Ban suite (I)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.banderola_iz_suite_opening"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "70caf800ed0c1ea883b16e0fecd3ef26"
+    },
+    {
+      "id": "482e5cb4-70a1-47e3-abab-44ab75d37b60",
+      "nombre": "puerta interior lavanderia",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.puerta_interior_lavanderia_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "6c54874a0ad624bd29a43dd6af0dd129"
+    },
+    {
+      "id": "58c4c3a1-7d1a-4d73-a593-781c9e03e368",
+      "nombre": "Ventana espacio",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Espacio de emi",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_magnet_opening_7"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "34b6055c3c177badb2f21dd4f800b3ba"
+    },
+    {
+      "id": "774e7da5-4dbb-4363-a154-38ce8c8407ae",
+      "nombre": "tapa candy",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.tapa_candy_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "92e01fa988727c8790f0067359312687"
+    },
+    {
+      "id": "e54fd7a5-10dd-4326-a911-368183dabc8a",
+      "nombre": "Puerta granero",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Espacio de emi",
+      "entidades": [
+        "binary_sensor.puerta_granero_opening_3"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-07-12",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "5058a4ce7f93ba2afee2543f0518a52c"
+    },
+    {
+      "id": "8654e078-199b-481e-90d4-7efbf7db3fe5",
+      "nombre": "Philips RWL021 (control remoto)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Philips",
+      "modelo": "RWL021",
+      "ubicacion": "hardware",
+      "entidades": [
+        "binary_sensor.philips_rwl021_binary_input"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-07-05",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "51ae7170e078d25838aeed19eea75c9c"
+    },
+    {
+      "id": "5e85f6ce-1833-4b6f-a912-eedf21fc571c",
+      "nombre": "Botón Sur",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_switch",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "cd59a747f83750b5452f2d9d8f7f6ef9"
+    },
+    {
+      "id": "a9cd2f4f-8153-46e6-9ce5-8f2eee6a2774",
+      "nombre": "Silla trabajo",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Espacio de emi",
+      "entidades": [
+        "binary_sensor.sensor_inundacion_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "af2bb44bc8d52ab5faa5d740601a29d3"
+    },
+    {
+      "id": "af4ce6b2-9190-4f97-a37f-35dd5973d6bb",
+      "nombre": "Banderola b suite",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.banderola_b_suite_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "a176f0043c4e9a3565fc74e3a3a12eb2"
+    },
+    {
+      "id": "4f06434b-b653-457b-a1f9-8c6597ecd079",
+      "nombre": "Cajón escritorio",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "DS01",
+      "ubicacion": "Espacio de emi",
+      "entidades": [
+        "binary_sensor.cajon_escritorio_opening"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "afccc1a9b7538788087ace4fc5f526fd"
+    },
+    {
+      "id": "7fb961c9-ac9b-4ad2-b4f9-f01a90eddc85",
+      "nombre": "Puerta interna norte",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [
+        "binary_sensor.puerta_interna_norte"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "5eb1a4ef2a858e888bb376066ee22567"
+    },
+    {
+      "id": "f909dfec-3fdc-442a-8400-022203b48273",
+      "nombre": "puerta interior baño pasillo",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Baño grande",
+      "entidades": [
+        "binary_sensor.puerta_interior_bano_pasillo_apertura_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "bd5e47f23b303ae4f9f175383b263432"
+    },
+    {
+      "id": "aae8c9c8-02cd-4ccb-bc92-42b0cfbc3b3e",
+      "nombre": "Puerta interna baño visita",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "baño visita",
+      "entidades": [
+        "binary_sensor.puerta_interna_bano_visita_apertura"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-05-18",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "48313c7c8e726d33a930f01fe9eb897b"
+    },
+    {
+      "id": "85f4ae70-9171-434b-8f0f-86d020ce09f9",
+      "nombre": "puerta baño suite",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.puerta_bano_suite_apertura"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "86625ea693850c1a4545a1041e8d98aa"
+    },
+    {
+      "id": "47ebb915-52c6-4c65-9902-dbfe5aae12cb",
+      "nombre": "mov_lumi_viejo",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_motion",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.mov_lumi_viejo_ocupacion"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "c29a9f39d0ebe7c2f50d464d615125a6"
+    },
+    {
+      "id": "5c25cc08-9564-4f8f-b821-fe01e96a92ac",
+      "nombre": "term taller",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Xiaomi",
+      "modelo": "LYWSD03MMC-z",
+      "ubicacion": "Taller",
+      "entidades": [
+        "sensor.term_taller_temperatura",
+        "sensor.term_taller_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "04f329f98cdac9dd2b8c89c1fe84fff7"
+    },
+    {
+      "id": "f41b088a-cecc-49c0-915b-fbcca62fce85",
+      "nombre": "Heladera (termómetro)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Xiaomi",
+      "modelo": "LYWSD03MMC-z",
+      "ubicacion": "Cocina",
+      "entidades": [
+        "sensor.heladera_temperatura",
+        "sensor.heladera_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "1537a04b9916dda4984d4dbbbe60e458"
+    },
+    {
+      "id": "6cbc864d-39cf-428b-bed2-a456308f6b0d",
+      "nombre": "Baño visita (termómetro)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Xiaomi",
+      "modelo": "LYWSD03MMC-z",
+      "ubicacion": "baño visita",
+      "entidades": [
+        "sensor.bano_visita_temperatura",
+        "sensor.bano_visita_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "e387ef906fee2a60a5c529512525fff6"
+    },
+    {
+      "id": "b6f1a5a9-0b66-40d5-ad1a-5ebef2354b23",
+      "nombre": "Sala_temp",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Xiaomi",
+      "modelo": "LYWSD03MMC-z",
+      "ubicacion": "Sala",
+      "entidades": [
+        "sensor.sala_temp_temperatura",
+        "sensor.sala_temp_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-06-05",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "94902864721ceeac392cfe4255c71340"
+    },
+    {
+      "id": "2610be74-ea07-4ac5-8010-86b9ffb7015e",
+      "nombre": "Ventana Tele der",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_magnet",
+      "ubicacion": "Sala",
+      "entidades": [
+        "binary_sensor.ventana_tele_der_apertura"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr1632",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "837ca321692ccc201d1b472d97e2ea4a"
+    },
+    {
+      "id": "760fbd93-748a-4778-b4db-62f02ba74cac",
+      "nombre": "Blackout (cortina suite)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.cortina_suite"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "de795eabc779e6f419a3130c33b93a17"
+    },
+    {
+      "id": "1771744d-22eb-4d4c-bdc6-ab5b58c0ef30",
+      "nombre": "Puerta taller",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "DS01",
+      "ubicacion": "Taller",
+      "entidades": [
+        "binary_sensor.puerta_taller_apertura"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "fa978c01973a4472c3bff72df5e76533"
+    },
+    {
+      "id": "24bb361e-e840-47da-a4ed-544244454151",
+      "nombre": "Reserva_2 (termómetro)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Xiaomi",
+      "modelo": "LYWSD03MMC-z",
+      "ubicacion": "Espacio de emi",
+      "entidades": [
+        "sensor.reserva_2_temperatura",
+        "sensor.reserva_2_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b93ae499836eb27e7a7a453f01758be4"
+    },
+    {
+      "id": "e441e27e-a463-4a71-8059-355a59431491",
+      "nombre": "Puerta interna Sur2",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [
+        "binary_sensor.orvibo_e70f96b3773a4c9283c6862dbafb6a99_apertura"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "118c367c924434bfc1009370464517b6"
+    },
+    {
+      "id": "9653da71-7abf-41f8-b54d-aac07f290614",
+      "nombre": "Puerta suite",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Suite",
+      "entidades": [
+        "binary_sensor.puerta_suite_apertura_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "da8ff5d4c0c76b947b503c05ed76e740"
+    },
+    {
+      "id": "65ef3625-b70f-498a-b208-6271d0fc179e",
+      "nombre": "Cortina Sur",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [
+        "binary_sensor.cortina_sur_apertura_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "00cff802927a159c55b65ef03c61a569"
+    },
+    {
+      "id": "4fc09dcb-3313-4e9d-a7c5-03fde0dba162",
+      "nombre": "Cortina Norte",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [
+        "binary_sensor.cortina_norte_apertura_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "b0fa20d7efcc0b4424bfb3078ef0c914"
+    },
+    {
+      "id": "7432552d-217e-46ee-a3e9-feebffac12c3",
+      "nombre": "Mov so reserva",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "66666",
+      "ubicacion": "Reserva",
+      "entidades": [
+        "binary_sensor.mov_so_reserva_movimiento"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "d6bdf5c18220051e67a685b63c5edeb0"
+    },
+    {
+      "id": "10ec1a63-a74b-41dd-a03c-18d5a76ad5b5",
+      "nombre": "Ban Lav",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.ban_lav"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "Dato incierto: revisar tipo/fecha de batería en HA",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "30df4d302cf06d297e86b0931506f480"
+    },
+    {
+      "id": "43ddc1a4-acdd-42e8-ad5b-9e50823caa2b",
+      "nombre": "eWeLink SNZB-04P (afuera)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "SNZB-04P",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "binary_sensor.ewelink_snzb_04p",
+        "binary_sensor.ewelink_snzb_04p_manipulacion"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "CR2477",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2025-07-19",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "39d6cc5781442b0faa86afe647e4e06d"
+    },
+    {
+      "id": "6be6dd38-c70f-4f1b-a87d-d44ad7b827c3",
+      "nombre": "Clima baño pasillo",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "SONOFF",
+      "modelo": "SNZB-02D",
+      "ubicacion": "Baño grande",
+      "entidades": [
+        "sensor.sonoff_snzb_02d_temperatura",
+        "sensor.sonoff_snzb_02d_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-04-05",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "d860d8449e673d12f73ce265d82026a0"
+    },
+    {
+      "id": "2b0a40cf-da8d-471f-83c2-ba24e3db25de",
+      "nombre": "eWeLink TH01 (sin área)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "TH01",
+      "ubicacion": "",
+      "entidades": [
+        "sensor.ewelink_th01_temperatura",
+        "sensor.ewelink_th01_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2025-06-30",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "a3fbbcd4d549b585cacee9882292ff01"
+    },
+    {
+      "id": "4a786b07-5ac5-408e-8ef0-892e2537682c",
+      "nombre": "Movimiento cocina",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.sensor_motion",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.lumi_lumi_sensor_motion_ocupacion"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "e93e1d69edbf2845ee588bfa2132fe6c"
+    },
+    {
+      "id": "54f62d65-9d6d-4bad-a49b-b8f8f8993a33",
+      "nombre": "Sensor inundacion (lavadero)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "SONOFF",
+      "modelo": "SNZB-05P",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.sensor_inundacion"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "Dato incierto: revisar tipo/fecha de batería en HA",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "0ad853660f03d4c6dac13c1b7c40eebe"
+    },
+    {
+      "id": "a9411996-d99d-4161-9d85-026f322125f7",
+      "nombre": "Botón taller",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "SNZB-01P",
+      "ubicacion": "Taller",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "CR2477",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2025-10-13",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "9f4d66cbf0c406e4ef7db5057469ec94"
+    },
+    {
+      "id": "569dd8de-4da1-42e9-9d44-92564b08be3d",
+      "nombre": "ORVIBO (sin nombre)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "",
+      "entidades": [
+        "binary_sensor.orvibo_e70f96b3773a4c9283c6862dbafb6a99"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2025-10-12",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "dc10de450d636fb128056bb6382bbe90"
+    },
+    {
+      "id": "62801562-d7f5-4a42-b2b6-97983f0e9788",
+      "nombre": "Botón Oma",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "SNZB-01P",
+      "ubicacion": "Dormitorio norte",
+      "entidades": [],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "CR2477",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2025-10-22",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "7c0663aca77ad07637562d1f185bf218"
+    },
+    {
+      "id": "a17253d1-9adf-45a9-8a97-485a185cd19a",
+      "nombre": "dormitorio sur temperatura",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "SONOFF",
+      "modelo": "SNZB-02D",
+      "ubicacion": "Dormitorio Sur",
+      "entidades": [
+        "sensor.dormitorio_sur_temperatura_temperatura",
+        "sensor.dormitorio_sur_temperatura_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2025-11-08",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "f5c8fd74ed6291e79fd3c9b1c9f44562"
+    },
+    {
+      "id": "2a8d2882-21a3-4731-9dd2-22936e86b33a",
+      "nombre": "banderola visita",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "baño visita",
+      "entidades": [
+        "binary_sensor.banderola_visita_opening_2"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "45876bf75866432a9d6b04db6656a68a"
+    },
+    {
+      "id": "3d30dbda-0644-48ec-992c-7a3424118c80",
+      "nombre": "Sensor lluvia",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "SONOFF",
+      "modelo": "SNZB-05P",
+      "ubicacion": "Afuera",
+      "entidades": [
+        "binary_sensor.sensor_lluvia"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "CR2477",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-02-17",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "13618fa149dafc8904c2113928cdc968"
+    },
+    {
+      "id": "958c6539-b32c-4b0f-88fe-cf673f99674d",
+      "nombre": "SONOFF SWV (válvula riego)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "SONOFF",
+      "modelo": "SWV",
+      "ubicacion": "Riego",
+      "entidades": [
+        "switch.sonoff_swv",
+        "binary_sensor.sonoff_swv_fuga_de_agua"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "4× AA",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-02-21",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "8429dd884ef9672ab59d499cb9622fcf"
+    },
+    {
+      "id": "e874d4f3-d639-45b3-a8a3-73bfe7ba73b5",
+      "nombre": "0714 (entrada lateral)",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "SNZB-04P",
+      "ubicacion": "Security",
+      "entidades": [
+        "binary_sensor.0714"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "CR2477",
+      "notas": "Dato incierto: revisar tipo/fecha de batería en HA",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "102f093764d19f226353b9f04a5ab3ee"
+    },
+    {
+      "id": "a966fc23-ebf7-4902-9a85-3c2b94b7657f",
+      "nombre": "1095",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "eWeLink",
+      "modelo": "SNZB-04P",
+      "ubicacion": "ensayos",
+      "entidades": [
+        "binary_sensor.1095"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "CR2477",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-02-27",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "23bd95008512955dd9d5283745c515fe"
+    },
+    {
+      "id": "36557965-52e4-426a-b721-ed5b1f253f7e",
+      "nombre": "SIRENA INTERNA",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "Tuya",
+      "modelo": "TS0601",
+      "ubicacion": "Security",
+      "entidades": [
+        "switch.sirena_interna_sirena_encendida"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "otro",
+      "bateriaOtro": "2× CR123A",
+      "notas": "",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-03-01",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "39f9f46cca8b986db4a9d7cdf1664520"
+    },
+    {
+      "id": "483f2153-1b9f-45d3-9cb1-f0c440a434bb",
+      "nombre": "TH Radiador",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "SONOFF",
+      "modelo": "SNZB-02D",
+      "ubicacion": "Toda la casa",
+      "entidades": [
+        "sensor.th_radiador_temperatura",
+        "sensor.th_radiador_humedad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2450",
+      "bateriaOtro": "",
+      "notas": "Dato incierto: revisar tipo/fecha de batería en HA",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "d410fe75dd24b6e3246f2f69b314cbba"
+    },
+    {
+      "id": "1d97577a-a5b2-455f-8339-61b4c96ed63d",
+      "nombre": "Silla Taller",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "Taller",
+      "entidades": [
+        "binary_sensor.silla_taller_apertura"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "Dato incierto: revisar tipo/fecha de batería en HA",
+      "lastModified": 1788443166288,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "1aea8c14e799621ad33d62d8b2724e94"
+    },
+    {
+      "id": "7940e822-40b4-4eb6-9ea2-d7ce10b39048",
+      "nombre": "VIBRACION",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "LUMI",
+      "modelo": "lumi.vibration.aq1",
+      "ubicacion": "Lavadero",
+      "entidades": [
+        "binary_sensor.vibracion_vibracion"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166289,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        }
+      ],
+      "haDeviceId": "4e4c65391af649951e4fc21092d7e252"
+    },
+    {
+      "id": "405659e8-bf62-48c9-a501-094c23646666",
+      "nombre": "cerco perimetral",
+      "tipo": "zigbee",
+      "tipoOtro": "",
+      "marca": "ORVIBO",
+      "modelo": "e70f96b3773a4c9283c6862dbafb6a99",
+      "ubicacion": "ensayos",
+      "entidades": [
+        "binary_sensor.cerco_perimetral"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166289,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-04-07",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "d7d6c6ce526224ffbefbcada60863794"
+    },
+    {
+      "id": "cde471a6-9852-474e-a758-62762c3e49fe",
+      "nombre": "Patio Norte",
+      "tipo": "otro",
+      "tipoOtro": "Mi Flora / BLE",
+      "marca": "Xiaomi",
+      "modelo": "HHCCJCY01",
+      "ubicacion": "Riego",
+      "entidades": [
+        "sensor.nueva_planta_moisture",
+        "sensor.nueva_planta_conductivity",
+        "sensor.nueva_planta_illuminance"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166289,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-08-17",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "36540fdc94d16da318de267cb6ca3652"
+    },
+    {
+      "id": "3c3dbbf9-260a-4717-991f-30657df5b0dc",
+      "nombre": "Patio sur",
+      "tipo": "otro",
+      "tipoOtro": "Mi Flora / BLE",
+      "marca": "Xiaomi",
+      "modelo": "HHCCJCY01",
+      "ubicacion": "",
+      "entidades": [
+        "sensor.plant_sensor_8284_moisture",
+        "sensor.plant_sensor_8284_conductivity",
+        "sensor.plant_sensor_8284_illuminance"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166289,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-09-02",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "4debaf7c525e54c16d5cc4ae16277976"
+    },
+    {
+      "id": "26426bc2-2b88-46ac-b216-5ccc60b1380b",
+      "nombre": "Plant Sensor B2E6",
+      "tipo": "otro",
+      "tipoOtro": "Mi Flora / BLE",
+      "marca": "Xiaomi",
+      "modelo": "HHCCJCY01",
+      "ubicacion": "",
+      "entidades": [
+        "sensor.plant_sensor_b2e6_humedad",
+        "sensor.plant_sensor_b2e6_conductividad"
+      ],
+      "fechaInstalacion": "2026-09-03",
+      "bateria": "cr2032",
+      "bateriaOtro": "",
+      "notas": "",
+      "lastModified": 1788443166289,
+      "reemplazadoPorId": null,
+      "reemplazaAId": null,
+      "fueraDeServicio": false,
+      "deleted": false,
+      "historial": [
+        {
+          "tipo": "instalado",
+          "fecha": "2026-09-03",
+          "detalle": "Importado desde HA"
+        },
+        {
+          "tipo": "cambio_bateria",
+          "fecha": "2026-04-02",
+          "detalle": "Cambio de batería (dato real importado desde HA / Battery Notes)"
+        }
+      ],
+      "haDeviceId": "af2b8cc94e6548ffaf59b9d5845ced84"
+    }
+  ],
+  "automatizaciones": [
+    {
+      "id": "baf460e7-23b0-447d-9c8e-897d6d75bf14",
+      "categoria": "Riego",
+      "nombre": "Respuesta y Control Fijo",
+      "descripcion": "",
+      "lastModified": 1788445375798,
+      "deleted": false,
+      "haEntityId": "automation.02_riego_respuesta_y_control_fijo_2"
+    },
+    {
+      "id": "b023e512-943d-44db-887e-f10ed036cfa0",
+      "categoria": "Climatización",
+      "nombre": "❄️ AC encendidos sin nadie en casa",
+      "descripcion": "",
+      "lastModified": 1788445375798,
+      "deleted": false,
+      "haEntityId": "automation.1_ensayo_de_climatizacion"
+    },
+    {
+      "id": "72f76cbb-d96b-48f5-bfc0-6edcd8751c87",
+      "categoria": "",
+      "nombre": "A dormir automatice ramdom",
+      "descripcion": "",
+      "lastModified": 1788445375798,
+      "deleted": false,
+      "haEntityId": "automation.a_dormir_automatice_ramdom"
+    },
+    {
+      "id": "9d436d4a-a147-4845-b589-6b8dfc1eb9bd",
+      "categoria": "Security",
+      "nombre": "intrusión suite",
+      "descripcion": "",
+      "lastModified": 1788445375798,
+      "deleted": false,
+      "haEntityId": "automation.aaa_intrusion_suite"
+    },
+    {
+      "id": "117c7fcd-9fa9-4d27-900d-0e8fbb0e74b7",
+      "categoria": "",
+      "nombre": "Abrir cortina al sonar la alarma (Echo Show)",
+      "descripcion": "",
+      "lastModified": 1788445375798,
+      "deleted": false,
+      "haEntityId": "automation.abrir_cortina_al_sonar_la_alarma_echo_show"
+    },
+    {
+      "id": "22575b26-7c78-402a-9603-23071a7f5aae",
+      "categoria": "",
+      "nombre": "Abrir entrada principal",
+      "descripcion": "",
+      "lastModified": 1788445375798,
+      "deleted": false,
+      "haEntityId": "automation.abrir_entrada_principal"
+    },
+    {
+      "id": "25ee292e-926e-470f-8c27-30c0660da5e6",
+      "categoria": "",
+      "nombre": "Acción: Encender Calefacción desde Móvil",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.accion_encender_calefaccion_desde_movil"
+    },
+    {
+      "id": "f7d4e039-d918-423a-b039-bc3b41befe85",
+      "categoria": "",
+      "nombre": "Activa a dormir",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.activa_a_dormir"
+    },
+    {
+      "id": "7c1b2015-b7d7-4fb2-8d22-f69b1d9662f2",
+      "categoria": "",
+      "nombre": "Alerta Crítica: Piloto Calentador Apagado",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.alerta_piloto_del_calentador_apagado"
+    },
+    {
+      "id": "36f0abcb-120e-4ae1-9d8e-424efdefc316",
+      "categoria": "",
+      "nombre": "Alterna luz mesa izquierda",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.alterna_luz_mesa_izquierda"
+    },
+    {
+      "id": "21558c4e-a137-4032-8de2-e0576739dc50",
+      "categoria": "",
+      "nombre": "Alterna luz  mesa derecha",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.alterna_luz_mesa_trabajo"
+    },
+    {
+      "id": "7fdeede3-409a-472f-b3be-6eff6e02f8e4",
+      "categoria": "",
+      "nombre": "Anuncio - Tablet Eco Batería completa",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.anuncio_bat_tablet_eco"
+    },
+    {
+      "id": "9ab2946f-a832-47f3-b5e6-61e86734682d",
+      "categoria": "",
+      "nombre": "anuncios varios",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.anuncios_varios"
+    },
+    {
+      "id": "45bf2ecc-e95f-4561-b123-f0bd27c53e91",
+      "categoria": "",
+      "nombre": "Apaga Aire suite por ausencia Espresence",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.apaga_aire_suite_por_ausencia"
+    },
+    {
+      "id": "fc360318-11e3-4432-a343-944615343d62",
+      "categoria": "Riego",
+      "nombre": "Apagado total riego",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.apagado_total_riego"
+    },
+    {
+      "id": "60cd0b48-88bd-41a7-9778-4d46df4b5c2c",
+      "categoria": "Iluminación",
+      "nombre": "Entrada frente OFF",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.apagar_frente"
+    },
+    {
+      "id": "90dfbe49-8eee-4b34-81e2-9e6e45fb0eb0",
+      "categoria": "Climatización",
+      "nombre": "puerta granero abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.automation_112"
+    },
+    {
+      "id": "c0901e1c-723f-416c-b452-b82d742a959a",
+      "categoria": "Iluminación",
+      "nombre": "antebaño - luz mejorada",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.automation_70"
+    },
+    {
+      "id": "7b8b617d-baad-4c59-8138-1f3e9fcc750a",
+      "categoria": "",
+      "nombre": "Riego manual Norte",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.automation_84"
+    },
+    {
+      "id": "e4971c3b-1ae9-4cad-b15e-0ca698b4711c",
+      "categoria": "Climatización",
+      "nombre": "♨️ Avisa caldera encendida fuera de casa",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.avisa_caldera_encendida_fuera_de_casa"
+    },
+    {
+      "id": "25bea9d4-a764-4751-b72c-c7c13e081abc",
+      "categoria": "",
+      "nombre": "Aviso auto llegó",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.aviso_auto_llego"
+    },
+    {
+      "id": "3bf8e8a1-8468-4505-a074-24b613058449",
+      "categoria": "",
+      "nombre": "Aviso de mal funcionamiento",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.aviso_de_mal_funcionamiento"
+    },
+    {
+      "id": "72d13eea-c19a-4262-ab20-d8f6e5773737",
+      "categoria": "",
+      "nombre": "Enciende luz Sala por luminosidad cuando baja del 48%",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.aviso_luz_sala_46"
+    },
+    {
+      "id": "0ae157dc-911f-4af9-9e6e-a4b8985fba26",
+      "categoria": "Varios",
+      "nombre": "bajar black",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.bajar_black_2"
+    },
+    {
+      "id": "80b0e3ab-4e9b-4983-ad65-e44c707fc559",
+      "categoria": "Baño",
+      "nombre": "Conteo por radar (Alarma activada)",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.bano_conteo_por_radar_alarma_armada"
+    },
+    {
+      "id": "69fa7310-b3e0-4adf-8445-6c63e08a12a1",
+      "categoria": "Baño",
+      "nombre": "Guardar y Resetear al Desarmar",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.bano_guardar_y_resetear_al_desarmar"
+    },
+    {
+      "id": "553e9e52-ce9b-4de3-b5ca-11ed0ad56a05",
+      "categoria": "",
+      "nombre": "Batería Cargada S9",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.bateria_cargada_s9"
+    },
+    {
+      "id": "ef7d0564-cba2-49db-a635-f6a53188b33b",
+      "categoria": "",
+      "nombre": "Batería S10",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.bateria_s10"
+    },
+    {
+      "id": "be8a0a6b-5893-4a2c-b24d-38c694811090",
+      "categoria": "",
+      "nombre": "Baterías bajas",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.baterias_bajas"
+    },
+    {
+      "id": "02daba6d-b16c-48e9-993e-3a19dd0eea2a",
+      "categoria": "Iluminación",
+      "nombre": "botón amarillo - hab sur",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.boton_sur"
+    },
+    {
+      "id": "8a90f448-a7fd-42d4-837d-c89d65a55829",
+      "categoria": "",
+      "nombre": "bypass puerta jardin",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.bypass_puerta_jardin"
+    },
+    {
+      "id": "86af212d-4c89-47e4-b908-286238d13e70",
+      "categoria": "",
+      "nombre": "Calefacción: Aviso al despertar (Presencia y Visitas)",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.calefaccion_aviso_al_despertar_presencia_y_visitas"
+    },
+    {
+      "id": "5a128700-0e7e-4dae-880a-4a1b9e02cd66",
+      "categoria": "Candy",
+      "nombre": "4 Ciclo completo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_4_ciclo_completo"
+    },
+    {
+      "id": "f0b2029b-3d48-49ab-a184-7d503fa188dc",
+      "categoria": "Candy",
+      "nombre": "5 Apaga",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_5_apaga"
+    },
+    {
+      "id": "b993ec50-6faa-449c-ba9c-7b0d5bc0eaec",
+      "categoria": "Candy",
+      "nombre": "6 Aviso centrifugar",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_6_aviso_centrifugar"
+    },
+    {
+      "id": "9062307b-fa8c-4a3c-b99a-b12b92b2f6a9",
+      "categoria": "Candy",
+      "nombre": "7 aviso ciclo completo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_7_aviso_ciclo_completo"
+    },
+    {
+      "id": "e7c53e66-776f-4fbf-8745-2f394b194be8",
+      "categoria": "Candy",
+      "nombre": "8 llega a casa",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_8_llega_a_casa"
+    },
+    {
+      "id": "02173a18-2aad-49b5-8422-3e95f5bc12a2",
+      "categoria": "Candy",
+      "nombre": "3 centrifugando",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_centrifugando"
+    },
+    {
+      "id": "88bfc2ed-ca09-40d9-87df-850103ea9347",
+      "categoria": "Candy",
+      "nombre": "1 Inicio programa",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_inicio_programa"
+    },
+    {
+      "id": "0e845885-1bab-40ae-967d-ba5c1fb5a55a",
+      "categoria": "Candy",
+      "nombre": "2 Lavado finalizado",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.candy_lavado_finalizado"
+    },
+    {
+      "id": "e514feed-55f7-46df-a695-2f31d737c310",
+      "categoria": "",
+      "nombre": "Ciclo Único de Caldera",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.ciclo_unico_de_caldera"
+    },
+    {
+      "id": "69a9cea6-5288-44b7-a1c2-e5861ad84ea0",
+      "categoria": "Climatización",
+      "nombre": "apaga aire por bt",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.climatizacion_apaga_aire_por_bt"
+    },
+    {
+      "id": "d4bb3b2a-9d65-4836-8c50-b5e782315947",
+      "categoria": "Climatización",
+      "nombre": "Caldera - apaga por puerta o ventana abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.climatizacion_caldera_apaga_por_puerta_o_ventana_abierta"
+    },
+    {
+      "id": "e544dc33-8879-4daa-9fd7-4b457b3b7be1",
+      "categoria": "Climatización",
+      "nombre": "🌀 Gestión turbo - OFF",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.climatizacion_gestion_turbo_off"
+    },
+    {
+      "id": "1fc54c5b-5651-4119-a3bc-d1e9684f89be",
+      "categoria": "Climatización",
+      "nombre": "🌀 Gestión turbo - ON",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.climatizacion_gestion_turbo_on"
+    },
+    {
+      "id": "5380ab92-88d0-4d70-80b3-e5f172454b11",
+      "categoria": "Climatización",
+      "nombre": "⚠️ Puerta Suite abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.climatizacion_puerta_suite_abierta"
+    },
+    {
+      "id": "0155ab16-c203-4cec-8743-b6921a0a3635",
+      "categoria": "Security",
+      "nombre": "conectar alarma por ausencia",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.conectar_alarma_por_ausencia"
+    },
+    {
+      "id": "42211fde-9c9a-4e02-af25-bb29381b7827",
+      "categoria": "Confort",
+      "nombre": "anuncia peso corporal",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.confort_anuncia_peso_corporal"
+    },
+    {
+      "id": "54df0c43-b3db-4566-8459-43e9af9b0a3c",
+      "categoria": "Iluminación",
+      "nombre": "Confort - luz corredor",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.confort_luz_corredor"
+    },
+    {
+      "id": "ac9ae8aa-3c84-4a14-884c-27c2ee3a14bf",
+      "categoria": "",
+      "nombre": "Luz galería de noche",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.confort_luz_galeria_de_noche"
+    },
+    {
+      "id": "b0cfc144-c1da-4821-9f8c-a1855687f70b",
+      "categoria": "Confort",
+      "nombre": "NFC a dormir",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.confort_nfc_a_dormir"
+    },
+    {
+      "id": "2ab1b57f-18c9-4d09-b785-e4bf6e159b4d",
+      "categoria": "",
+      "nombre": "Contar Movimiento Baño Suite",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.contar_movimiento_bano_suite"
+    },
+    {
+      "id": "7428567e-cad3-4dd7-ad86-c8c6d4b43e39",
+      "categoria": "Security",
+      "nombre": "Escena - despierta la casa",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.despierta_la_casa"
+    },
+    {
+      "id": "0a0eb36e-fa35-4ea1-bb73-4389ca53e85a",
+      "categoria": "",
+      "nombre": "Detección de personas en patio",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.deteccion_de_personas_en_patio"
+    },
+    {
+      "id": "922ac77c-7ec8-4ed7-be38-149f81a80604",
+      "categoria": "Security",
+      "nombre": "detector presencia en galería",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.detector_presencia_en_galeria"
+    },
+    {
+      "id": "315a2568-8521-442e-aabb-e7e6c3a26294",
+      "categoria": "Iluminación",
+      "nombre": "Entrada Frente ON",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.encender_frente"
+    },
+    {
+      "id": "cbf20d58-e89b-4f7d-a750-2f815782d404",
+      "categoria": "Candy",
+      "nombre": "Encendidos",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.encendidos_candy"
+    },
+    {
+      "id": "2454c971-9577-406a-ba8a-9d8e789933ab",
+      "categoria": "Iluminación",
+      "nombre": "Suite -  2 toques - alterna velador izquierdo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.enciende_apaga_velador_suite_2"
+    },
+    {
+      "id": "c2edd590-9b71-4f03-a0ac-f631f2a2a442",
+      "categoria": "Climatización",
+      "nombre": "Enciende caldera remoto",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.enciende_caldera_por_notificacion_accionable"
+    },
+    {
+      "id": "5dee52dd-9309-4daa-ad0c-ecc2b8ba8167",
+      "categoria": "",
+      "nombre": "Enciende espacio de emi",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.enciende_espacio_de_emi"
+    },
+    {
+      "id": "1ad99d66-902a-4f98-8b50-d21167d1f162",
+      "categoria": "Iluminación",
+      "nombre": "enciende  luces sala y espacio",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.enciende_luces_sala"
+    },
+    {
+      "id": "96747a8e-1dab-4fef-a5a7-b20685a71be2",
+      "categoria": "Riego",
+      "nombre": "Palo - riego aut",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.ensayo_de_riego_automatico"
+    },
+    {
+      "id": "c74bece6-8f4d-438b-82f0-6fa983fb9675",
+      "categoria": "",
+      "nombre": "Falla sensores",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.falla_sensores"
+    },
+    {
+      "id": "96d9ec33-000a-4f8e-8d80-07200606d327",
+      "categoria": "Cocina",
+      "nombre": "Freezer abierto",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.freezer_abierto"
+    },
+    {
+      "id": "b8c5a54f-852f-4e14-9d21-f0b03482eca9",
+      "categoria": "",
+      "nombre": "Gestión repelente mosquitos",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.gestion_repelente_mosquitos"
+    },
+    {
+      "id": "25113742-127b-4b55-8c8c-905c15568ba9",
+      "categoria": "Helada",
+      "nombre": "Actualizar historial de temperatura",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.helada_actualizar_historial_de_temperatura"
+    },
+    {
+      "id": "07bb5395-6b54-4f06-94a4-6f48dcdb1a8f",
+      "categoria": "Helada",
+      "nombre": "Predicción y Aviso",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.helada_prediccion_y_aviso"
+    },
+    {
+      "id": "95d8effa-6f72-462e-8e0f-0573094cdbd1",
+      "categoria": "Helada",
+      "nombre": "Registro Horario",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.helada_registro_horario"
+    },
+    {
+      "id": "7a3d4aca-bca9-4494-89f6-9e5fcd07088d",
+      "categoria": "Helada",
+      "nombre": "Riego por temperatura actual",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.helada_riego_por_temperatura_actual"
+    },
+    {
+      "id": "4b9f678c-c2e3-4701-94ab-174e70b918b4",
+      "categoria": "Iluminación",
+      "nombre": "Luz automática cichera",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.iluminacion_luz_automatica_cochera"
+    },
+    {
+      "id": "7a6339e4-6b8f-4000-8f66-dc668966b957",
+      "categoria": "Iluminación",
+      "nombre": "silla",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.iluminacion_silla"
+    },
+    {
+      "id": "7cca10d9-f63a-4a1d-8444-0be511dcd071",
+      "categoria": "Iluminación",
+      "nombre": "gestión Luz Alacena",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.iluminacipon_gestion_luz_alacena"
+    },
+    {
+      "id": "0165de62-b50d-4b5f-bc62-432bf04e5ad5",
+      "categoria": "",
+      "nombre": "Inundación en lavadero",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.inundacion_en_lavadero"
+    },
+    {
+      "id": "b0828e64-9e6e-4f36-9c8f-2d47b440f76a",
+      "categoria": "Iluminación",
+      "nombre": "Luz lavandería - apaga 5'",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.lavadero_apaga_30"
+    },
+    {
+      "id": "8764ade6-6c86-43fc-8bc7-ce9a32152bb2",
+      "categoria": "Iluminación",
+      "nombre": "lavadero - luz puerta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.lavadero_luz_puerta"
+    },
+    {
+      "id": "bcd3e983-8cb9-4b91-a650-d78df07276f6",
+      "categoria": "Iluminación",
+      "nombre": "Cocina  - alacenas nocturno",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_alacena"
+    },
+    {
+      "id": "2901a776-8add-478d-8afb-0166edca5aa0",
+      "categoria": "",
+      "nombre": "Luz baño pasillo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_bano_pasillo"
+    },
+    {
+      "id": "885ae600-0ae4-4e49-a6b8-416b78837d4c",
+      "categoria": "",
+      "nombre": "Luz baño suite con radar",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_bano_suite_con_radar"
+    },
+    {
+      "id": "bc6a13a9-e896-4a73-a5ee-c96accab1b31",
+      "categoria": "",
+      "nombre": "Luz baño visita",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_bano_visita"
+    },
+    {
+      "id": "b94e47a6-28f8-424b-b5d2-ae54620a3ddb",
+      "categoria": "Iluminación",
+      "nombre": "Luz de ingreso pta principal",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_de_ingreso"
+    },
+    {
+      "id": "cf69da31-0c7b-4e86-8ce6-eed508db85ba",
+      "categoria": "Iluminación",
+      "nombre": "Luz taller pir",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_taller_pir"
+    },
+    {
+      "id": "c7dcc662-744c-42cf-b4f0-1fd2484d5ada",
+      "categoria": "Iluminación",
+      "nombre": "luz vestidor",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.luz_vestidor"
+    },
+    {
+      "id": "0822e732-8299-4387-b2d3-257e144433eb",
+      "categoria": "Mantenimiento",
+      "nombre": "Batería baja, crear tarea",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_bateria_baja_crear_tarea_2"
+    },
+    {
+      "id": "4083b739-db4a-4fb4-b979-c361adf084b2",
+      "categoria": "Mantenimiento",
+      "nombre": "Batería recuperada, descartar notificación",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_bateria_recuperada_descartar_notificacion_2"
+    },
+    {
+      "id": "303f0266-c791-4c0a-8d51-bc1e1790143c",
+      "categoria": "Mantenimiento",
+      "nombre": "Batería reemplazada, completar tarea",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_bateria_reemplazada_completar_tarea_2"
+    },
+    {
+      "id": "8caee834-8a11-4172-ad74-000f35aab0ea",
+      "categoria": "Mantenimiento",
+      "nombre": "Chequeo diario baterías",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_chequeo_diario_baterias_2"
+    },
+    {
+      "id": "68598865-097d-41bc-a3be-8a6ccd68f533",
+      "categoria": "Mantenimiento",
+      "nombre": "Chequeo mensual sin reportar",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_chequeo_mensual_sin_reportar_2"
+    },
+    {
+      "id": "b8996a99-08e3-4a7c-8463-260c68b363a0",
+      "categoria": "Mantenimiento",
+      "nombre": "Limpiar tareas completadas",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_limpiar_tareas_completadas_2"
+    },
+    {
+      "id": "3f02c5f2-256a-43fc-a4db-c63a53627d85",
+      "categoria": "Mantenimiento",
+      "nombre": "Registrar reemplazo automático",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.mantenimiento_registrar_reemplazo_automatico_2"
+    },
+    {
+      "id": "9251781a-a00e-4337-b5ff-e837c8f6871e",
+      "categoria": "Climatización",
+      "nombre": "⚠️ norte -apaga aire por puerta abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.norte_apaga_aire_por_puerta_abierta"
+    },
+    {
+      "id": "cf25998b-f7de-4f0f-9256-cd6bc0c6e61d",
+      "categoria": "",
+      "nombre": "Batería Note 13",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.note_13_cargado"
+    },
+    {
+      "id": "4b6efaa3-e5c5-4984-9389-8425134de493",
+      "categoria": "Notificación",
+      "nombre": "Alerta de Energía UPS Forza",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_alerta_de_energia_ups_forza"
+    },
+    {
+      "id": "3f829170-67ef-4eed-8ede-6e3c04016dda",
+      "categoria": "",
+      "nombre": "Notificación de batería baja - TTL",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_de_bateria_baja_ttl"
+    },
+    {
+      "id": "b31bfe84-ace3-4d3a-9d56-8273a9b7aa3c",
+      "categoria": "Notificación",
+      "nombre": "Repuesto de Repelente Bajo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_repuesto_de_repelente_bajo"
+    },
+    {
+      "id": "5a10d799-65b4-4c45-ae4f-7751b9a243fd",
+      "categoria": "Notificación",
+      "nombre": "UPS Batería Crítica",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.notificacion_ups_bateria_critica"
+    },
+    {
+      "id": "6e1bd5ff-0dcb-40eb-a2bb-660153dba935",
+      "categoria": "Varios",
+      "nombre": "parar black",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.parar_black"
+    },
+    {
+      "id": "1271619c-0750-484d-a966-6f4402d69000",
+      "categoria": "",
+      "nombre": "parar black",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.parar_black_2"
+    },
+    {
+      "id": "73d3f3d5-60f4-49c0-abb8-5bc90f1ba47c",
+      "categoria": "Salud",
+      "nombre": "silla - pausa de trabajo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.pausa_de_trabajo"
+    },
+    {
+      "id": "c1359b52-cd72-4650-bd2e-caab3347b5ca",
+      "categoria": "Iluminación",
+      "nombre": "philips varias funciones",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.philips_dos_veladores"
+    },
+    {
+      "id": "4b77abcc-605b-4225-a1cc-2b441592d6c8",
+      "categoria": "Confort",
+      "nombre": "No molestar Redmi 13",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.proeba_dnd"
+    },
+    {
+      "id": "fefc8185-e639-4c90-993f-f75925250f0b",
+      "categoria": "",
+      "nombre": "Proximidad a casa",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.proximidad_a_casa"
+    },
+    {
+      "id": "52448848-551f-4ed8-b1a1-90b71d7188b3",
+      "categoria": "Proximidad",
+      "nombre": "pruebas",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.proximidad_pruebas"
+    },
+    {
+      "id": "88e46db3-4d8d-4e2e-b2cf-88f18d94e35d",
+      "categoria": "Security",
+      "nombre": "ALARMO - Llamada por disparo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.prueba_alarmo_con_llamada"
+    },
+    {
+      "id": "22c8edff-024c-49c9-9ff0-964488b39b03",
+      "categoria": "",
+      "nombre": "prueba para borrar",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.prueba_para_borrar"
+    },
+    {
+      "id": "8b03b056-6f05-4ecd-b030-0c95f964c5b5",
+      "categoria": "Iluminación",
+      "nombre": "Cabecera",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.prueba_presencia"
+    },
+    {
+      "id": "a427ee85-06c2-4380-99b5-ab3b0801cd7c",
+      "categoria": "Cocina",
+      "nombre": "Puerta heladera",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.prueba_puerto_heladera"
+    },
+    {
+      "id": "1da59ad9-547b-446f-be85-c0dc064ecdca",
+      "categoria": "Varios",
+      "nombre": "pupi",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.pupi"
+    },
+    {
+      "id": "6286e168-628d-4e51-897a-7bce466e1be0",
+      "categoria": "",
+      "nombre": "Regleta mesa alterna",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.regleta_mesa_alterna"
+    },
+    {
+      "id": "b5299a14-8137-45f1-9353-e86ac0634f87",
+      "categoria": "",
+      "nombre": "Relay luz → Lámpara",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.relay_luz_lampara"
+    },
+    {
+      "id": "ea7f5933-b0a5-4a83-84f5-6f9cae0bdb89",
+      "categoria": "",
+      "nombre": "Relay luz → Lámpara",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.relay_luz_lampara_2"
+    },
+    {
+      "id": "9ae35b54-c792-4da9-a41c-064c7030440c",
+      "categoria": "",
+      "nombre": "Reset y Registro al Desarmar suite",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.reset_y_registro_al_desarmar_suite"
+    },
+    {
+      "id": "4f17ca56-4422-4076-97b6-371d7f8667bf",
+      "categoria": "RFID",
+      "nombre": "Acceso Autorizado",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.rfid_acceso_autorizado"
+    },
+    {
+      "id": "9a131a8f-327e-48b0-a6b2-80b07d747833",
+      "categoria": "RFID",
+      "nombre": "Acceso Denegado",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.rfid_acceso_denegado"
+    },
+    {
+      "id": "fadba487-3381-4fd6-87bd-bf82d5a91fa8",
+      "categoria": "RFID",
+      "nombre": "Reset contadores diarios",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.rfid_reset_contadores_diarios"
+    },
+    {
+      "id": "a2d9cc71-6020-4e70-9bd5-861b805e603d",
+      "categoria": "",
+      "nombre": "Riego adaptativo interior (palo agua)",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_adaptativo_interior_palo_agua"
+    },
+    {
+      "id": "95576d37-4a0a-4ff1-af85-748c0cd99c26",
+      "categoria": "Riego",
+      "nombre": "Alerta suelo seco",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_alerta_suelo_seco"
+    },
+    {
+      "id": "e1adb077-4dc5-40c4-8c6e-56dbb6eddcb1",
+      "categoria": "",
+      "nombre": "Riego manual sur",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_manual_sur"
+    },
+    {
+      "id": "3be38e90-250b-4b89-9ef2-1de1e62be496",
+      "categoria": "Riego",
+      "nombre": "Notificar Suelo Seco",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_notificar_necesidad"
+    },
+    {
+      "id": "fef323d9-a097-4ee5-9439-735a822b9e25",
+      "categoria": "",
+      "nombre": "Riego palo de agua - aviso humedad baja",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_palo_de_agua_aviso_humedad_baja"
+    },
+    {
+      "id": "a327f006-fff7-421a-a6b7-143e17965255",
+      "categoria": "Riego",
+      "nombre": "Respuesta desde Móvil",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_respuesta_desde_movil"
+    },
+    {
+      "id": "515c45c3-fc2f-4221-8ea4-02a81da09277",
+      "categoria": "Riego",
+      "nombre": "Sistema Adaptativo Profesional v 3.1",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.riego_sistema_adaptativo_profesional_v_3_1"
+    },
+    {
+      "id": "1d5dbaa9-c4a0-47bf-9208-176715ccbd94",
+      "categoria": "Safety",
+      "nombre": "apaga soldador",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.safety_apaga_soldador"
+    },
+    {
+      "id": "858ea452-2a24-4a6f-8aa5-80005b6299c1",
+      "categoria": "Safety",
+      "nombre": "llama mamá",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.safety_llama_mama"
+    },
+    {
+      "id": "dcdd2fc8-7029-439c-bfba-9d9f0fbce7fe",
+      "categoria": "Iluminación",
+      "nombre": "Silla Taller",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.safety_silla_taller"
+    },
+    {
+      "id": "749fc839-9177-443f-a52e-bf4c950d1f32",
+      "categoria": "Climatización",
+      "nombre": "Sala - apaga AA por puerta abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.sala_apaga_aa_por_puerta_abierta"
+    },
+    {
+      "id": "eb99927e-1131-4e3e-a5f1-c305cdc5d1be",
+      "categoria": "Security",
+      "nombre": "Apaga la sirena",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_apaga_la_sirena"
+    },
+    {
+      "id": "52ab0285-9a63-4933-a0f6-9af68363d43c",
+      "categoria": "Security",
+      "nombre": "apaga simulación",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_apaga_simulacion"
+    },
+    {
+      "id": "61bfd533-a120-441e-ba8a-e7237bbd6334",
+      "categoria": "Security",
+      "nombre": "apertura de puerta lateral",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_apertura_de_puerta_lateral"
+    },
+    {
+      "id": "189068fb-2698-4dc9-9998-1ff3aa67f032",
+      "categoria": "Security",
+      "nombre": "arma y desarma  x assist",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_arma_x_assist"
+    },
+    {
+      "id": "f241edca-491f-47d3-83b2-e03fb743138b",
+      "categoria": "Security",
+      "nombre": "aviso de alarma disparada",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_aviso_de_alarma_disparada"
+    },
+    {
+      "id": "69250c0d-22a4-4f03-8bac-1107d1fc1eb2",
+      "categoria": "Security",
+      "nombre": "aviso de ingreso",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_aviso_de_ingreso"
+    },
+    {
+      "id": "87bfdcf7-b553-40fd-8ca4-65644dd58ee7",
+      "categoria": "Security",
+      "nombre": "Botón rojo apaga sirena",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_boton_rojo_apaga_sirena"
+    },
+    {
+      "id": "7576c67d-d85d-4879-8919-bafb03783c29",
+      "categoria": "Security",
+      "nombre": "desarma alarma al llegar",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_desarma_alarma_al_llegar"
+    },
+    {
+      "id": "341d9c35-e381-4252-b4df-3317d0677034",
+      "categoria": "Security",
+      "nombre": "desarma alarma con llave de acceso",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_desarma_alarma_con_llave_de_acceso"
+    },
+    {
+      "id": "05adc4b0-8a40-45f0-ae6d-3a957ad682a0",
+      "categoria": "Security",
+      "nombre": "encender simulación",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_encenmder_simulacion"
+    },
+    {
+      "id": "0baa85f1-00b3-4098-92aa-e15e224b12d7",
+      "categoria": "Security",
+      "nombre": "Puerta lateral sigue abierta - Random",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.security_puerta_lateral_sigue_abierta"
+    },
+    {
+      "id": "9e4f46ff-c754-4f71-ad93-457d045021f4",
+      "categoria": "",
+      "nombre": "Secutity Cerco perimetral",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.secutity"
+    },
+    {
+      "id": "d8a92f9b-1099-46e1-acee-a3483d3ea517",
+      "categoria": "Seguridad",
+      "nombre": "Sensores de Riego Fuera del Suelo",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.seguridad_sensores_de_riego_fuera_del_suelo"
+    },
+    {
+      "id": "e90efca3-89d0-47b8-bb41-e31e2e41ed6e",
+      "categoria": "Salud",
+      "nombre": "Silla taller - descanso",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.silla_taller"
+    },
+    {
+      "id": "c112d099-7a54-4834-acba-a77bcbc93008",
+      "categoria": "Sonoff",
+      "nombre": "Recargar integración si hay dispositivo no disponible",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.sonoff_recargar_integracion_si_hay_dispositivo_no_disponible"
+    },
+    {
+      "id": "df15f481-8f5c-4c5c-ad2d-11b07d55c585",
+      "categoria": "Starlink",
+      "nombre": "Aviso obstrucción o pérdida de paquetes",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.starlink_aviso_obstruccion_o_perdida_de_paquetes"
+    },
+    {
+      "id": "94997978-1b8d-49dc-afcf-9b4221bacdff",
+      "categoria": "Varios",
+      "nombre": "black medio",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.subir_black"
+    },
+    {
+      "id": "ac3e17ed-c869-406b-84a5-cf206c2e1c41",
+      "categoria": "Varios",
+      "nombre": "Subir black",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.subir_black_2"
+    },
+    {
+      "id": "bb9b7082-49ca-47f8-856a-ff010998b103",
+      "categoria": "Climatización",
+      "nombre": "Suite - apaga AA por puerta abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.suite_apaga_aa_por_puerta_abierta"
+    },
+    {
+      "id": "7b428fb4-ce7c-46f4-bb23-4c4ad6a727e7",
+      "categoria": "Iluminación",
+      "nombre": "Suite - enciende velador",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.suite_enciende_velador"
+    },
+    {
+      "id": "a1547ea9-df82-44c9-a79a-6f8fdee9f541",
+      "categoria": "Climatización",
+      "nombre": "Sur - apaga aa por puerta abierta",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.sur_apaga_aa_por_puerta_abierta"
+    },
+    {
+      "id": "7961cbed-6710-4633-bbe2-0e1c07f8e018",
+      "categoria": "",
+      "nombre": "Temporiza calienta cama suite 45 minutos",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.temporiza_calienta_cama_suite_45_minutos"
+    },
+    {
+      "id": "9b53ce44-7caf-4fed-a466-abdd0b0e70c3",
+      "categoria": "",
+      "nombre": "test cerradura",
+      "descripcion": "",
+      "lastModified": 1788445375799,
+      "deleted": false,
+      "haEntityId": "automation.test_cerradura"
+    },
+    {
+      "id": "0418aca5-c9c7-4a12-a42f-78a0109814c6",
+      "categoria": "Tuya",
+      "nombre": "Recargar integración si hay dispositivo no disponible",
+      "descripcion": "",
+      "lastModified": 1788445375800,
+      "deleted": false,
+      "haEntityId": "automation.tuya_recargar_integracion_si_hay_dispositivo_no_disponible"
+    },
+    {
+      "id": "7b5c3d0d-09dc-421e-aa91-7b20098b07e2",
+      "categoria": "",
+      "nombre": "Velador Oma - alterna",
+      "descripcion": "",
+      "lastModified": 1788445375800,
+      "deleted": false,
+      "haEntityId": "automation.velador_oma_alterna"
+    },
+    {
+      "id": "973cda2d-559f-43fb-b4bf-b4f1e5d300ae",
+      "categoria": "Iluminación",
+      "nombre": "Suite - 1 toque alterna velador derecho",
+      "descripcion": "",
+      "lastModified": 1788445375800,
+      "deleted": false,
+      "haEntityId": "automation.veladores_suite_alterna"
+    },
+    {
+      "id": "d063b1b8-d062-486e-8a0c-5ce9c6b1ab10",
+      "categoria": "Iluminación",
+      "nombre": "Suite - 3 toques alterna antebaño",
+      "descripcion": "",
+      "lastModified": 1788445375800,
+      "deleted": false,
+      "haEntityId": "automation.veladores_suite_enciende_apaga"
+    },
+    {
+      "id": "16277bfc-b955-4044-8c8c-eac579aa6957",
+      "categoria": "Security",
+      "nombre": "Cámara calle en suite",
+      "descripcion": "",
+      "lastModified": 1788445375800,
+      "deleted": false,
+      "haEntityId": "automation.ver_camara_calle_en_suite"
+    },
+    {
+      "id": "ec0ea1e0-53a6-4a1e-844c-4abbf54f20ac",
+      "categoria": "Security",
+      "nombre": "Señal de luces al dispararse",
+      "descripcion": "",
+      "lastModified": 1788445375800,
+      "deleted": false,
+      "haEntityId": "automation.xxx_alarma"
+    }
+  ]
+}
