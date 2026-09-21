@@ -1,7 +1,7 @@
 // ============================================================
-// GESTIÓN INTEGRAL DE HA — v0.18-dev
+// GESTIÓN INTEGRAL DE HA — v0.19-dev
 // ============================================================
-const APP_VERSION = "0.18-dev";
+const APP_VERSION = "0.19-dev";
 const STORAGE_KEY = "giha_items";
 const STORAGE_KEY_AUTO = "giha_automatizaciones";
 const STORAGE_KEY_TIPOS_CUSTOM = "giha_tipos_custom";
